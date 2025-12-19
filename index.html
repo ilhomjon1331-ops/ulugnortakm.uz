@@ -76,21 +76,6 @@
             to { transform: rotate(360deg); }
         }
         
-        @keyframes slideInRight {
-            from { transform: translateX(100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes slideInLeft {
-            from { transform: translateX(-100px); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
-        
         /* Background animatsiyasi */
         .animated-bg {
             position: fixed;
@@ -637,13 +622,20 @@
         .book-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 25px;
+            margin-bottom: 15px;
             font-size: 16px;
             color: #94a3b8;
         }
         
         .book-rating {
             color: var(--accent-color);
+        }
+        
+        .book-description {
+            margin-bottom: 20px;
+            color: #64748b;
+            font-size: 16px;
+            line-height: 1.6;
         }
         
         /* Statistika */
@@ -1166,22 +1158,22 @@
                 <div class="service-card" data-delay="0">
                     <i class="fas fa-book-open"></i>
                     <h3>Kitob ijarasi</h3>
-                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi.</p>
+                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi. Kitobni uzoq muddatga olish, yangi kelgan kitoblardan xabardor bo'lish, kitoblar haqida sharhlar va baholarni o'qish imkoniyati.</p>
                 </div>
                 <div class="service-card" data-delay="0.2">
                     <i class="fas fa-laptop-code"></i>
                     <h3>Internet va kompyuter xizmati</h3>
-                    <p>Bepul internet va zamonaviy kompyuterlardan foydalanish imkoniyati. Yuqori tezlikdagi Wi-Fi. Printer va skaner xizmatlari.</p>
+                    <p>Bepul internet va zamonaviy kompyuterlardan foydalanish imkoniyati. Yuqori tezlikdagi Wi-Fi. Printer va skaner xizmatlari. <strong>Elektron kutubxona tizimi:</strong> 5,000+ elektron kitob va jurnallarga kirish. <strong>Onlayn kataloglar</strong> va ma'lumotlar bazalaridan foydalanish. <strong>Kitob tarjimalari</strong> va audio kitoblar xizmati. Kompyuterda kitob yozish, nashr qilish va dizayn qilish imkoniyati.</p>
                 </div>
                 <div class="service-card" data-delay="0.4">
                     <i class="fas fa-search"></i>
                     <h3>Ilmiy-ma'rifiy qidiruv</h3>
-                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash.</p>
+                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash. Dissertatsiyalar, ilmiy maqolalar, tarixiy hujjatlar va adabiyotlar bo'yicha malakali yordam. Kutubxona mutaxassislari tomonidan ma'lumotlarni izlash va tahlil qilish xizmati.</p>
                 </div>
                 <div class="service-card" data-delay="0.6">
                     <i class="fas fa-users"></i>
                     <h3>Klublar va to'garaklar</h3>
-                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash.</p>
+                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash. Adabiy kechalar, mualliflar bilan uchrashuvlar, kitob muhokamalari, sheʼriyat kunlari, bolalar uchun hikoya soatlari va badiiy adabiyot tanlovlari.</p>
                 </div>
             </div>
         </div>
@@ -1195,10 +1187,12 @@
                 <p>O'zbekiston adabiyotining asarlari. Har oy 100+ yangi kitob qo'shiladi</p>
             </div>
             <div class="books-grid">
-                <!-- O'tkan Kunlar - CHIROYLI RASM -->
+                <!-- O'tkan Kunlar - YANGILANGAN RASM -->
                 <div class="book-card" data-delay="0">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=kimberly-farmer-lUaaKCUANVI-unsplash.jpg&w=1920" alt="O'tkan Kunlar kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                             alt="O'tkan Kunlar kitobi - Abdulla Qodiriy" 
+                             onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1215,6 +1209,9 @@
                                 <i class="fas fa-star-half-alt"></i>
                             </span>
                             <span>560 sahifa</span>
+                        </div>
+                        <div class="book-description">
+                            "O'tkan Kunlar" - Abdulla Qodiriyning 1926-yil yozilgan tarixiy romani. Asarda XIX asr oxiridagi Oʻzbekiston hayoti, madaniyati va urf-odatlari tasvirlangan. Roman O'zbek adabiyotining dastlabki yirik asarlaridan biri bo'lib, milliy adabiyotimizning rivojlanishida muhim o'rin tutadi.
                         </div>
                         <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
@@ -1241,6 +1238,9 @@
                             </span>
                             <span>780 sahifa</span>
                         </div>
+                        <div class="book-description">
+                            "Xamsa" - Alisher Navoiyning beshta dostondan iborat sheʼriy toʻplami. 1483-1485 yillarda yozilgan. "Hayrat ul-abror", "Farhod va Shirin", "Layli va Majnun", "Sab'ai Sayyor" va "Saddi Iskandariy" dostonlaridan iborat. Bu asar fors-tojik va turkiy adabiyotning eng yirik yutug'i hisoblanadi.
+                        </div>
                         <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
                 </div>
@@ -1248,7 +1248,7 @@
                 <!-- Boburnoma - CHIROYLI RASM -->
                 <div class="book-card" data-delay="0.4">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=aaron-burden-9zsHNt5OpqE-unsplash.jpg&w=640" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1265,6 +1265,9 @@
                                 <i class="fas fa-star"></i>
                             </span>
                             <span>420 sahifa</span>
+                        </div>
+                        <div class="book-description">
+                            "Boburnoma" - Zahiriddin Muhammad Boburning xotiralari va tarixiy asari. XVI asrda yozilgan. Boburning hayoti, Hindistondagi hukmronligi va o'z davri haqida qimmatli ma'lumotlar beradi. Asar chigʻatoy turk tilida yozilgan bo'lib, tarix, geografiya, etnografiya va madaniyat bo'yicha muhim manba hisoblanadi.
                         </div>
                         <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
@@ -1290,6 +1293,9 @@
                                 <i class="fas fa-star-half-alt"></i>
                             </span>
                             <span>320 sahifa</span>
+                        </div>
+                        <div class="book-description">
+                            "Sariq devni minib" - Xudoyberdi To'xtaboyevning bolalar uchun yozilgan sarguzashtli hikoyalar to'plami. Sovet davrida yozilgan bo'lib, bolalarning kundalik hayoti va sarguzashtlarini tasvirlaydi. Asar yosh o'quvchilar orasida katta mashhurligga ega bo'lib, bir necha marta qayta nashr etilgan.
                         </div>
                         <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
@@ -1347,9 +1353,9 @@
                         <div class="event-badge">Yangi</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 15:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 25-iyun, 15:00</div>
                         <h3 class="event-title">Yozgi kitob ko'rgazmasi</h3>
-                        <p class="event-excerpt">Yangi nashr etilgan yozgi kitoblar va adabiyotlar ko'rgazmasi. 100 dan ortiq yangi kitob. Yozuvchilar bilan uchrashuv.</p>
+                        <p class="event-excerpt">Yangi nashr etilgan yozgi kitoblar va adabiyotlar ko'rgazmasi. 100 dan ortiq yangi kitob. Yozuvchilar bilan uchrashuv. Tanlovda ishtirok etish va sovrinlar yutish imkoniyati. Ko'rgazma davomida kitob imzolash marosimi ham o'tkaziladi.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
@@ -1361,9 +1367,9 @@
                         <div class="event-badge">Bolalar uchun</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 14:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 30-iyun, 14:00</div>
                         <h3 class="event-title">Bolalar uchun hikoya soati</h3>
-                        <p class="event-excerpt">Yosh kitobxonlar uchun qiziqarli hikoyalar va interfaol o'yinlar. 5-12 yoshdagi bolalar uchun. Ota-onalar ham taklif etiladi.</p>
+                        <p class="event-excerpt">Yosh kitobxonlar uchun qiziqarli hikoyalar va interfaol o'yinlar. 5-12 yoshdagi bolalar uchun. Ota-onalar ham taklif etiladi. Maxsus mehmon - taniqli bolalar yozuvchisi. Hikoyalar, qiziqarli viktorinalar va sovg'alar.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
@@ -1374,9 +1380,9 @@
                         <div class="event-badge">Maxsus mehmon</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 16:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 5-iyul, 16:00</div>
                         <h3 class="event-title">Yozuvchilar uchrashuvi</h3>
-                        <p class="event-excerpt">Mahalliy yozuvchilar bilan uchrashuv va adabiy suhbat. Savol-javob va kitob imzolash. Yangi adabiyotlar haqida suhbat.</p>
+                        <p class="event-excerpt">Mahalliy yozuvchilar bilan uchrashuv va adabiy suhbat. Savol-javob va kitob imzolash. Yangi adabiyotlar haqida suhbat. Tanqidchilar va adabiyotshunoslar ishtirokida. Adabiy ijod sirlari haqida bilim almashish.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
@@ -1418,7 +1424,7 @@
                 </div>
                 <div class="contact-info">
                     <h3>Biz bilan bog'laning</h3>
-                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz.</p>
+                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz. A'zo bo'lish uchun shaxsiy guvohnoma va 2 ta rasmli fotosurat kerak bo'ladi.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -1468,7 +1474,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Ulug'nor Tuman Axborot-Kutubxona Markazi</h3>
-                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari.</p>
+                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari. Bizning maqsadimiz - har bir fuqaroga bilim olish imkoniyatini berish va madaniy taraqqiyotga hissa qo'shish.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-telegram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1482,6 +1488,7 @@
                         <a href="#home" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Bosh sahifa</a>
                         <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
                         <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
+                        <a href="#stats" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Statistika</a>
                         <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
                         <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
                     </div>
@@ -1492,11 +1499,13 @@
                     <p style="margin-top: 20px;"><i class="fas fa-phone-alt"></i> +99899-876-10-64</p>
                     <p style="margin-top: 20px;"><i class="fas fa-envelope"></i> info@ulugnormarkaz.uz</p>
                     <p style="margin-top: 20px;"><i class="fas fa-clock"></i> Dushanba-Juma: 9:00-18:00</p>
+                    <p style="margin-top: 20px;"><i class="fas fa-book"></i> A'zo bo'lish: Bepul</p>
                 </div>
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Ulug'nor Tuman Axborot-Kutubxona Markazi. Barcha huquqlar himoyalangan.</p>
-              </div>
+                <p style="margin-top: 20px;">Veb-sayt <span style="color: var(--accent-color); font-weight: 600;">zamonaviy texnologiyalar</span> yordamida yaratilgan</p>
+            </div>
         </div>
     </footer>
 
@@ -1671,6 +1680,4 @@
         });
     </script>
 </body>
-
 </html>
-
