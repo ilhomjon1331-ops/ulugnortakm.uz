@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulug'nor Tuman Axborot-Kutubxona Markazi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #0ea5e9;
+            --accent-color: #f59e0b;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --text-color: #334155;
+            --success-color: #10b981;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --hover-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.2);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--light-color);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Animatsiyalar */
+        @keyframes fadeInUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        
+        /* Buttonlar */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            font-size: 17px;
+            box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            text-decoration: none;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .btn:hover::before {
+            left: 0;
+        }
+        
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(37, 99, 235, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            box-shadow: none;
+        }
+        
+        .btn-outline::before {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .btn-outline:hover {
+            color: #fff;
+        }
+        
+        .btn-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo i {
+            font-size: 50px;
+            color: var(--primary-color);
+            transition: transform 0.5s ease;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        .logo-text h1 {
+            font-size: 26px;
+            color: var(--primary-color);
+            line-height: 1.2;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text span {
+            font-size: 15px;
+            color: #64748b;
+            font-weight: 400;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+        
+        .nav-links a {
+            color: var(--dark-color);
+            font-weight: 500;
+            font-size: 17px;
+            text-decoration: none;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            transition: width 0.4s ease;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent-color);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero section */
+        .hero {
+            height: 90vh;
+            min-height: 700px;
+            background: linear-gradient(135deg, 
+                rgba(37, 99, 235, 0.85) 0%, 
+                rgba(14, 165, 233, 0.8) 50%,
+                rgba(245, 158, 11, 0.2) 100%),
+                url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') 
+                no-repeat center center/cover;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 62px;
+            margin-bottom: 30px;
+            line-height: 1.2;
+            text-shadow: 0 3px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+        
+        .hero p {
+            font-size: 22px;
+            margin-bottom: 50px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.6s forwards;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 1s ease 0.9s forwards;
+        }
+        
+        /* Sectionlar */
+        .section-title {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+        
+        .section-title h2 {
+            font-size: 46px;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            border-radius: 3px;
+            animation: shimmer 3s infinite linear;
+            background-size: 1000px 100%;
+        }
+        
+        .section-title p {
+            color: #64748b;
+            max-width: 800px;
+            margin: 25px auto 0;
+            font-size: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Xizmatlar */
+        .services {
+            padding: 120px 0;
+            background: #fff;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .service-card {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: var(--card-shadow);
+            padding: 50px 40px;
+            transition: all 0.4s ease;
+            border-top: 6px solid var(--primary-color);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        
+        .service-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .service-card i {
+            font-size: 60px;
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            transition: all 0.4s ease;
+        }
+        
+        .service-card:hover i {
+            transform: scale(1.2) rotate(15deg);
+            color: var(--accent-color);
+        }
+        
+        .service-card h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .service-card p {
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+        
+        /* Yangi kitoblar */
+        .new-books {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .book-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            position: relative;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        
+        .book-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .book-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .book-img {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .book-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .book-card:hover .book-img img {
+            transform: scale(1.1) rotate(2deg);
+        }
+        
+        .book-info {
+            padding: 30px;
+        }
+        
+        .book-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+            font-weight: 600;
+        }
+        
+        .book-author {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 20px;
+        }
+        
+        /* Statistika */
+        .stats {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .stat-item {
+            padding: 30px;
+            opacity: 0;
+            transform: translateY(40px);
+        }
+        
+        .stat-item.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .stat-number {
+            font-size: 64px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .stat-text {
+            font-size: 22px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Tadbirlar */
+        .events {
+            padding: 120px 0;
+            background: #fff;
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .event-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        
+        .event-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .event-card:hover {
+            transform: translateY(-20px) scale(1.03);
+            box-shadow: var(--hover-shadow);
+        }
+        
+        .event-img {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .event-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+        
+        .event-card:hover .event-img img {
+            transform: scale(1.1);
+        }
+        
+        .event-content {
+            padding: 35px;
+        }
+        
+        .event-date {
+            font-size: 16px;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .event-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+        }
+        
+        .event-excerpt {
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 17px;
+        }
+        
+        /* Aloqa */
+        .contact {
+            padding: 120px 0;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            padding: 60px 50px;
+            border-radius: 25px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .contact-info h3 {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-details {
+            margin-top: 50px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 35px;
+        }
+        
+        .contact-item i {
+            font-size: 28px;
+            margin-right: 25px;
+            margin-top: 5px;
+            background: rgba(255, 255, 255, 0.15);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-text h4 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+        
+        .contact-text p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        
+        .contact-form {
+            background: #fff;
+            padding: 60px 50px;
+            border-radius: 25px;
+            box-shadow: var(--card-shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 30px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: 500;
+            color: var(--dark-color);
+            font-size: 17px;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 18px 25px;
+            border: 2px solid #e2e8f0;
+            border-radius: 15px;
+            font-family: inherit;
+            font-size: 17px;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        textarea.form-control {
+            min-height: 180px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark-color), #0f172a);
+            color: #fff;
+            padding: 80px 0 40px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .footer-column h3 {
+            font-size: 26px;
+            margin-bottom: 30px;
+            color: #fff;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .footer-column p {
+            color: #cbd5e1;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            font-size: 17px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+        
+        .social-links a {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px) rotate(10deg);
+        }
+        
+        .copyright {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            text-align: center;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                max-width: 100%;
+                padding: 0 30px;
+            }
+            
+            .hero h1 {
+                font-size: 56px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .hero h1 {
+                font-size: 48px;
+            }
+            
+            .section-title h2 {
+                font-size: 40px;
+            }
+            
+            .services-grid, .books-grid, .events-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .hero {
+                height: 80vh;
+                min-height: 600px;
+            }
+            
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero p {
+                font-size: 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                font-size: 28px;
+                color: var(--primary-color);
+                cursor: pointer;
+            }
+            
+            .section-title h2 {
+                font-size: 36px;
+            }
+            
+            .service-card, .contact-info, .contact-form {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .hero-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section-title h2 {
+                font-size: 32px;
+            }
+            
+            .stat-number {
+                font-size: 56px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <i class="fas fa-book-reader"></i>
+                    <div class="logo-text">
+                        <h1>Ulug'nor Tuman Axborot-Kutubxona Markazi</h1>
+                        <span>Bilim - taraqqiyot kaliti</span>
+                    </div>
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Bosh sahifa</a>
+                    <a href="#services">Xizmatlar</a>
+                    <a href="#books">Kitoblar</a>
+                    <a href="#stats">Statistika</a>
+                    <a href="#events">Tadbirlar</a>
+                    <a href="#contact">Aloqa</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ulug'nor Tuman Axborot-Kutubxona Markazi</h1>
+                <p>Bilim, madaniyat va axborot resurslarining zamonaviy markazi. Yangi asrga mos kutubxona xizmatlari</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-pulse"><i class="fas fa-book-open"></i> Xizmatlarimiz</a>
+                    <a href="#contact" class="btn btn-outline btn-pulse"><i class="fas fa-user-plus"></i> A'zo bo'lish</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xizmatlar -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bizning Xizmatlar</h2>
+                <p>Kutubxonamiz o'quvchilar, tadqiqotchilar va barcha bilim izlovchilar uchun keng ko'lamli xizmatlarni taklif etadi</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-delay="0">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Kitob ijarasi</h3>
+                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi.</p>
+                </div>
+                <div class="service-card" data-delay="0.2">
+                    <i class="fas fa-laptop"></i>
+                    <h3>Internet va kompyuter xizmati</h3>
+                    <p>Bepul internet va zamonaviy kompyuterlardan foydalanish imkoniyati. Yuqori tezlikdagi Wi-Fi. Printer va skaner xizmatlari.</p>
+                </div>
+                <div class="service-card" data-delay="0.4">
+                    <i class="fas fa-search"></i>
+                    <h3>Ilmiy-ma'rifiy qidiruv</h3>
+                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash.</p>
+                </div>
+                <div class="service-card" data-delay="0.6">
+                    <i class="fas fa-users"></i>
+                    <h3>Klublar va to'garaklar</h3>
+                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yangi kitoblar - Haqiqiy kitob rasmlari -->
+    <section class="new-books" id="books">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangi Kelgan Kitoblar</h2>
+                <p>O'zbekiston adabiyotining asarlari. Har oy 100+ yangi kitob qo'shiladi</p>
+            </div>
+            <div class="books-grid">
+                <!-- O'tkan Kunlar - Haqiqiy kitob rasmi -->
+                <div class="book-card" data-delay="0">
+                    <div class="book-img">
+                        <img src="https://upload.wikimedia.org/wikipedia/uz/4/44/O%27tkan_kunlar.jpg" alt="O'tkan Kunlar kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">O'tkan Kunlar</h3>
+                        <p class="book-author">Abdulla Qodiriy</p>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Xamsa - Haqiqiy kitob rasmi -->
+                <div class="book-card" data-delay="0.2">
+                    <div class="book-img">
+                        <img src="https://uzlit.net/wp-content/uploads/2020/08/Alisher-Navoiy-Xamsa-1.jpg" alt="Xamsa kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Xamsa</h3>
+                        <p class="book-author">Alisher Navoiy</p>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Boburnoma - Haqiqiy kitob rasmi -->
+                <div class="book-card" data-delay="0.4">
+                    <div class="book-img">
+                        <img src="https://kitobxon.com/uploads/products/2678/img_2678_8a649bf2bdc75fcb31fb.jpg" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Boburnoma</h3>
+                        <p class="book-author">Zahiriddin Muhammad Bobur</p>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Sariq devni minib - Haqiqiy kitob rasmi -->
+                <div class="book-card" data-delay="0.6">
+                    <div class="book-img">
+                        <img src="https://kitobxon.com/uploads/products/210/img_210_ecf3072ed8b8744bebca.jpg" alt="Sariq devni minib kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Sariq devni minib</h3>
+                        <p class="book-author">Xudoyberdi To'xtaboyev</p>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn"><i class="fas fa-books"></i> Barcha kitoblar ro'yxati</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistika -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">Bizning Ko'rsatkichlar</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Kutubxonamizning faoliyati va erishgan yutuqlari</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item" data-delay="0">
+                    <div class="stat-number" data-count="25000">0</div>
+                    <div class="stat-text">Kitoblar</div>
+                </div>
+                <div class="stat-item" data-delay="0.2">
+                    <div class="stat-number" data-count="5200">0</div>
+                    <div class="stat-text">Faol a'zolar</div>
+                </div>
+                <div class="stat-item" data-delay="0.4">
+                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-text">Jurnallar</div>
+                </div>
+                <div class="stat-item" data-delay="0.6">
+                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-text">Yillik tajriba</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tadbirlar -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yaqindagi Tadbirlar</h2>
+                <p>Kutubxonamizda bo'lib o'tadigan tadbirlar va dasturlar. Barchaga ochiq va bepul</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-card" data-delay="0">
+                    <div class="event-img">
+                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kitob ko'rgazmasi">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 25-iyun, 15:00</div>
+                        <h3 class="event-title">Yozgi kitob ko'rgazmasi</h3>
+                        <p class="event-excerpt">Yangi nashr etilgan yozgi kitoblar va adabiyotlar ko'rgazmasi. 100 dan ortiq yangi kitob. Yozuvchilar bilan uchrashuv.</p>
+                        <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
+                    </div>
+                </div>
+                
+                <!-- Yangi bolalar rasmli tadbir -->
+                <div class="event-card" data-delay="0.3">
+                    <div class="event-img">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bolalar hikoya soati">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 30-iyun, 14:00</div>
+                        <h3 class="event-title">Bolalar uchun hikoya soati</h3>
+                        <p class="event-excerpt">Yosh kitobxonlar uchun qiziqarli hikoyalar va interfaol o'yinlar. 5-12 yoshdagi bolalar uchun. Ota-onalar ham taklif etiladi.</p>
+                        <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
+                    </div>
+                </div>
+                
+                <div class="event-card" data-delay="0.6">
+                    <div class="event-img">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Yozuvchilar uchrashuvi">
+                    </div>
+                    <div class="event-content">
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 5-iyul, 16:00</div>
+                        <h3 class="event-title">Yozuvchilar uchrashuvi</h3>
+                        <p class="event-excerpt">Mahalliy yozuvchilar bilan uchrashuv va adabiy suhbat. Savol-javob va kitob imzolash. Yangi adabiyotlar haqida suhbat.</p>
+                        <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="#" class="btn"><i class="far fa-calendar-alt"></i> Barcha tadbirlar jadvali</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aloqa -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Aloqa</h2>
+                <p>Biz bilan bog'laning yoki kutubxona a'zosi bo'ling. Tezkor javob va sifatli xizmat</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ismingiz</label>
+                            <input type="text" id="name" class="form-control" placeholder="To'liq ism sharifingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon raqamingiz</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+998 (XX) XXX-XX-XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Elektron pochta (ixtiyoriy)</label>
+                            <input type="email" id="email" class="form-control" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Xabaringiz</label>
+                            <textarea id="message" class="form-control" placeholder="Xabaringizni bu yerga yozing..." rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Xabarni yuborish</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Biz bilan bog'laning</h3>
+                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz.</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>Manzil</h4>
+                                <p>Andijon viloyati, Ulug'nor tumani, Mustaqillik ko'chasi 1</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-text">
+                                <h4>Telefon raqamlar</h4>
+                                <p>+99899-876-10-64 (Qabulxona)</p>
+                                <p>+99877-003-04-82 (Ma'sul xodim)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Elektron pochta</h4>
+                                <p>info@ulugnormarkaz.uz</p>
+                                <p>kutubxona@ulugnormarkaz.uz</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h4>Ish vaqti</h4>
+                                <p>Dushanba-Juma: 9:00 - 18:00</p>
+                                <p>Shanba: 10:00 - 16:00</p>
+                                <p>Yakshanba: Dam olish kuni</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ulug'nor Tuman Axborot-Kutubxona Markazi</h3>
+                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Tez havolalar</h3>
+                    <div>
+                        <a href="#home" style="color: #cbd5e1; display: block; margin-bottom: 15px; text-decoration: none; font-size: 17px;"><i class="fas fa-chevron-right"></i> Bosh sahifa</a>
+                        <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 15px; text-decoration: none; font-size: 17px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
+                        <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 15px; text-decoration: none; font-size: 17px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
+                        <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 15px; text-decoration: none; font-size: 17px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
+                        <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 15px; text-decoration: none; font-size: 17px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Aloqa ma'lumotlari</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Andijon viloyati, Ulug'nor tumani</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-phone-alt"></i> +99899-876-10-64</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-envelope"></i> info@ulugnormarkaz.uz</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-clock"></i> Dushanba-Juma: 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Ulug'nor Tuman Axborot-Kutubxona Markazi. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 15px;">Veb-sayt <span style="color: var(--accent-color); font-weight: 600;">zamonaviy texnologiyalar</span> yordamida yaratilgan</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll animatsiyalari
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item');
+            
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    const delay = element.dataset.delay || 0;
+                    
+                    setTimeout(() => {
+                        element.classList.add('animated');
+                    }, delay * 1000);
+                }
+            });
+        }
+
+        // Counter animatsiyasi
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                
+                if (count < target) {
+                    const increment = Math.ceil(target / speed);
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(animateCounters, 1);
+                }
+            });
+        }
+
+        // Header hide/show
+        let lastScrollTop = 0;
+        const header = document.getElementById('header');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > lastScrollTop && scrollTop > 100) {
+                header.style.transform = 'translateY(-100%)';
+            } else {
+                header.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollTop = scrollTop;
+            
+            // Animatsiyalarni ishga tushirish
+            animateOnScroll();
+            
+            // Statistika animatsiyasi
+            const statsSection = document.querySelector('.stats');
+            const statsTop = statsSection.getBoundingClientRect().top;
+            
+            if (statsTop < window.innerHeight - 100) {
+                animateCounters();
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Form yuborish
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Yuborilmoqda...';
+            submitBtn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Xabaringiz muvaffaqiyatli yuborildi! Tez orada siz bilan bog\'lanamiz.');
+                this.reset();
+                
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+                
+                // Muvaffaqiyat animatsiyasi
+                submitBtn.classList.add('btn-pulse');
+                setTimeout(() => {
+                    submitBtn.classList.remove('btn-pulse');
+                }, 2000);
+            }, 1500);
+        });
+
+        // Elementlarni animatsiya bilan yuklash
+        document.addEventListener('DOMContentLoaded', function() {
+            animateOnScroll();
+            
+            // Kartalarga hover effektlari
+            const cards = document.querySelectorAll('.service-card, .book-card, .event-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-20px) scale(1.03)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('animated')) {
+                        this.style.transform = 'translateY(60px)';
+                    } else {
+                        this.style.transform = 'translateY(0) scale(1)';
+                    }
+                });
+            });
+            
+            // Logo animatsiyasi
+            const logoIcon = document.querySelector('.logo i');
+            if (logoIcon) {
+                logoIcon.addEventListener('mouseenter', function() {
+                    this.style.animation = 'float 1s ease-in-out';
+                });
+                
+                logoIcon.addEventListener('mouseleave', function() {
+                    this.style.animation = 'float 4s ease-in-out infinite';
+                });
+            }
+            
+            // Tugmalarga hover effektlari
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px) scale(1.05)';
+                });
+                
+                btn.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+            
+            // Rasmlarni yuklashda xatolikni qayta ishlash
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    console.log('Rasm yuklanmadi:', this.src);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
