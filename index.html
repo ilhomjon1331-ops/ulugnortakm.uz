@@ -76,6 +76,21 @@
             to { transform: rotate(360deg); }
         }
         
+        @keyframes slideInRight {
+            from { transform: translateX(100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes slideInLeft {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+        
         /* Background animatsiyasi */
         .animated-bg {
             position: fixed;
@@ -622,20 +637,13 @@
         .book-meta {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 15px;
+            margin-bottom: 25px;
             font-size: 16px;
             color: #94a3b8;
         }
         
         .book-rating {
             color: var(--accent-color);
-        }
-        
-        .book-description {
-            margin-bottom: 20px;
-            color: #64748b;
-            font-size: 16px;
-            line-height: 1.6;
         }
         
         /* Statistika */
@@ -786,6 +794,144 @@
             margin-bottom: 30px;
             line-height: 1.8;
             font-size: 18px;
+        }
+        
+        /* Yangilik va E'lonlar */
+        .news-announcements {
+            padding: 140px 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-announcements::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(60px);
+            border-left: 6px solid var(--primary-color);
+        }
+
+        .news-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .news-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .news-card:nth-child(1) .news-badge {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+        }
+
+        .news-card:nth-child(2) .news-badge {
+            background: linear-gradient(135deg, var(--success-color), #34d399);
+            color: white;
+        }
+
+        .news-card:nth-child(3) .news-badge {
+            background: linear-gradient(135deg, var(--accent-color), #fbbf24);
+            color: white;
+        }
+
+        .news-card:nth-child(4) .news-badge {
+            background: linear-gradient(135deg, var(--accent-color-2), #a78bfa);
+            color: white;
+        }
+
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #64748b;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .news-date i {
+            color: var(--primary-color);
+        }
+
+        .news-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: #64748b;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .news-link:hover {
+            gap: 15px;
+            color: var(--accent-color);
+        }
+
+        .news-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .news-footer span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         /* Aloqa */
@@ -1025,7 +1171,7 @@
                 font-size: 44px;
             }
             
-            .services-grid, .books-grid, .events-grid {
+            .services-grid, .books-grid, .events-grid, .news-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1066,7 +1212,7 @@
                 font-size: 38px;
             }
             
-            .service-card, .contact-info, .contact-form {
+            .service-card, .contact-info, .contact-form, .news-card {
                 padding: 50px 30px;
             }
             
@@ -1121,6 +1267,7 @@
                     <a href="#books">Kitoblar</a>
                     <a href="#stats">Statistika</a>
                     <a href="#events">Tadbirlar</a>
+                    <a href="#news">Yangiliklar</a>
                     <a href="#contact">Aloqa</a>
                 </div>
             </nav>
@@ -1158,208 +1305,140 @@
                 <div class="service-card" data-delay="0">
                     <i class="fas fa-book-open"></i>
                     <h3>Kitob ijarasi</h3>
-                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi. Kitobni uzoq muddatga olish, yangi kelgan kitoblardan xabardor bo'lish, kitoblar haqida sharhlar va baholarni o'qish imkoniyati.</p>
+                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi.</p>
                 </div>
-           <div class="service-card" data-delay="0.4">
+                <div class="service-card" data-delay="0.2">
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>Internet va kompyuter xizmati</h3>
+                    <p>Bepul internet va zamonaviy kompyuterlardan foydalanish imkoniyati. Yuqori tezlikdagi Wi-Fi. Printer va skaner xizmatlari.</p>
+                </div>
+                <div class="service-card" data-delay="0.4">
                     <i class="fas fa-search"></i>
                     <h3>Ilmiy-ma'rifiy qidiruv</h3>
-                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash. Dissertatsiyalar, ilmiy maqolalar, tarixiy hujjatlar va adabiyotlar bo'yicha malakali yordam. Kutubxona mutaxassislari tomonidan ma'lumotlarni izlash va tahlil qilish xizmati.</p>
+                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash.</p>
                 </div>
                 <div class="service-card" data-delay="0.6">
                     <i class="fas fa-users"></i>
                     <h3>Klublar va to'garaklar</h3>
-                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash. Adabiy kechalar, mualliflar bilan uchrashuvlar, kitob muhokamalari, sheʼriyat kunlari, bolalar uchun hikoya soatlari va badiiy adabiyot tanlovlari.</p>
+                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash.</p>
                 </div>
             </div>
         </div>
     </section>
-<!-- Yangi kitoblar - CHIROYLI RASMLAR -->
-<section class="new-books" id="books">
-    <div class="container">
-        <div class="section-title">
-            <h2>Yangi Kelgan Kitoblar</h2>
-            <p>O'zbekiston adabiyotining asarlari. Har oy 100+ yangi kitob qo'shiladi</p>
-        </div>
-        <div class="books-grid">
-            <!-- O'tkan Kunlar - YANGILANGAN RASM -->
-            <div class="book-card" data-delay="0">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="O'tkan Kunlar kitobi - Abdulla Qodiriy" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
+
+    <!-- Yangi kitoblar - CHIROYLI RASMLAR -->
+    <section class="new-books" id="books">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangi Kelgan Kitoblar</h2>
+                <p>O'zbekiston adabiyotining asarlari. Har oy 100+ yangi kitob qo'shiladi</p>
+            </div>
+            <div class="books-grid">
+                <!-- O'tkan Kunlar - CHIROYLI RASM -->
+                <div class="book-card" data-delay="0">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=kimberly-farmer-lUaaKCUANVI-unsplash.jpg&w=1920" alt="O'tkan Kunlar kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">O'tkan Kunlar</h3>
+                        <p class="book-author">Abdulla Qodiriy</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span>560 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
                 </div>
-                <div class="book-info">
-                    <h3 class="book-title">O'tkan Kunlar</h3>
-                    <p class="book-author">Abdulla Qodiriy</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </span>
-                        <span>560 sahifa</span>
+                
+                <!-- Xamsa - CHIROYLI RASM -->
+                <div class="book-card" data-delay="0.2">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Xamsa kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
                     </div>
-                    <div class="book-description">
-                        "O'tkan Kunlar" - Abdulla Qodiriyning 1926-yil yozilgan tarixiy romani. Asarda XIX asr oxiridagi Oʻzbekiston hayoti, madaniyati va urf-odatlari tasvirlangan. Roman O'zbek adabiyotining dastlabki yirik asarlaridan biri bo'lib, milliy adabiyotimizning rivojlanishida muhim o'rin tutadi.
+                    <div class="book-info">
+                        <h3 class="book-title">Xamsa</h3>
+                        <p class="book-author">Alisher Navoiy</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span>780 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                </div>
+                
+                <!-- Boburnoma - CHIROYLI RASM -->
+                <div class="book-card" data-delay="0.4">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=aaron-burden-9zsHNt5OpqE-unsplash.jpg&w=640" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Boburnoma</h3>
+                        <p class="book-author">Zahiriddin Muhammad Bobur</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </span>
+                            <span>420 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Sariq devni minib - CHIROYLI RASM -->
+                <div class="book-card" data-delay="0.6">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sariq devni minib kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Sariq devni minib</h3>
+                        <p class="book-author">Xudoyberdi To'xtaboyev</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span>320 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
                 </div>
             </div>
-            
-            <!-- Xamsa - CHIROYLI RASM -->
-            <div class="book-card" data-delay="0.2">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Xamsa kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Xamsa</h3>
-                    <p class="book-author">Alisher Navoiy</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </span>
-                        <span>780 sahifa</span>
-                    </div>
-                    <div class="book-description">
-                        "Xamsa" - Alisher Navoiyning beshta dostondan iborat sheʼriy toʻplami. 1483-1485 yillarda yozilgan. "Hayrat ul-abror", "Farhod va Shirin", "Layli va Majnun", "Sab'ai Sayyor" va "Saddi Iskandariy" dostonlaridan iborat. Bu asar fors-tojik va turkiy adabiyotning eng yirik yutug'i hisoblanadi.
-                    </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
-                </div>
-            </div>
-            
-            <!-- Boburnoma - CHIROYLI RASM -->
-            <div class="book-card" data-delay="0.4">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=aaron-burden-9zsHNt5OpqE-unsplash.jpg&w=640" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Boburnoma</h3>
-                    <p class="book-author">Zahiriddin Muhammad Bobur</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span>420 sahifa</span>
-                    </div>
-                    <div class="book-description">
-                        "Boburnoma" - Zahiriddin Muhammad Boburning xotiralari va tarixiy asari. XVI asrda yozilgan. Boburning hayoti, Hindistondagi hukmronligi va o'z davri haqida qimmatli ma'lumotlar beradi. Asar chigʻatoy turk tilida yozilgan bo'lib, tarix, geografiya, etnografiya va madaniyat bo'yicha muhim manba hisoblanadi.
-                    </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
-                </div>
-            </div>
-            
-            <!-- Sariq devni minib - CHIROYLI RASM -->
-            <div class="book-card" data-delay="0.6">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sariq devni minib kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Sariq devni minib</h3>
-                    <p class="book-author">Xudoyberdi To'xtaboyev</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </span>
-                        <span>320 sahifa</span>
-                    </div>
-                    <div class="book-description">
-                        "Sariq devni minib" - Xudoyberdi To'xtaboyevning bolalar uchun yozilgan sarguzashtli hikoyalar to'plami. Sovet davrida yozilgan bo'lib, bolalarning kundalik hayoti va sarguzashtlarini tasvirlaydi. Asar yosh o'quvchilar orasida katta mashhurligga ega bo'lib, bir necha marta qayta nashr etilgan.
-                    </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
-                </div>
-            </div>
-            
-            <!-- Dunyoning ishlari - O'tkir Hoshimov -->
-            <div class="book-card" data-delay="0.8">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1531346688376-ab6275c4725e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                         alt="Dunyoning ishlari kitobi" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544716278-e513176f20b5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Dunyoning ishlari</h3>
-                    <p class="book-author">O'tkir Hoshimov</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </span>
-                        <span>480 sahifa</span>
-                    </div>
-                    <div class="book-description">
-                        "Dunyoning ishlari" - O'tkir Hoshimovning 1972-yilda yozilgan badiiy asari. Roman O'zbekistonning sovet davridagi ijtimoiy-siyosiy hayotini, odamlarning qiyin kunlardagi hayotini, insoniy munosabatlarni chuqur yoritib beradi. Asar o'zbek adabiyotining eng mashhur romanlaridan biri hisoblanadi.
-                    </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
-                </div>
-            </div>
-            
-            <!-- Navoiy - Oybek -->
-            <div class="book-card" data-delay="1.0">
-                <div class="book-img">
-                    <img src="https://images.unsplash.com/photo-1602399481667-07536109851e?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=thilak-mohan-C0eMifpRfQE-unsplash.jpg&w=640" 
-                         alt="Navoiy kitobi" 
-                         onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
-                    <div class="book-overlay">
-                        <button class="quick-view-btn">Tezkor ko'rish</button>
-                    </div>
-                </div>
-                <div class="book-info">
-                    <h3 class="book-title">Navoiy</h3>
-                    <p class="book-author">Oybek</p>
-                    <div class="book-meta">
-                        <span class="book-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                        </span>
-                        <span>640 sahifa</span>
-                    </div>
-                    <div class="book-description">
-                        "Navoiy" - Oybekning 1945-yilda yozilgan tarixiy-biografik romani. Asarda buyuk shoir va davlat arbobi Alisher Navoiyning hayoti, ijodi va davri haqida hikoya qilinadi. Roman o'zbek adabiyotining durdona asarlaridan biri bo'lib, Alisher Navoiy haqidagi eng yaxshi asarlardan hisoblanadi.
-                    </div>
-                    <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
-                </div>
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="#" class="btn btn-glow"><i class="fas fa-books"></i> Barcha kitoblar ro'yxati</a>
             </div>
         </div>
-        <div style="text-align: center; margin-top: 80px;">
-            <a href="#" class="btn btn-glow"><i class="fas fa-books"></i> Barcha kitoblar ro'yxati</a>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- Statistika -->
     <section class="stats" id="stats">
@@ -1371,22 +1450,22 @@
             <div class="stats-grid">
                 <div class="stat-item" data-delay="0">
                     <div class="stat-icon"><i class="fas fa-book"></i></div>
-                    <div class="stat-number" data-count="25000">0</div>
+                    <div class="stat-number" data-count="25000+">0</div>
                     <div class="stat-text">Kitoblar</div>
                 </div>
                 <div class="stat-item" data-delay="0.2">
                     <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number" data-count="5200">0</div>
+                    <div class="stat-number" data-count="5200+">0</div>
                     <div class="stat-text">Faol a'zolar</div>
                 </div>
                 <div class="stat-item" data-delay="0.4">
                     <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
-                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-number" data-count="120+">0</div>
                     <div class="stat-text">Jurnallar</div>
                 </div>
                 <div class="stat-item" data-delay="0.6">
                     <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-number" data-count="15+">0</div>
                     <div class="stat-text">Yillik tajriba</div>
                 </div>
             </div>
@@ -1407,9 +1486,9 @@
                         <div class="event-badge">Yangi</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 15:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 25-iyun, 15:00</div>
                         <h3 class="event-title">Yozgi kitob ko'rgazmasi</h3>
-                        <p class="event-excerpt">Yangi nashr etilgan yozgi kitoblar va adabiyotlar ko'rgazmasi. 100 dan ortiq yangi kitob. Yozuvchilar bilan uchrashuv. Tanlovda ishtirok etish va sovrinlar yutish imkoniyati. Ko'rgazma davomida kitob imzolash marosimi ham o'tkaziladi.</p>
+                        <p class="event-excerpt">Yangi nashr etilgan yozgi kitoblar va adabiyotlar ko'rgazmasi. 100 dan ortiq yangi kitob. Yozuvchilar bilan uchrashuv.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
@@ -1421,9 +1500,9 @@
                         <div class="event-badge">Bolalar uchun</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 14:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 30-iyun, 14:00</div>
                         <h3 class="event-title">Bolalar uchun hikoya soati</h3>
-                        <p class="event-excerpt">Yosh kitobxonlar uchun qiziqarli hikoyalar va interfaol o'yinlar. 5-12 yoshdagi bolalar uchun. Ota-onalar ham taklif etiladi. Maxsus mehmon - taniqli bolalar yozuvchisi. Hikoyalar, qiziqarli viktorinalar va sovg'alar.</p>
+                        <p class="event-excerpt">Yosh kitobxonlar uchun qiziqarli hikoyalar va interfaol o'yinlar. 5-12 yoshdagi bolalar uchun. Ota-onalar ham taklif etiladi.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
@@ -1434,15 +1513,101 @@
                         <div class="event-badge">Maxsus mehmon</div>
                     </div>
                     <div class="event-content">
-                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 15-dekabr, 16:00</div>
+                        <div class="event-date"><i class="far fa-calendar-alt"></i> 2025-yil 5-iyul, 16:00</div>
                         <h3 class="event-title">Yozuvchilar uchrashuvi</h3>
-                        <p class="event-excerpt">Mahalliy yozuvchilar bilan uchrashuv va adabiy suhbat. Savol-javob va kitob imzolash. Yangi adabiyotlar haqida suhbat. Tanqidchilar va adabiyotshunoslar ishtirokida. Adabiy ijod sirlari haqida bilim almashish.</p>
+                        <p class="event-excerpt">Mahalliy yozuvchilar bilan uchrashuv va adabiy suhbat. Savol-javob va kitob imzolash. Yangi adabiyotlar haqida suhbat.</p>
                         <a href="#" class="btn btn-outline">Batafsil ma'lumot</a>
                     </div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 80px;">
                 <a href="#" class="btn btn-glow"><i class="far fa-calendar-alt"></i> Barcha tadbirlar jadvali</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yangilik va E'lonlar -->
+    <section class="news-announcements" id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangilik va E'lonlar</h2>
+                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
+            </div>
+            <div class="news-grid">
+                <!-- Yangilik 1 -->
+                <div class="news-card" data-delay="0">
+                    <div class="news-badge">Yangilik</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025-yil 10-iyun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Kutubxonada yangi raqamli platforma ishga tushdi</h3>
+                        <p class="news-excerpt">Kutubxonamizning raqamli platformasi ishga tushirildi. Endi kitoblarni onlayn bron qilish, elektron kutubxona va audio kitoblarga kirish imkoniyati.</p>
+                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 245</span>
+                        <span><i class="far fa-comment"></i> 12</span>
+                    </div>
+                </div>
+                
+                <!-- Yangilik 2 -->
+                <div class="news-card" data-delay="0.2">
+                    <div class="news-badge">E'lon</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025-yil 5-iyun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Yangi xalqaro jurnallar qo'shildi</h3>
+                        <p class="news-excerpt">Kutubxonamizga 20 dan ortiq xalqaro ilmiy jurnallar qo'shildi. Jumladan, Nature, Science va boshqa nufuzli jurnallar.</p>
+                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 189</span>
+                        <span><i class="far fa-comment"></i> 8</span>
+                    </div>
+                </div>
+                
+                <!-- Yangilik 3 -->
+                <div class="news-card" data-delay="0.4">
+                    <div class="news-badge">Yangilik</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025-yil 1-iyun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Yozgi o'qish tanlovi boshlanmoqda</h3>
+                        <p class="news-excerpt">Yoz mavsumi uchun maxsus o'qish tanlovi e'lon qilindi. Eng ko'p kitob o'qiydiganlar uchun qimmatbaho sovg'alar.</p>
+                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 312</span>
+                        <span><i class="far fa-comment"></i> 15</span>
+                    </div>
+                </div>
+                
+                <!-- Yangilik 4 -->
+                <div class="news-card" data-delay="0.6">
+                    <div class="news-badge">E'lon</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025-yil 28-may</span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Kutubxona qayta ta'mirlanmoqda</h3>
+                        <p class="news-excerpt">Kutubxona binosi zamonaviy talablarga mos ravishda qayta ta'mirlanmoqda. Yangi o'quv zallari va bolalar bo'limi ochiladi.</p>
+                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 167</span>
+                        <span><i class="far fa-comment"></i> 6</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="#" class="btn btn-glow"><i class="fas fa-newspaper"></i> Barcha yangiliklar</a>
             </div>
         </div>
     </section>
@@ -1478,7 +1643,7 @@
                 </div>
                 <div class="contact-info">
                     <h3>Biz bilan bog'laning</h3>
-                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz. A'zo bo'lish uchun shaxsiy guvohnoma va 2 ta rasmli fotosurat kerak bo'ladi.</p>
+                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz.</p>
                     
                     <div class="contact-details">
                         <div class="contact-item">
@@ -1528,7 +1693,7 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Ulug'nor Tuman Axborot-Kutubxona Markazi</h3>
-                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari. Bizning maqsadimiz - har bir fuqaroga bilim olish imkoniyatini berish va madaniy taraqqiyotga hissa qo'shish.</p>
+                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-telegram"></i></a>
                         <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -1542,8 +1707,8 @@
                         <a href="#home" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Bosh sahifa</a>
                         <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
                         <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
-                        <a href="#stats" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Statistika</a>
                         <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
+                        <a href="#news" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangiliklar</a>
                         <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
                     </div>
                 </div>
@@ -1553,7 +1718,6 @@
                     <p style="margin-top: 20px;"><i class="fas fa-phone-alt"></i> +99899-876-10-64</p>
                     <p style="margin-top: 20px;"><i class="fas fa-envelope"></i> info@ulugnormarkaz.uz</p>
                     <p style="margin-top: 20px;"><i class="fas fa-clock"></i> Dushanba-Juma: 9:00-18:00</p>
-                    <p style="margin-top: 20px;"><i class="fas fa-book"></i> A'zo bo'lish: Bepul</p>
                 </div>
             </div>
             <div class="copyright">
@@ -1565,7 +1729,7 @@
     <script>
         // Scroll animatsiyalari
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item');
+            const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item, .news-card');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -1673,10 +1837,14 @@
             animateOnScroll();
             
             // Kartalarga hover effektlari
-            const cards = document.querySelectorAll('.service-card, .book-card, .event-card');
+            const cards = document.querySelectorAll('.service-card, .book-card, .event-card, .news-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    this.style.transform = 'translateY(-30px) scale(1.03)';
+                    if (this.classList.contains('news-card')) {
+                        this.style.transform = 'translateY(-20px)';
+                    } else if (this.classList.contains('service-card') || this.classList.contains('book-card') || this.classList.contains('event-card')) {
+                        this.style.transform = 'translateY(-30px) scale(1.03)';
+                    }
                 });
                 
                 card.addEventListener('mouseleave', function() {
@@ -1724,6 +1892,17 @@
                 });
             });
             
+            // Yangiliklar uchun batafsil ma'lumot
+            document.querySelectorAll('.news-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const newsCard = this.closest('.news-card');
+                    const newsTitle = newsCard.querySelector('.news-title').textContent;
+                    
+                    alert(`"${newsTitle}"\n\nBu yangilik haqida batafsil ma'lumot hozirda ishlab chiqilmoqda. Tez orada bu funksiya ishga tushadi.`);
+                });
+            });
+            
             // Rasmlarni yuklashda xatolikni qayta ishlash
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', function() {
@@ -1734,10 +1913,3 @@
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
