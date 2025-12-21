@@ -1,230 +1,111 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial,sans-serif
-}
-body{
-  background:#f1f5f9;
-  color:#1e293b
-}
-
-/* NAVBAR */
-nav{
-  background:#0f172a;
-  color:#fff;
-  padding:15px 30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center
-}
-nav .logo{
-  font-size:20px;
-  font-weight:bold
-}
-nav ul{
-  list-style:none;
-  display:flex;
-  gap:20px
-}
-nav ul li a{
-  color:#fff;
-  text-decoration:none;
-  font-size:15px
-}
-
-/* HEADER */
-header{
-  background:#1e40af;
-  color:#fff;
-  text-align:center;
-  padding:60px 20px
-}
-header h1{
-  font-size:32px
-}
-header p{
-  margin-top:12px;
-  opacity:.9
-}
-
-/* SECTIONS */
-.container{
-  max-width:1200px;
-  margin:auto;
-  padding:60px 20px
-}
-.section-title{
-  text-align:center;
-  margin-bottom:40px
-}
-.section-title h2{
-  font-size:28px;
-  margin-bottom:10px
-}
-.section-title p{
-  color:#475569
-}
-
-/* ABOUT */
-.about{
-  text-align:center;
-  font-size:18px;
-  color:#334155;
-  line-height:1.7
-}
-
-/* NEWS */
-.news-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px
-}
-.news-card{
-  background:#fff;
-  border-radius:20px;
-  padding:25px;
-  box-shadow:0 12px 30px rgba(0,0,0,.08)
-}
-.news-badge{
-  background:#2563eb;
-  color:#fff;
-  padding:6px 16px;
-  border-radius:30px;
-  font-size:13px;
-  display:inline-block;
-  margin-bottom:12px
-}
-.news-card img{
-  width:100%;
-  border-radius:16px;
-  margin:18px 0
-}
-.news-date{
-  font-size:13px;
-  color:#64748b;
-  margin-bottom:10px
-}
-.news-title{
-  font-size:21px;
-  margin-bottom:10px;
-  color:#0f172a
-}
-.news-text{
-  font-size:16px;
-  line-height:1.6;
-  color:#334155
-}
-
-/* FOOTER */
-footer{
-  background:#0f172a;
-  color:#cbd5f5;
-  text-align:center;
-  padding:30px;
-  margin-top:60px
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kutubxona Yangiliklar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f5f5f5;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2563eb, #8b5cf6);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .news-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .news-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .news-title {
+            font-size: 20px;
+            margin: 10px 0;
+            color: #333;
+        }
+        
+        .news-text {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .badge {
+            background: #2563eb;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+            font-size: 18px;
+            color: #666;
+        }
+        
+        .refresh-btn {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 20px auto;
+            display: block;
+        }
+    </style>
 </head>
-
 <body>
-
-<nav>
-  <div class="logo">Ulug‘nor AKM</div>
-  <ul>
-    <li><a href="#">Bosh sahifa</a></li>
-    <li><a href="#about">Biz haqimizda</a></li>
-    <li><a href="#news">Yangiliklar</a></li>
-    <li><a href="#contact">Aloqa</a></li>
-  </ul>
-</nav>
-
-<header>
-  <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
-  <p>Rasmiy veb-sayt</p>
-</header>
-
-<section class="container" id="about">
-  <div class="section-title">
-    <h2>Biz haqimizda</h2>
-  </div>
-  <div class="about">
-    Ulug‘nor tuman Axborot-Kutubxona Markazi aholiga axborot,
-    bilim va madaniy xizmatlar ko‘rsatadi.
-  </div>
-</section>
-
-<section class="container" id="news">
-  <div class="section-title">
-    <h2>Yangilik va e’lonlar</h2>
-    <p>Telegram bot orqali avtomatik yangilanadi</p>
-  </div>
-
-  <div class="news-grid" id="newsGrid">
-    <!-- YANGILIKLAR SHU YERGA CHIQADI -->
-  </div>
-</section>
-
-<section class="container" id="contact">
-  <div class="section-title">
-    <h2>Aloqa</h2>
-  </div>
-  <p style="text-align:center;font-size:17px">
-    📍 Ulug‘nor tumani<br>
-    📞 +998 xx xxx xx xx<br>
-    📧 info@ulugnortakm.uz
-  </p>
-</section>
-
-<footer>
-© 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
-</footer>
-
-<script>
-fetch("news.json")
-  .then(res => res.json())
-  .then(data => {
-    const grid = document.getElementById("newsGrid");
-    grid.innerHTML = "";
-
-    if(!Array.isArray(data) || data.length === 0){
-      grid.innerHTML = "<p>Hozircha yangiliklar yo‘q.</p>";
-      return;
-    }
-
-    data.forEach(item => {
-      grid.innerHTML += `
-        <div class="news-card">
-          <div class="news-badge">${item.type || "Yangilik"}</div>
-
-          ${item.image ? `<img src="${item.image}">` : ""}
-
-          <div class="news-date">
-            <i class="fa-regular fa-calendar"></i> ${item.date || ""}
-          </div>
-
-          <div class="news-title">${item.title || ""}</div>
-          <div class="news-text">${item.text || ""}</div>
-        </div>
-      `;
-    });
-  })
-  .catch(()=>{
-    document.getElementById("newsGrid").innerHTML =
-      "<p>news.json yuklanmadi</p>";
-  });
-</script>
-
-</body>
-</html>
+    <div class="header">
+        <h1>📚 Kutubxona Yangiliklari</h1>
+        <p>Telegram bot orqali GitHub'dan yuklanadi</p>
+    </div>
+    
+    <div id="news-container" class="news-container">
+        <div class="loading">Yangiliklar yuklanmoqda...</div>
+    </div>
+    
+    <center>
+        <button onclick="loadNews()" class="refresh-btn">🔄 Yangilash</button>
+    </center>
