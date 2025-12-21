@@ -2,7 +2,7 @@
 <html lang="uz">
 <head>
     <meta charset="UTF-8">
-    <title>Ulugnortakm | Yangiliklar</title>
+    <title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
@@ -18,9 +18,9 @@
         }
 
         header {
-            background: #2563eb;
+            background: #1d4ed8;
             color: white;
-            padding: 25px;
+            padding: 30px 20px;
             text-align: center;
         }
 
@@ -30,15 +30,33 @@
         }
 
         header p {
-            margin-top: 8px;
+            margin-top: 10px;
+            font-size: 16px;
             opacity: 0.9;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1200px;
             margin: auto;
-            padding: 40px 20px;
+            padding: 50px 20px;
         }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #475569;
+            font-size: 15px;
+        }
+
+        /* ===== NEWS ===== */
 
         .news-grid {
             display: grid;
@@ -49,29 +67,20 @@
         .news-card {
             background: white;
             border-radius: 16px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             padding: 20px;
-            transition: transform 0.3s ease;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
         }
 
-        .news-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .news-type {
-            display: inline-block;
-            background: #2563eb;
-            color: white;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            margin-bottom: 10px;
+        .news-card img {
+            width: 100%;
+            border-radius: 14px;
+            margin-bottom: 15px;
         }
 
         .news-date {
             font-size: 13px;
             color: #64748b;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .news-title {
@@ -90,7 +99,7 @@
             background: #0f172a;
             color: #cbd5f5;
             text-align: center;
-            padding: 25px;
+            padding: 30px 20px;
             font-size: 14px;
         }
     </style>
@@ -99,11 +108,17 @@
 
 <header>
     <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
-    <p>Yangiliklar va e’lonlar</p>
+    <p>Rasmiy sayt</p>
 </header>
 
 <div class="container">
-    <div class="news-grid" id="newsContainer">
+    <div class="section-title">
+        <h2>Yangiliklar va e’lonlar</h2>
+        <p>So‘nggi yangiliklar Telegram bot orqali yangilanadi</p>
+    </div>
+
+    <!-- DYNAMIC NEWS -->
+    <div class="news-grid" id="newsGrid">
         <!-- Yangiliklar shu yerga chiqadi -->
     </div>
 </div>
@@ -116,26 +131,29 @@
 fetch("news.json")
     .then(response => response.json())
     .then(data => {
-        const box = document.getElementById("newsContainer");
+        const grid = document.getElementById("newsGrid");
 
         if (!data || data.length === 0) {
-            box.innerHTML = "<p>Hozircha yangiliklar mavjud emas.</p>";
+            grid.innerHTML = "<p>Hozircha yangiliklar mavjud emas.</p>";
             return;
         }
 
-        box.innerHTML = data.map(item => `
-            <div class="news-card">
-                <div class="news-type">${item.type || "Yangilik"}</div>
-                <div class="news-date">${item.date || ""}</div>
-                <div class="news-title">${item.title || ""}</div>
-                <div class="news-text">${item.text || ""}</div>
-            </div>
-        `).join("");
+        grid.innerHTML = "";
+
+        data.slice(0, 5).forEach(item => {
+            grid.innerHTML += `
+                <div class="news-card">
+                    ${item.image ? `<img src="${item.image}" alt="Yangilik rasmi">` : ""}
+                    <div class="news-date">${item.date || ""}</div>
+                    <div class="news-title">${item.title || ""}</div>
+                    <div class="news-text">${item.text || ""}</div>
+                </div>
+            `;
+        });
     })
-    .catch(err => {
-        document.getElementById("newsContainer").innerHTML =
-            "<p>Xatolik: news.json yuklanmadi</p>";
-        console.error(err);
+    .catch(() => {
+        document.getElementById("newsGrid").innerHTML =
+            "<p>Yangiliklarni yuklashda xatolik yuz berdi.</p>";
     });
 </script>
 
