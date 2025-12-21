@@ -1,160 +1,194 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        body {
-            margin: 0;
-            background: #f1f5f9;
-            color: #1e293b;
-        }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f1f5f9;color:#1e293b}
 
-        header {
-            background: #1d4ed8;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* NAVBAR */
+nav{
+  background:#0f172a;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+nav .logo{font-size:20px;font-weight:bold}
+nav ul{list-style:none;display:flex;gap:20px}
+nav ul li a{color:#fff;text-decoration:none;font-size:15px}
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+/* HEADER */
+header{
+  background:#1e40af;
+  color:#fff;
+  text-align:center;
+  padding:60px 20px
+}
+header h1{font-size:32px}
+header p{margin-top:12px;opacity:.9}
 
-        header p {
-            margin-top: 10px;
-            font-size: 16px;
-            opacity: 0.9;
-        }
+/* SECTIONS */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px
+}
+.section-title{text-align:center;margin-bottom:40px}
+.section-title h2{font-size:28px;margin-bottom:10px}
+.section-title p{color:#475569}
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 50px 20px;
-        }
+/* ABOUT */
+.about{
+  text-align:center;
+  font-size:18px;
+  color:#334155;
+  line-height:1.7
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+/* NEWS */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px
+}
+.news-card{
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08)
+}
+.news-badge{
+  background:#2563eb;
+  color:#fff;
+  padding:6px 16px;
+  border-radius:30px;
+  font-size:13px;
+  display:inline-block;
+  margin-bottom:12px
+}
+.news-card img{
+  width:100%;
+  border-radius:16px;
+  margin:18px 0
+}
+.news-date{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:10px
+}
+.news-title{
+  font-size:21px;
+  margin-bottom:10px;
+  color:#0f172a
+}
+.news-text{
+  font-size:16px;
+  line-height:1.6;
+  color:#334155
+}
 
-        .section-title h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
-
-        .section-title p {
-            color: #475569;
-            font-size: 15px;
-        }
-
-        /* ===== NEWS ===== */
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .news-card {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .news-card img {
-            width: 100%;
-            border-radius: 14px;
-            margin-bottom: 15px;
-        }
-
-        .news-date {
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 8px;
-        }
-
-        .news-title {
-            font-size: 20px;
-            margin: 10px 0;
-            color: #0f172a;
-        }
-
-        .news-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #334155;
-        }
-
-        footer {
-            background: #0f172a;
-            color: #cbd5f5;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-        }
-    </style>
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  text-align:center;
+  padding:30px;
+  margin-top:60px
+}
+</style>
 </head>
+
 <body>
 
+<nav>
+  <div class="logo">Ulug‘nor AKM</div>
+  <ul>
+    <li><a href="#">Bosh sahifa</a></li>
+    <li><a href="#about">Biz haqimizda</a></li>
+    <li><a href="#news">Yangiliklar</a></li>
+    <li><a href="#contact">Aloqa</a></li>
+  </ul>
+</nav>
+
 <header>
-    <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
-    <p>Rasmiy sayt</p>
+  <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
+  <p>Rasmiy veb-sayt</p>
 </header>
 
-<div class="container">
-    <div class="section-title">
-        <h2>Yangiliklar va e’lonlar</h2>
-        <p>So‘nggi yangiliklar Telegram bot orqali yangilanadi</p>
-    </div>
+<section class="container" id="about">
+  <div class="section-title">
+    <h2>Biz haqimizda</h2>
+  </div>
+  <div class="about">
+    Ulug‘nor tuman Axborot-Kutubxona Markazi aholiga axborot,
+    bilim va madaniy xizmatlar ko‘rsatadi.
+  </div>
+</section>
 
-    <!-- DYNAMIC NEWS -->
-    <div class="news-grid" id="newsGrid">
-        <!-- Yangiliklar shu yerga chiqadi -->
-    </div>
-</div>
+<section class="container" id="news">
+  <div class="section-title">
+    <h2>Yangilik va e’lonlar</h2>
+    <p>Telegram bot orqali avtomatik yangilanadi</p>
+  </div>
+
+  <div class="news-grid" id="newsGrid">
+    <!-- YANGILIKLAR SHU YERGA CHIQADI -->
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <div class="section-title">
+    <h2>Aloqa</h2>
+  </div>
+  <p style="text-align:center;font-size:17px">
+    📍 Ulug‘nor tumani<br>
+    📞 +998 xx xxx xx xx<br>
+    📧 info@ulugnortakm.uz
+  </p>
+</section>
 
 <footer>
-    © 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
+© 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
 </footer>
 
 <script>
 fetch("news.json")
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById("newsGrid");
+  .then(r => r.json())
+  .then(data => {
+    const grid = document.getElementById("newsGrid");
+    grid.innerHTML = "";
 
-        if (!data || data.length === 0) {
-            grid.innerHTML = "<p>Hozircha yangiliklar mavjud emas.</p>";
-            return;
-        }
+    if(!data || data.length === 0){
+      grid.innerHTML = "<p>Hozircha yangiliklar yo‘q.</p>";
+      return;
+    }
 
-        grid.innerHTML = "";
-
-        data.slice(0, 5).forEach(item => {
-            grid.innerHTML += `
-                <div class="news-card">
-                    ${item.image ? `<img src="${item.image}" alt="Yangilik rasmi">` : ""}
-                    <div class="news-date">${item.date || ""}</div>
-                    <div class="news-title">${item.title || ""}</div>
-                    <div class="news-text">${item.text || ""}</div>
-                </div>
-            `;
-        });
-    })
-    .catch(() => {
-        document.getElementById("newsGrid").innerHTML =
-            "<p>Yangiliklarni yuklashda xatolik yuz berdi.</p>";
+    data.slice(0,5).forEach(item => {
+      grid.innerHTML += `
+        <div class="news-card">
+          <div class="news-badge">${item.type || "Yangilik"}</div>
+          ${item.image ? `<img src="${item.image}">` : ""}
+          <div class="news-date">
+            <i class="fa-regular fa-calendar"></i> ${item.date || ""}
+          </div>
+          <div class="news-title">${item.title || ""}</div>
+          <div class="news-text">${item.text || ""}</div>
+        </div>
+      `;
     });
+  })
+  .catch(()=>{
+    document.getElementById("newsGrid").innerHTML =
+      "<p>news.json yuklanmadi</p>";
+  });
 </script>
 
 </body>
