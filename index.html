@@ -1814,13 +1814,13 @@
                 const response = await fetch(proxyUrl + apiUrl);
                 
                 if (!response.ok) {
-                    throw new Error(`Telegram API dan javob kelmadi: ${response.status}`);
+                    throw new Error(`Serverdan javob kelmadi: ${response.status}`);
                 }
                 
                 const data = await response.json();
                 
                 if (!data.ok) {
-                    throw new Error(`Telegram API xatosi: ${data.description}`);
+                    throw new Error(`Server xatosi: ${data.description}`);
                 }
                 
                 // Kanal postlarini filtrlash
@@ -2122,4 +2122,5 @@
     </script>
 </body>
 </html>
+
 
