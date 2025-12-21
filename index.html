@@ -796,144 +796,6 @@
             font-size: 18px;
         }
         
-        /* Yangilik va E'lonlar */
-        .news-announcements {
-            padding: 140px 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .news-announcements::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .news-card {
-            background: #fff;
-            border-radius: 25px;
-            box-shadow: var(--card-shadow);
-            padding: 40px;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(60px);
-            border-left: 6px solid var(--primary-color);
-        }
-
-        .news-card.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .news-card:hover {
-            transform: translateY(-20px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .news-badge {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .news-card:nth-child(1) .news-badge {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-        }
-
-        .news-card:nth-child(2) .news-badge {
-            background: linear-gradient(135deg, var(--success-color), #34d399);
-            color: white;
-        }
-
-        .news-card:nth-child(3) .news-badge {
-            background: linear-gradient(135deg, var(--accent-color), #fbbf24);
-            color: white;
-        }
-
-        .news-card:nth-child(4) .news-badge {
-            background: linear-gradient(135deg, var(--accent-color-2), #a78bfa);
-            color: white;
-        }
-
-        .news-date {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #64748b;
-            margin-bottom: 25px;
-            font-size: 16px;
-        }
-
-        .news-date i {
-            color: var(--primary-color);
-        }
-
-        .news-title {
-            font-size: 26px;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-            line-height: 1.4;
-        }
-
-        .news-excerpt {
-            color: #64748b;
-            margin-bottom: 30px;
-            line-height: 1.8;
-            font-size: 18px;
-        }
-
-        .news-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .news-link:hover {
-            gap: 15px;
-            color: var(--accent-color);
-        }
-
-        .news-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: #94a3b8;
-            font-size: 16px;
-        }
-
-        .news-footer span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
         /* Aloqa */
         .contact {
             padding: 140px 0;
@@ -1171,7 +1033,7 @@
                 font-size: 44px;
             }
             
-            .services-grid, .books-grid, .events-grid, .news-grid {
+            .services-grid, .books-grid, .events-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -1212,7 +1074,7 @@
                 font-size: 38px;
             }
             
-            .service-card, .contact-info, .contact-form, .news-card {
+            .service-card, .contact-info, .contact-form {
                 padding: 50px 30px;
             }
             
@@ -1267,7 +1129,6 @@
                     <a href="#books">Kitoblar</a>
                     <a href="#stats">Statistika</a>
                     <a href="#events">Tadbirlar</a>
-                    <a href="#news">Yangiliklar</a>
                     <a href="#contact">Aloqa</a>
                 </div>
             </nav>
@@ -1455,17 +1316,17 @@
                 </div>
                 <div class="stat-item" data-delay="0.2">
                     <div class="stat-icon"><i class="fas fa-users"></i></div>
-                    <div class="stat-number" data-count="5200">0</div>
+                    <div class="stat-number" data-count="5200+">0</div>
                     <div class="stat-text">Faol a'zolar</div>
                 </div>
                 <div class="stat-item" data-delay="0.4">
                     <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
-                    <div class="stat-number" data-count="120">0</div>
+                    <div class="stat-number" data-count="120+">0</div>
                     <div class="stat-text">Jurnallar</div>
                 </div>
                 <div class="stat-item" data-delay="0.6">
                     <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
-                    <div class="stat-number" data-count="15">0</div>
+                    <div class="stat-number" data-count="15+">0</div>
                     <div class="stat-text">Yillik tajriba</div>
                 </div>
             </div>
@@ -1522,92 +1383,6 @@
             </div>
             <div style="text-align: center; margin-top: 80px;">
                 <a href="#" class="btn btn-glow"><i class="far fa-calendar-alt"></i> Barcha tadbirlar jadvali</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Yangilik va E'lonlar -->
-    <section class="news-announcements" id="news">
-        <div class="container">
-            <div class="section-title">
-                <h2>Yangilik va E'lonlar</h2>
-                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
-            </div>
-            <div class="news-grid">
-                <!-- Yangilik 1 -->
-                <div class="news-card" data-delay="0">
-                    <div class="news-badge">Yangilik</div>
-                    <div class="news-date">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>2025-yil 10-iyun</span>
-                    </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Kutubxonada yangi raqamli platforma ishga tushdi</h3>
-                        <p class="news-excerpt">Kutubxonamizning raqamli platformasi ishga tushirildi. Endi kitoblarni onlayn bron qilish, elektron kutubxona va audio kitoblarga kirish imkoniyati.</p>
-                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="news-footer">
-                        <span><i class="far fa-eye"></i> 245</span>
-                        <span><i class="far fa-comment"></i> 12</span>
-                    </div>
-                </div>
-                
-                <!-- Yangilik 2 -->
-                <div class="news-card" data-delay="0.2">
-                    <div class="news-badge">E'lon</div>
-                    <div class="news-date">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>2025-yil 5-iyun</span>
-                    </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Yangi xalqaro jurnallar qo'shildi</h3>
-                        <p class="news-excerpt">Kutubxonamizga 20 dan ortiq xalqaro ilmiy jurnallar qo'shildi. Jumladan, Nature, Science va boshqa nufuzli jurnallar.</p>
-                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="news-footer">
-                        <span><i class="far fa-eye"></i> 189</span>
-                        <span><i class="far fa-comment"></i> 8</span>
-                    </div>
-                </div>
-                
-                <!-- Yangilik 3 -->
-                <div class="news-card" data-delay="0.4">
-                    <div class="news-badge">Yangilik</div>
-                    <div class="news-date">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>2025-yil 1-iyun</span>
-                    </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Yozgi o'qish tanlovi boshlanmoqda</h3>
-                        <p class="news-excerpt">Yoz mavsumi uchun maxsus o'qish tanlovi e'lon qilindi. Eng ko'p kitob o'qiydiganlar uchun qimmatbaho sovg'alar.</p>
-                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="news-footer">
-                        <span><i class="far fa-eye"></i> 312</span>
-                        <span><i class="far fa-comment"></i> 15</span>
-                    </div>
-                </div>
-                
-                <!-- Yangilik 4 -->
-                <div class="news-card" data-delay="0.6">
-                    <div class="news-badge">E'lon</div>
-                    <div class="news-date">
-                        <i class="far fa-calendar-alt"></i>
-                        <span>2025-yil 28-may</span>
-                    </div>
-                    <div class="news-content">
-                        <h3 class="news-title">Kutubxona qayta ta'mirlanmoqda</h3>
-                        <p class="news-excerpt">Kutubxona binosi zamonaviy talablarga mos ravishda qayta ta'mirlanmoqda. Yangi o'quv zallari va bolalar bo'limi ochiladi.</p>
-                        <a href="#" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="news-footer">
-                        <span><i class="far fa-eye"></i> 167</span>
-                        <span><i class="far fa-comment"></i> 6</span>
-                    </div>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 80px;">
-                <a href="#" class="btn btn-glow"><i class="fas fa-newspaper"></i> Barcha yangiliklar</a>
             </div>
         </div>
     </section>
@@ -1695,11 +1470,10 @@
                     <h3>Ulug'nor Tuman Axborot-Kutubxona Markazi</h3>
                     <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari.</p>
                     <div class="social-links">
-                        <a href="https://t.me/ulugnortakm" target="_blank"><i class="fab fa-telegram"></i></a>
-                        <a href="https://www.facebook.com/ulugnortakmuz" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/ulugnortakm1" target="_blank"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@UlugnorTAKM" target="_blank"><i class="fab fa-youtube"></i></a>
-                        <a href="https://x.com/Shermuhamm81984" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
                 <div class="footer-column">
@@ -1709,7 +1483,6 @@
                         <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
                         <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
                         <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
-                        <a href="#news" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangiliklar</a>
                         <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
                     </div>
                 </div>
@@ -1723,6 +1496,7 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2025 Ulug'nor Tuman Axborot-Kutubxona Markazi. Barcha huquqlar himoyalangan.</p>
+                <p style="margin-top: 20px;">Veb-sayt <span style="color: var(--accent-color); font-weight: 600;">zamonaviy texnologiyalar</span> yordamida yaratilgan</p>
             </div>
         </div>
     </footer>
@@ -1730,7 +1504,7 @@
     <script>
         // Scroll animatsiyalari
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item, .news-card');
+            const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
@@ -1838,14 +1612,10 @@
             animateOnScroll();
             
             // Kartalarga hover effektlari
-            const cards = document.querySelectorAll('.service-card, .book-card, .event-card, .news-card');
+            const cards = document.querySelectorAll('.service-card, .book-card, .event-card');
             cards.forEach(card => {
                 card.addEventListener('mouseenter', function() {
-                    if (this.classList.contains('news-card')) {
-                        this.style.transform = 'translateY(-20px)';
-                    } else if (this.classList.contains('service-card') || this.classList.contains('book-card') || this.classList.contains('event-card')) {
-                        this.style.transform = 'translateY(-30px) scale(1.03)';
-                    }
+                    this.style.transform = 'translateY(-30px) scale(1.03)';
                 });
                 
                 card.addEventListener('mouseleave', function() {
@@ -1893,17 +1663,6 @@
                 });
             });
             
-            // Yangiliklar uchun batafsil ma'lumot
-            document.querySelectorAll('.news-link').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const newsCard = this.closest('.news-card');
-                    const newsTitle = newsCard.querySelector('.news-title').textContent;
-                    
-                    alert(`"${newsTitle}"\n\nBu yangilik haqida batafsil ma'lumot hozirda ishlab chiqilmoqda. Tez orada bu funksiya ishga tushadi.`);
-                });
-            });
-            
             // Rasmlarni yuklashda xatolikni qayta ishlash
             document.querySelectorAll('img').forEach(img => {
                 img.addEventListener('error', function() {
@@ -1914,4 +1673,3 @@
     </script>
 </body>
 </html>
-
