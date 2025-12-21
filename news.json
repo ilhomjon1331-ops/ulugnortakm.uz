@@ -1,18 +1,1 @@
-[
-  {
-    "id": 2,
-    "type": "Yangilik",
-    "title": "Yangi",
-    "text": "YangiArcha",
-    "image": "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_1.jpg",
-    "date": "2025-12-22"
-  },
-  {
-    "id": 1,
-    "type": "Yangilik",
-    "title": "Lavha",
-    "text": "LavhaHxjxbx",
-    "image": "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_0.jpg",
-    "date": "2025-12-22"
-  }
-]
+[]
