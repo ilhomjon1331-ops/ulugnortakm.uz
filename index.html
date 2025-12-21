@@ -1,197 +1,230 @@
-import json
-import requests
-import asyncio
-from telegram import Update
-from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
-from datetime import datetime
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-TOKEN = "8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE"
-KANAL_ID = "161651555"
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-# GitHub new.json fayli manzili
-GITHUB_RAW_URL = "https://raw.githubusercontent.com/username/repo/main/new.json"
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial,sans-serif
+}
+body{
+  background:#f1f5f9;
+  color:#1e293b
+}
 
-async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text(
-        "👋 Ulug'nor Kutubxona Boti\n\n"
-        "📋 Komandalar:\n"
-        "/start - Botni ishga tushirish\n"
-        "/github - GitHub'dan yangiliklarni yuklash\n"
-        "/last - Oxirgi yangilikni ko'rish\n"
-        "/post - Yangilik yuborish\n\n"
-        "📚 GitHub'dan new.json faylini o'qib, yangiliklarni avtomatik joylaydi"
-    )
+/* NAVBAR */
+nav{
+  background:#0f172a;
+  color:#fff;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center
+}
+nav .logo{
+  font-size:20px;
+  font-weight:bold
+}
+nav ul{
+  list-style:none;
+  display:flex;
+  gap:20px
+}
+nav ul li a{
+  color:#fff;
+  text-decoration:none;
+  font-size:15px
+}
 
-async def github_yangiliklar(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    try:
-        await update.message.reply_text("⏳ GitHub'dan yangiliklarni yuklayapman...")
-        
-        # GitHub'dan new.json faylini o'qish
-        response = requests.get(GITHUB_RAW_URL, timeout=10)
-        
-        if response.status_code != 200:
-            await update.message.reply_text(f"❌ GitHub faylini o'qib bo'lmadi: {response.status_code}")
-            return
-        
-        yangiliklar = response.json()
-        
-        if not isinstance(yangiliklar, list):
-            await update.message.reply_text("❌ new.json formati noto'g'ri. List bo'lishi kerak.")
-            return
-        
-        count = 0
-        for yangilik in yangiliklar[:5]:  # Bir vaqtda 5 tasini
-            try:
-                # Yangilikni tekshirish
-                title = yangilik.get('title', 'Yangilik')
-                content = yangilik.get('content', '')
-                image_url = yangilik.get('image', '')
-                date = yangilik.get('date', datetime.now().strftime('%Y-%m-%d'))
-                
-                # Telegram kanalga yuborish
-                post_text = f"📢 {title}\n\n{content}\n\n📅 {date}"
-                
-                if image_url and image_url.startswith('http'):
-                    # Rasm bilan post
-                    image_response = requests.get(image_url, timeout=10)
-                    if image_response.status_code == 200:
-                        # Rasmni fayl sifatida yuborish
-                        await context.bot.send_photo(
-                            chat_id=KANAL_ID,
-                            photo=image_response.content,
-                            caption=post_text
-                        )
-                    else:
-                        # Rasm yo'q bo'lsa, faqat matn
-                        await context.bot.send_message(
-                            chat_id=KANAL_ID,
-                            text=post_text
-                        )
-                else:
-                    # Faqat matn
-                    await context.bot.send_message(
-                        chat_id=KANAL_ID,
-                        text=post_text
-                    )
-                
-                count += 1
-                await asyncio.sleep(1)  # 1 soniya kutish
-                
-            except Exception as e:
-                await update.message.reply_text(f"❌ Yangilik yuborishda xato: {str(e)}")
-                continue
-        
-        await update.message.reply_text(f"✅ {count} ta yangilik kanalga joylandi!")
-        
-        # Yangiliklarni JSON faylga saqlash
-        with open('last_github_news.json', 'w', encoding='utf-8') as f:
-            json.dump(yangiliklar[:5], f, ensure_ascii=False, indent=2)
-        
-    except Exception as e:
-        await update.message.reply_text(f"❌ Xatolik: {str(e)}")
+/* HEADER */
+header{
+  background:#1e40af;
+  color:#fff;
+  text-align:center;
+  padding:60px 20px
+}
+header h1{
+  font-size:32px
+}
+header p{
+  margin-top:12px;
+  opacity:.9
+}
 
-async def oxirgi_yangilik(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Oxirgi saqlangan yangiliklarni ko'rsatish"""
-    try:
-        with open('last_github_news.json', 'r', encoding='utf-8') as f:
-            yangiliklar = json.load(f)
-        
-        if not yangiliklar:
-            await update.message.reply_text("📭 Hali yangiliklar yo'q")
-            return
-        
-        javob = "📰 Oxirgi yangiliklar:\n\n"
-        for i, yangilik in enumerate(yangiliklar[:3], 1):
-            title = yangilik.get('title', 'Noma\'lum')
-            date = yangilik.get('date', '')
-            javob += f"{i}. {title}\n   📅 {date}\n\n"
-        
-        await update.message.reply_text(javob)
-        
-    except FileNotFoundError:
-        await update.message.reply_text("📭 Hali yangiliklar yuklanmagan. /github buyrug'ini ishlating.")
-    except Exception as e:
-        await update.message.reply_text(f"❌ Xatolik: {str(e)}")
+/* SECTIONS */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px
+}
+.section-title{
+  text-align:center;
+  margin-bottom:40px
+}
+.section-title h2{
+  font-size:28px;
+  margin-bottom:10px
+}
+.section-title p{
+  color:#475569
+}
 
-async def yangilik_yuborish(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Oddiy yangilik yuborish"""
-    await update.message.reply_text(
-        "📝 Yangilik yuborish uchun:\n"
-        "1. Matn yozing\n"
-        "2. Rasm qo'shing (ixtiyoriy)\n"
-        "3. Yuboring\n\n"
-        "✅ Yangilik avtomatik kanalga joylanadi!"
-    )
+/* ABOUT */
+.about{
+  text-align:center;
+  font-size:18px;
+  color:#334155;
+  line-height:1.7
+}
 
-async def post_qabul(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """Yangilik qabul qilish va kanalga joylash"""
-    try:
-        matn = update.message.caption or update.message.text
-        
-        if not matn:
-            await update.message.reply_text("❌ Iltimos, yangilik matnini yozing!")
-            return
-        
-        # Kanalga yuborish
-        if update.message.photo:
-            rasm = update.message.photo[-1]
-            await context.bot.send_photo(
-                chat_id=KANAL_ID,
-                photo=rasm.file_id,
-                caption=matn
-            )
-        else:
-            await context.bot.send_message(
-                chat_id=KANAL_ID,
-                text=matn
-            )
-        
-        await update.message.reply_text("✅ Yangilik kanalga joylandi!")
-        
-    except Exception as e:
-        await update.message.reply_text(f"❌ Xato: {str(e)}")
+/* NEWS */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px
+}
+.news-card{
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08)
+}
+.news-badge{
+  background:#2563eb;
+  color:#fff;
+  padding:6px 16px;
+  border-radius:30px;
+  font-size:13px;
+  display:inline-block;
+  margin-bottom:12px
+}
+.news-card img{
+  width:100%;
+  border-radius:16px;
+  margin:18px 0
+}
+.news-date{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:10px
+}
+.news-title{
+  font-size:21px;
+  margin-bottom:10px;
+  color:#0f172a
+}
+.news-text{
+  font-size:16px;
+  line-height:1.6;
+  color:#334155
+}
 
-async def github_test(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """GitHub faylini test qilish"""
-    try:
-        await update.message.reply_text("🔍 GitHub faylini tekshiryapman...")
-        
-        response = requests.get(GITHUB_RAW_URL, timeout=10)
-        
-        if response.status_code == 200:
-            data = response.json()
-            await update.message.reply_text(
-                f"✅ GitHub fayli topildi!\n"
-                f"📊 Yangiliklar soni: {len(data) if isinstance(data, list) else 'Noma\'lum'}\n"
-                f"📝 Birinchi yangilik: {data[0].get('title', 'Noma\'lum')[:50]}..."
-            )
-        else:
-            await update.message.reply_text(f"❌ GitHub fayli topilmadi: {response.status_code}")
-            
-    except Exception as e:
-        await update.message.reply_text(f"❌ Xatolik: {str(e)}")
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  text-align:center;
+  padding:30px;
+  margin-top:60px
+}
+</style>
+</head>
 
-async def main():
-    app = Application.builder().token(TOKEN).build()
-    
-    # Command handlerlar
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CommandHandler("github", github_yangiliklar))
-    app.add_handler(CommandHandler("last", oxirgi_yangilik))
-    app.add_handler(CommandHandler("post", yangilik_yuborish))
-    app.add_handler(CommandHandler("test", github_test))
-    
-    # Message handlerlar
-    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, post_qabul))
-    app.add_handler(MessageHandler(filters.PHOTO, post_qabul))
-    
-    print("🤖 GitHub Yangilik Boti ishga tushdi!")
-    print(f"📁 GitHub fayli: {GITHUB_RAW_URL}")
-    
-    await app.run_polling()
+<body>
 
-if __name__ == "__main__":
-    # GitHub URL'ini o'zgartiring
-    GITHUB_RAW_URL = "https://raw.githubusercontent.com/username/repo/main/new.json"
-    
-    asyncio.run(main())
+<nav>
+  <div class="logo">Ulug‘nor AKM</div>
+  <ul>
+    <li><a href="#">Bosh sahifa</a></li>
+    <li><a href="#about">Biz haqimizda</a></li>
+    <li><a href="#news">Yangiliklar</a></li>
+    <li><a href="#contact">Aloqa</a></li>
+  </ul>
+</nav>
+
+<header>
+  <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
+  <p>Rasmiy veb-sayt</p>
+</header>
+
+<section class="container" id="about">
+  <div class="section-title">
+    <h2>Biz haqimizda</h2>
+  </div>
+  <div class="about">
+    Ulug‘nor tuman Axborot-Kutubxona Markazi aholiga axborot,
+    bilim va madaniy xizmatlar ko‘rsatadi.
+  </div>
+</section>
+
+<section class="container" id="news">
+  <div class="section-title">
+    <h2>Yangilik va e’lonlar</h2>
+    <p>Telegram bot orqali avtomatik yangilanadi</p>
+  </div>
+
+  <div class="news-grid" id="newsGrid">
+    <!-- YANGILIKLAR SHU YERGA CHIQADI -->
+  </div>
+</section>
+
+<section class="container" id="contact">
+  <div class="section-title">
+    <h2>Aloqa</h2>
+  </div>
+  <p style="text-align:center;font-size:17px">
+    📍 Ulug‘nor tumani<br>
+    📞 +998 xx xxx xx xx<br>
+    📧 info@ulugnortakm.uz
+  </p>
+</section>
+
+<footer>
+© 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
+</footer>
+
+<script>
+fetch("news.json")
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById("newsGrid");
+    grid.innerHTML = "";
+
+    if(!Array.isArray(data) || data.length === 0){
+      grid.innerHTML = "<p>Hozircha yangiliklar yo‘q.</p>";
+      return;
+    }
+
+    data.forEach(item => {
+      grid.innerHTML += `
+        <div class="news-card">
+          <div class="news-badge">${item.type || "Yangilik"}</div>
+
+          ${item.image ? `<img src="${item.image}">` : ""}
+
+          <div class="news-date">
+            <i class="fa-regular fa-calendar"></i> ${item.date || ""}
+          </div>
+
+          <div class="news-title">${item.title || ""}</div>
+          <div class="news-text">${item.text || ""}</div>
+        </div>
+      `;
+    });
+  })
+  .catch(()=>{
+    document.getElementById("newsGrid").innerHTML =
+      "<p>news.json yuklanmadi</p>";
+  });
+</script>
+
+</body>
+</html>
