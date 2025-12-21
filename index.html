@@ -1,160 +1,161 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-    <meta charset="UTF-8">
-    <title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ulug‘nor Tuman Axborot-Kutubxona Markazi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+<!-- ICONS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-        body {
-            margin: 0;
-            background: #f1f5f9;
-            color: #1e293b;
-        }
+<style>
+*{box-sizing:border-box;font-family:Arial,sans-serif}
+body{margin:0;background:#f1f5f9;color:#1e293b}
 
-        header {
-            background: #1d4ed8;
-            color: white;
-            padding: 30px 20px;
-            text-align: center;
-        }
+/* HEADER */
+header{
+  background:#1e40af;
+  color:#fff;
+  padding:35px 20px;
+  text-align:center
+}
+header h1{margin:0;font-size:30px}
+header p{margin-top:10px;opacity:.9}
 
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
+/* SECTION */
+.container{max-width:1200px;margin:auto;padding:60px 20px}
+.section-title{text-align:center;margin-bottom:45px}
+.section-title h2{font-size:28px;margin-bottom:10px}
+.section-title p{color:#475569}
 
-        header p {
-            margin-top: 10px;
-            font-size: 16px;
-            opacity: 0.9;
-        }
+/* NEWS GRID */
+.news-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:30px
+}
+.news-card{
+  background:#fff;
+  border-radius:20px;
+  padding:25px;
+  box-shadow:0 12px 30px rgba(0,0,0,.08);
+  transition:.3s
+}
+.news-card:hover{transform:translateY(-6px)}
 
-        .container {
-            max-width: 1200px;
-            margin: auto;
-            padding: 50px 20px;
-        }
+.news-badge{
+  display:inline-block;
+  background:#2563eb;
+  color:#fff;
+  padding:6px 16px;
+  border-radius:30px;
+  font-size:13px;
+  margin-bottom:12px
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-        }
+.news-card img{
+  width:100%;
+  border-radius:16px;
+  margin:18px 0
+}
 
-        .section-title h2 {
-            font-size: 26px;
-            margin-bottom: 10px;
-        }
+.news-date{
+  font-size:13px;
+  color:#64748b;
+  margin-bottom:10px
+}
 
-        .section-title p {
-            color: #475569;
-            font-size: 15px;
-        }
+.news-title{
+  font-size:21px;
+  margin:10px 0;
+  color:#0f172a
+}
 
-        /* ===== NEWS ===== */
+.news-text{
+  font-size:16px;
+  line-height:1.6;
+  color:#334155
+}
 
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
+.news-footer{
+  margin-top:18px;
+  display:flex;
+  justify-content:space-between;
+  font-size:13px;
+  color:#64748b
+}
 
-        .news-card {
-            background: white;
-            border-radius: 16px;
-            padding: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .news-card img {
-            width: 100%;
-            border-radius: 14px;
-            margin-bottom: 15px;
-        }
-
-        .news-date {
-            font-size: 13px;
-            color: #64748b;
-            margin-bottom: 8px;
-        }
-
-        .news-title {
-            font-size: 20px;
-            margin: 10px 0;
-            color: #0f172a;
-        }
-
-        .news-text {
-            font-size: 16px;
-            line-height: 1.6;
-            color: #334155;
-        }
-
-        footer {
-            background: #0f172a;
-            color: #cbd5f5;
-            text-align: center;
-            padding: 30px 20px;
-            font-size: 14px;
-        }
-    </style>
+/* FOOTER */
+footer{
+  background:#0f172a;
+  color:#cbd5f5;
+  text-align:center;
+  padding:30px;
+  font-size:14px
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
-    <p>Rasmiy sayt</p>
+  <h1>Ulug‘nor Tuman Axborot-Kutubxona Markazi</h1>
+  <p>Rasmiy veb-sayt</p>
 </header>
 
-<div class="container">
-    <div class="section-title">
-        <h2>Yangiliklar va e’lonlar</h2>
-        <p>So‘nggi yangiliklar Telegram bot orqali yangilanadi</p>
-    </div>
+<section class="container" id="news">
+  <div class="section-title">
+    <h2>Yangilik va E’lonlar</h2>
+    <p>Kutubxonamizdagi so‘nggi yangiliklar va e’lonlar</p>
+  </div>
 
+  <div class="news-grid" id="newsGrid">
     <!-- DYNAMIC NEWS -->
-    <div class="news-grid" id="newsGrid">
-        <!-- Yangiliklar shu yerga chiqadi -->
-    </div>
-</div>
+  </div>
+</section>
 
 <footer>
-    © 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
+© 2025 Ulug‘nor Tuman Axborot-Kutubxona Markazi
 </footer>
 
 <script>
 fetch("news.json")
-    .then(response => response.json())
-    .then(data => {
-        const grid = document.getElementById("newsGrid");
+  .then(res => res.json())
+  .then(data => {
+    const grid = document.getElementById("newsGrid");
+    grid.innerHTML = "";
 
-        if (!data || data.length === 0) {
-            grid.innerHTML = "<p>Hozircha yangiliklar mavjud emas.</p>";
-            return;
-        }
+    if(!data || data.length === 0){
+      grid.innerHTML = "<p>Hozircha yangiliklar mavjud emas.</p>";
+      return;
+    }
 
-        grid.innerHTML = "";
+    data.slice(0,5).forEach(item => {
+      grid.innerHTML += `
+        <div class="news-card">
+          <div class="news-badge">${item.type || "Yangilik"}</div>
 
-        data.slice(0, 5).forEach(item => {
-            grid.innerHTML += `
-                <div class="news-card">
-                    ${item.image ? `<img src="${item.image}" alt="Yangilik rasmi">` : ""}
-                    <div class="news-date">${item.date || ""}</div>
-                    <div class="news-title">${item.title || ""}</div>
-                    <div class="news-text">${item.text || ""}</div>
-                </div>
-            `;
-        });
-    })
-    .catch(() => {
-        document.getElementById("newsGrid").innerHTML =
-            "<p>Yangiliklarni yuklashda xatolik yuz berdi.</p>";
+          ${item.image ? `<img src="${item.image}">` : ""}
+
+          <div class="news-date">
+            <i class="fa-regular fa-calendar"></i> ${item.date || ""}
+          </div>
+
+          <div class="news-title">${item.title || ""}</div>
+          <div class="news-text">${item.text || ""}</div>
+
+          <div class="news-footer">
+            <span><i class="fa-regular fa-eye"></i> —</span>
+            <span><i class="fa-regular fa-comment"></i> —</span>
+          </div>
+        </div>
+      `;
     });
+  })
+  .catch(()=>{
+    document.getElementById("newsGrid").innerHTML =
+      "<p>Yangiliklarni yuklashda xatolik yuz berdi.</p>";
+  });
 </script>
 
 </body>
