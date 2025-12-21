@@ -264,7 +264,7 @@
             width: 100%;
         }
         
-        /* Hero section - YAQQOL KO'RINADIGAN FON */
+        /* Hero section */
         .hero {
             height: 100vh;
             min-height: 800px;
@@ -419,6 +419,139 @@
             font-weight: 300;
         }
         
+        /* YANGILIK VA E'LONLAR - ENG YUQORIDA (HERODAN KEYIN) */
+        .news-announcements {
+            padding: 140px 0;
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .news-announcements::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-radius: 25px;
+            box-shadow: var(--card-shadow);
+            padding: 40px;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(60px);
+            border-left: 6px solid var(--primary-color);
+        }
+
+        .news-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .news-card:hover {
+            transform: translateY(-20px);
+            box-shadow: var(--hover-shadow);
+        }
+
+        .news-badge {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .news-date {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #64748b;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        .news-date i {
+            color: var(--primary-color);
+        }
+
+        .news-title {
+            font-size: 26px;
+            margin-bottom: 20px;
+            color: var(--dark-color);
+            line-height: 1.4;
+        }
+
+        .news-excerpt {
+            color: #64748b;
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-size: 18px;
+        }
+
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        .news-link:hover {
+            gap: 15px;
+            color: var(--accent-color);
+        }
+
+        .news-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            color: #94a3b8;
+            font-size: 16px;
+        }
+
+        .news-footer span {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Yangilik ko'rish sonlari animatsiyasi */
+        .view-count, .comment-count {
+            transition: all 0.3s ease;
+        }
+
+        .news-card:hover .view-count {
+            color: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .news-card:hover .comment-count {
+            color: var(--accent-color);
+            transform: scale(1.1);
+        }
+        
         /* Xizmatlar */
         .services {
             padding: 140px 0;
@@ -515,7 +648,7 @@
             z-index: 1;
         }
         
-        /* Yangi kitoblar - CHIROYLI RASMLAR */
+        /* Yangi kitoblar - CHIROYLI RASMLAR (KO'P KITOBLAR) */
         .new-books {
             padding: 140px 0;
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -794,139 +927,6 @@
             margin-bottom: 30px;
             line-height: 1.8;
             font-size: 18px;
-        }
-        
-        /* Yangilik va E'lonlar */
-        .news-announcements {
-            padding: 140px 0;
-            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .news-announcements::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%232563eb' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E");
-        }
-
-        .news-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .news-card {
-            background: #fff;
-            border-radius: 25px;
-            box-shadow: var(--card-shadow);
-            padding: 40px;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            opacity: 0;
-            transform: translateY(60px);
-            border-left: 6px solid var(--primary-color);
-        }
-
-        .news-card.animated {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .news-card:hover {
-            transform: translateY(-20px);
-            box-shadow: var(--hover-shadow);
-        }
-
-        .news-badge {
-            position: absolute;
-            top: 25px;
-            right: 25px;
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .news-date {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: #64748b;
-            margin-bottom: 25px;
-            font-size: 16px;
-        }
-
-        .news-date i {
-            color: var(--primary-color);
-        }
-
-        .news-title {
-            font-size: 26px;
-            margin-bottom: 20px;
-            color: var(--dark-color);
-            line-height: 1.4;
-        }
-
-        .news-excerpt {
-            color: #64748b;
-            margin-bottom: 30px;
-            line-height: 1.8;
-            font-size: 18px;
-        }
-
-        .news-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .news-link:hover {
-            gap: 15px;
-            color: var(--accent-color);
-        }
-
-        .news-footer {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            color: #94a3b8;
-            font-size: 16px;
-        }
-
-        .news-footer span {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        /* Yangilik ko'rish sonlari animatsiyasi */
-        .view-count, .comment-count {
-            transition: all 0.3s ease;
-        }
-
-        .news-card:hover .view-count {
-            color: var(--primary-color);
-            transform: scale(1.1);
-        }
-
-        .news-card:hover .comment-count {
-            color: var(--accent-color);
-            transform: scale(1.1);
         }
         
         /* Aloqa */
@@ -1258,18 +1258,18 @@
                 </div>
                 <div class="nav-links">
                     <a href="#home">Bosh sahifa</a>
+                    <a href="#news">Yangiliklar</a>
                     <a href="#services">Xizmatlar</a>
                     <a href="#books">Kitoblar</a>
                     <a href="#stats">Statistika</a>
                     <a href="#events">Tadbirlar</a>
-                    <a href="#news">Yangiliklar</a>
                     <a href="#contact">Aloqa</a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <!-- Hero section - YAQQOL KO'RINADIGAN FON -->
+    <!-- Hero section -->
     <section class="hero" id="home">
         <div class="floating-elements">
             <div class="floating-element"></div>
@@ -1289,6 +1289,28 @@
         </div>
     </section>
 
+    <!-- YANGILIK VA E'LONLAR - ENG YUQORIDA (HERODAN KEYIN) -->
+    <section class="news-announcements" id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangilik va E'lonlar</h2>
+                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
+            </div>
+            <div class="news-grid">
+                <!-- Yangiliklarni JavaScript orqali GitHub'dan yuklanadi -->
+                <div style="text-align: center; padding: 60px; color: #64748b; font-size: 20px; grid-column: 1 / -1;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; margin-bottom: 20px;"></i>
+                    <p>Yangiliklarni yuklanmoqda...</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 80px;">
+                <a href="#" class="btn btn-glow refresh-news-btn">
+                    <i class="fas fa-sync-alt"></i> Yangiliklarni yangilash
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Xizmatlar -->
     <section class="services" id="services">
         <div class="container">
@@ -1302,11 +1324,6 @@
                     <h3>Kitob ijarasi</h3>
                     <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi.</p>
                 </div>
-                <div class="service-card" data-delay="0.4">
-                    <i class="fas fa-search"></i>
-                    <h3>Ilmiy-ma'rifiy qidiruv</h3>
-                    <p>Ilmiy ishlar va tadqiqotlar uchun ma'lumotlarni qidirish yordami. Xalqaro bazalardan foydalanish. Referat va kurs ishlari tayyorlash.</p>
-                </div>
                 <div class="service-card" data-delay="0.6">
                     <i class="fas fa-users"></i>
                     <h3>Klublar va to'garaklar</h3>
@@ -1316,7 +1333,7 @@
         </div>
     </section>
 
-    <!-- Yangi kitoblar - CHIROYLI RASMLAR -->
+    <!-- Yangi kitoblar - 6 TA KITOB -->
     <section class="new-books" id="books">
         <div class="container">
             <div class="section-title">
@@ -1324,10 +1341,10 @@
                 <p>O'zbekiston adabiyotining asarlari. Har oy 100+ yangi kitob qo'shiladi</p>
             </div>
             <div class="books-grid">
-                <!-- O'tkan Kunlar - CHIROYLI RASM -->
+                <!-- O'tkan Kunlar -->
                 <div class="book-card" data-delay="0">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=kimberly-farmer-lUaaKCUANVI-unsplash.jpg&w=1920" alt="O'tkan Kunlar kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="O'tkan Kunlar kitobi">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1349,10 +1366,10 @@
                     </div>
                 </div>
                 
-                <!-- Xamsa - CHIROYLI RASM -->
+                <!-- Xamsa -->
                 <div class="book-card" data-delay="0.2">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Xamsa kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1541963463532-d68292c34b19?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Xamsa kitobi">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1374,10 +1391,10 @@
                     </div>
                 </div>
                 
-                <!-- Boburnoma - CHIROYLI RASM -->
+                <!-- Boburnoma -->
                 <div class="book-card" data-delay="0.4">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=aaron-burden-9zsHNt5OpqE-unsplash.jpg&w=640" alt="Boburnoma kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Boburnoma kitobi">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1399,10 +1416,10 @@
                     </div>
                 </div>
                 
-                <!-- Sariq devni minib - CHIROYLI RASM -->
+                <!-- Sariq devni minib -->
                 <div class="book-card" data-delay="0.6">
                     <div class="book-img">
-                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sariq devni minib kitobi" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80'">
+                        <img src="https://images.unsplash.com/photo-1495446815901-a7297e633e8d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sariq devni minib kitobi">
                         <div class="book-overlay">
                             <button class="quick-view-btn">Tezkor ko'rish</button>
                         </div>
@@ -1419,6 +1436,56 @@
                                 <i class="fas fa-star-half-alt"></i>
                             </span>
                             <span>320 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Kecha va Kunduz -->
+                <div class="book-card" data-delay="0.8">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Kecha va Kunduz kitobi">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Kecha va Kunduz</h3>
+                        <p class="book-author">Oybek</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </span>
+                            <span>450 sahifa</span>
+                        </div>
+                        <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
+                    </div>
+                </div>
+                
+                <!-- Ulug'bek xazinasi -->
+                <div class="book-card" data-delay="1.0">
+                    <div class="book-img">
+                        <img src="https://images.unsplash.com/photo-1575709527142-a93ed587bb83?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=sinziana-susa-SNHsMunOPME-unsplash.jpg&w=640" alt="Ulug'bek xazinasi kitobi">
+                        <div class="book-overlay">
+                            <button class="quick-view-btn">Tezkor ko'rish</button>
+                        </div>
+                    </div>
+                    <div class="book-info">
+                        <h3 class="book-title">Ulug'bek xazinasi</h3>
+                        <p class="book-author">Pirmat Shermuhammad</p>
+                        <div class="book-meta">
+                            <span class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </span>
+                            <span>380 sahifa</span>
                         </div>
                         <a href="#" class="btn btn-outline">Ko'proq o'qish</a>
                     </div>
@@ -1483,7 +1550,6 @@
                     </div>
                 </div>
                 
-                <!-- Yangi bolalar rasmli tadbir -->
                 <div class="event-card" data-delay="0.3">
                     <div class="event-img">
                         <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Bolalar hikoya soati">
@@ -1512,28 +1578,6 @@
             </div>
             <div style="text-align: center; margin-top: 80px;">
                 <a href="#" class="btn btn-glow"><i class="far fa-calendar-alt"></i> Barcha tadbirlar jadvali</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Yangilik va E'lonlar -->
-    <section class="news-announcements" id="news">
-        <div class="container">
-            <div class="section-title">
-                <h2>Yangilik va E'lonlar</h2>
-                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
-            </div>
-            <div class="news-grid">
-                <!-- Yangiliklarni JavaScript orqali GitHub'dan yuklanadi -->
-                <div style="text-align: center; padding: 60px; color: #64748b; font-size: 20px; grid-column: 1 / -1;">
-                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; margin-bottom: 20px;"></i>
-                    <p>Yangiliklarni yuklanmoqda...</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 80px;">
-                <a href="#" class="btn btn-glow refresh-news-btn">
-                    <i class="fas fa-sync-alt"></i> Yangiliklarni yangilash
-                </a>
             </div>
         </div>
     </section>
@@ -1632,10 +1676,11 @@
                     <h3>Tez havolalar</h3>
                     <div>
                         <a href="#home" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Bosh sahifa</a>
+                        <a href="#news" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangiliklar</a>
                         <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
                         <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
+                        <a href="#stats" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Statistika</a>
                         <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
-                        <a href="#news" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangiliklar</a>
                         <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
                     </div>
                 </div>
@@ -1930,6 +1975,22 @@
                         <span><i class="far fa-comment"></i> <span class="comment-count">8</span></span>
                     </div>
                 </div>
+                <div class="news-card" data-delay="0.4">
+                    <div class="news-badge" style="background: linear-gradient(135deg, var(--accent-color), #fbbf24)">Tadbir</div>
+                    <div class="news-date">
+                        <i class="far fa-calendar-alt"></i>
+                        <span>2025-yil 15-iyun</span>
+                    </div>
+                    <div class="news-content">
+                        <h3 class="news-title">Yozgi o'quv dasturi start oldi</h3>
+                        <p class="news-excerpt">Bolalar uchun yozgi o'quv dasturi ishga tushdi. Dasturlashtirish, ingliz tili va adabiyot kurslari mavjud.</p>
+                        <a href="#" class="news-link" onclick="viewNewsDetail(3); return false;">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> <span class="view-count">156</span></span>
+                        <span><i class="far fa-comment"></i> <span class="comment-count">5</span></span>
+                    </div>
+                </div>
             `;
             
             // Animatsiyalarni qayta ishga tushirish
@@ -2152,4 +2213,3 @@
     </script>
 </body>
 </html>
-
