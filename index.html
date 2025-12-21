@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <style>
-        * {
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+        * { box-sizing: border-box; font-family: Arial, sans-serif; }
 
         body {
             margin: 0;
@@ -22,16 +19,6 @@
             color: white;
             padding: 25px;
             text-align: center;
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 28px;
-        }
-
-        header p {
-            margin-top: 8px;
-            opacity: 0.9;
         }
 
         .container {
@@ -51,11 +38,12 @@
             border-radius: 16px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.08);
             padding: 20px;
-            transition: transform 0.3s ease;
         }
 
-        .news-card:hover {
-            transform: translateY(-5px);
+        .news-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-bottom: 12px;
         }
 
         .news-type {
@@ -65,13 +53,13 @@
             padding: 4px 14px;
             border-radius: 20px;
             font-size: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .news-date {
             font-size: 13px;
             color: #64748b;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .news-title {
@@ -123,8 +111,9 @@ fetch("news.json")
             return;
         }
 
-        box.innerHTML = data.map(item => `
+        box.innerHTML = data.slice(0,5).map(item => `
             <div class="news-card">
+                ${item.image ? `<img src="${item.image}" alt="Yangilik rasmi">` : ``}
                 <div class="news-type">${item.type || "Yangilik"}</div>
                 <div class="news-date">${item.date || ""}</div>
                 <div class="news-title">${item.title || ""}</div>
