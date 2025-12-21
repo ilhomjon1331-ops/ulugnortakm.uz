@@ -989,6 +989,14 @@
             border-radius: 15px;
             margin-top: 20px;
         }
+
+        /* Telegram widget */
+        .telegram-widget-container {
+            margin-top: 40px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+        }
         
         /* Aloqa */
         .contact {
@@ -1590,36 +1598,27 @@
         </div>
     </section>
 
-    <!-- Yangilik va E'lonlar - TELEGRAM BOT INTEGRATSIYASI -->
+    <!-- Yangilik va E'lonlar - TELEGRAM WIDGET INTEGRATSIYASI -->
     <section class="news-announcements" id="news">
         <div class="container">
             <div class="section-title">
-                <h2>Yangilik va E'lonlar</h2>
-                <p>Kutubxonamizning so'nggi yangiliklar va e'lonlar</p>
-                <div style="margin-top: 30px;">
-                    <button class="telegram-refresh-btn" id="refreshTelegramBtn">
-                        <i class="fab fa-telegram"></i> Yangiliklarni yangilash
-                    </button>
-                </div>
+                <h2>Telegram Yangilik va E'lonlar</h2>
+                <p>Kutubxonamizning Telegram kanalidagi so'nggi yangiliklar va e'lonlar</p>
             </div>
 
-            <!-- Yuklash indikatori -->
-            <div class="telegram-loading" id="telegramLoading">
-                <i class="fas fa-spinner"></i>
-                <p>Yangiliklarni yuklanmoqda...</p>
+            <!-- Telegram kanal widget -->
+            <div class="telegram-widget-container">
+                <iframe 
+                    src="https://t.me/s/ulugnortakm?embed=1" 
+                    width="100%" 
+                    height="500" 
+                    frameborder="0" 
+                    style="border-radius: 20px;"
+                    allowtransparency="true">
+                </iframe>
             </div>
 
-            <!-- Xato xabari -->
-            <div class="telegram-error" id="telegramError">
-                <p>Yangiliklarni yuklashda xatolik yuz berdi. Iltimos, keyinroq urinib ko'ring.</p>
-            </div>
-
-            <!-- Telegram yangiliklari joylashadigan joy -->
-            <div class="news-grid" id="telegramNewsGrid">
-                <!-- Yangiliklar shu yerga JavaScript orqali yuklanadi -->
-            </div>
-
-            <!-- Statik yangiliklar (agar Telegram ishlamasa) -->
+            <!-- Statik yangiliklar -->
             <div class="news-grid" id="staticNewsGrid">
                 <!-- Statik yangilik 1 -->
                 <div class="news-card" data-delay="0">
@@ -1645,7 +1644,7 @@
                 <!-- Statik yangilik 2 -->
                 <div class="news-card" data-delay="0.2">
                     <div class="news-img">
-                        <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Xalqaro jurnallar">
+                        <img src="https://images.unsplash.com/photo-1509021436665-8f07dbf5bf1d?ixlib=rb-4.1.0&q=85&fm=jpg&crop=entropy&cs=srgb&dl=aaron-burden-9zsHNt5OpqE-unsplash.jpg&w=640" alt="Xalqaro jurnallar">
                     </div>
                     <div class="news-content">
                         <div class="news-badge" style="background: linear-gradient(135deg, var(--success-color), #34d399);">E'lon</div>
@@ -1660,6 +1659,48 @@
                     <div class="news-footer">
                         <span><i class="far fa-eye"></i> 189</span>
                         <span><i class="far fa-comment"></i> 8</span>
+                    </div>
+                </div>
+
+                <!-- Statik yangilik 3 -->
+                <div class="news-card" data-delay="0.4">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="O'qish tanlovi">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge" style="background: linear-gradient(135deg, var(--accent-color), #fbbf24);">Yangilik</div>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2025-yil 1-iyun</span>
+                        </div>
+                        <h3 class="news-title">Yozgi o'qish tanlovi boshlanmoqda</h3>
+                        <p class="news-excerpt">Yoz mavsumi uchun maxsus o'qish tanlovi e'lon qilindi. Eng ko'p kitob o'qiydiganlar uchun qimmatbaho sovg'alar.</p>
+                        <a href="https://t.me/ulugnortakm" target="_blank" class="news-link">Telegram kanalimiz <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 312</span>
+                        <span><i class="far fa-comment"></i> 15</span>
+                    </div>
+                </div>
+
+                <!-- Statik yangilik 4 -->
+                <div class="news-card" data-delay="0.6">
+                    <div class="news-img">
+                        <img src="https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Qayta ta'mirlash">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-badge" style="background: linear-gradient(135deg, var(--accent-color-2), #a78bfa);">E'lon</div>
+                        <div class="news-date">
+                            <i class="far fa-calendar-alt"></i>
+                            <span>2025-yil 28-may</span>
+                        </div>
+                        <h3 class="news-title">Kutubxona qayta ta'mirlanmoqda</h3>
+                        <p class="news-excerpt">Kutubxona binosi zamonaviy talablarga mos ravishda qayta ta'mirlanmoqda. Yangi o'quv zallari va bolalar bo'limi ochiladi.</p>
+                        <a href="https://t.me/ulugnortakm" target="_blank" class="news-link">Telegram kanalimiz <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-footer">
+                        <span><i class="far fa-eye"></i> 167</span>
+                        <span><i class="far fa-comment"></i> 6</span>
                     </div>
                 </div>
             </div>
@@ -1788,160 +1829,6 @@
     </footer>
 
     <script>
-        // Telegram Bot ma'lumotlari
-        const TELEGRAM_BOT_TOKEN = '8517558395:AAGXAjAs1oFN8R2j_H1g3XdHv8NBMR56xfI';
-        const TELEGRAM_CHAT_ID = '161651555';
-        
-        // DOM elementlari
-        const telegramNewsGrid = document.getElementById('telegramNewsGrid');
-        const staticNewsGrid = document.getElementById('staticNewsGrid');
-        const refreshTelegramBtn = document.getElementById('refreshTelegramBtn');
-        const telegramLoading = document.getElementById('telegramLoading');
-        const telegramError = document.getElementById('telegramError');
-
-        // Telegram yangiliklarni yuklash funksiyasi
-        async function loadTelegramNews() {
-            try {
-                // Yuklash indikatorini ko'rsatish
-                telegramLoading.style.display = 'block';
-                telegramError.style.display = 'none';
-                telegramNewsGrid.innerHTML = '';
-                
-                // Proxy orqali Telegram API ga so'rov (CORS muammosini hal qilish uchun)
-                const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-                const apiUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates`;
-                
-                const response = await fetch(proxyUrl + apiUrl);
-                
-                if (!response.ok) {
-                    throw new Error(`Serverdan javob kelmadi: ${response.status}`);
-                }
-                
-                const data = await response.json();
-                
-                if (!data.ok) {
-                    throw new Error(`Server xatosi: ${data.description}`);
-                }
-                
-                // Kanal postlarini filtrlash
-                const channelPosts = data.result
-                    .filter(update => update.channel_post && update.channel_post.chat.id == TELEGRAM_CHAT_ID)
-                    .map(update => update.channel_post)
-                    .sort((a, b) => b.date - a.date) // Eng yangilar birinchi
-                    .slice(0, 4); // Faqat 4 ta eng yangi post
-                
-                // Agar postlar bo'lsa
-                if (channelPosts.length > 0) {
-                    // Statik yangiliklarni yashirish
-                    staticNewsGrid.style.display = 'none';
-                    
-                    // Telegram yangiliklarini ko'rsatish
-                    displayTelegramPosts(channelPosts);
-                } else {
-                    // Agar postlar bo'lmasa, statik yangiliklarni ko'rsatish
-                    staticNewsGrid.style.display = 'grid';
-                    telegramNewsGrid.innerHTML = '<p style="text-align: center; grid-column: 1/-1; color: #64748b;">Hozirda Telegramdan yangiliklar yo\'q. Iltimos, keyinroq urinib ko\'ring.</p>';
-                }
-                
-            } catch (error) {
-                console.error('Telegram yangiliklarni yuklashda xatolik:', error);
-                telegramError.style.display = 'block';
-                telegramError.innerHTML = `<p>${error.message}</p><p style="font-size: 14px; margin-top: 10px;">Iltimos, Internet aloqangizni tekshiring yoki keyinroq urinib ko'ring.</p>`;
-                
-                // Statik yangiliklarni ko'rsatish
-                staticNewsGrid.style.display = 'grid';
-            } finally {
-                // Yuklash indikatorini yashirish
-                telegramLoading.style.display = 'none';
-            }
-        }
-
-        // Telegram postlarini ko'rsatish funksiyasi
-        function displayTelegramPosts(posts) {
-            telegramNewsGrid.innerHTML = '';
-            
-            posts.forEach((post, index) => {
-                const newsCard = document.createElement('div');
-                newsCard.className = 'news-card';
-                newsCard.setAttribute('data-delay', index * 0.2);
-                
-                // Sana formatlash
-                const postDate = new Date(post.date * 1000);
-                const formattedDate = postDate.toLocaleDateString('uz-UZ', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                });
-                
-                // Post matnini qisqartirish
-                let postText = post.text || post.caption || 'Yangilik';
-                let title = postText.split('\n')[0] || 'Yangilik';
-                let excerpt = postText.length > 150 ? postText.substring(0, 150) + '...' : postText;
-                
-                // Rasmni tekshirish (agar postda rasm bo'lsa)
-                let imageUrl = 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
-                
-                if (post.photo && post.photo.length > 0) {
-                    // Eng katta o'lchamdagi rasmni olish
-                    const largestPhoto = post.photo[post.photo.length - 1];
-                    imageUrl = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getFile?file_id=${largestPhoto.file_id}`;
-                }
-                
-                // Badge rangini belgilash
-                const badges = [
-                    'linear-gradient(135deg, var(--primary-color), var(--secondary-color))',
-                    'linear-gradient(135deg, var(--success-color), #34d399)',
-                    'linear-gradient(135deg, var(--accent-color), #fbbf24)',
-                    'linear-gradient(135deg, var(--accent-color-2), #a78bfa)'
-                ];
-                
-                const badgeStyle = badges[index % badges.length];
-                
-                // Yangilik kartasini yaratish
-                newsCard.innerHTML = `
-                    <div class="news-img">
-                        <img src="${imageUrl}" alt="${title}" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">
-                    </div>
-                    <div class="news-content">
-                        <div class="news-badge" style="background: ${badgeStyle};">Yangilik</div>
-                        <div class="news-date">
-                            <i class="far fa-calendar-alt"></i>
-                            <span>${formattedDate}</span>
-                        </div>
-                        <h3 class="news-title">${title}</h3>
-                        <p class="news-excerpt">${excerpt}</p>
-                        <a href="https://t.me/ulugnortakm/${post.message_id}" target="_blank" class="news-link">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                    <div class="news-footer">
-                        <span><i class="far fa-eye"></i> ${post.views || 0}</span>
-                        <span><i class="far fa-comment"></i> 0</span>
-                    </div>
-                `;
-                
-                telegramNewsGrid.appendChild(newsCard);
-            });
-            
-            // Animatsiyalarni ishga tushirish
-            setTimeout(() => {
-                animateOnScroll();
-            }, 100);
-        }
-
-        // Tugma bosilganda yangiliklarni yangilash
-        refreshTelegramBtn.addEventListener('click', loadTelegramNews);
-
-        // Sahifa yuklanganda avtomatik yangiliklarni yuklash
-        document.addEventListener('DOMContentLoaded', function() {
-            // Avval statik yangiliklarni yashirish
-            staticNewsGrid.style.display = 'none';
-            
-            // Telegram yangiliklarni yuklash
-            setTimeout(loadTelegramNews, 1000);
-            
-            // Scroll animatsiyalari
-            animateOnScroll();
-        });
-
         // Scroll animatsiyalari
         function animateOnScroll() {
             const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item, .news-card');
@@ -2116,12 +2003,23 @@
                 });
             });
             
-            // Yangiliklarni har 5 daqiqada avtomatik yangilash
-            setInterval(loadTelegramNews, 5 * 60 * 1000);
+            // Telegram widgetni o'lchamini moslashtirish
+            const telegramIframe = document.querySelector('.telegram-widget-container iframe');
+            if (telegramIframe) {
+                window.addEventListener('resize', function() {
+                    if (window.innerWidth < 768) {
+                        telegramIframe.style.height = '400px';
+                    } else {
+                        telegramIframe.style.height = '500px';
+                    }
+                });
+                
+                // Dastlabki o'lcham
+                if (window.innerWidth < 768) {
+                    telegramIframe.style.height = '400px';
+                }
+            }
         });
     </script>
 </body>
 </html>
-
-
-
