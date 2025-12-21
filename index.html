@@ -1526,7 +1526,7 @@
         <div class="container">
             <div class="section-title">
                 <h2>Yangilik va E'lonlar</h2>
-                <p>Telegram bot orqali yangilangan so'nggi xabarlar</p>
+                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
             </div>
             <div class="news-grid">
                 <!-- Yangiliklarni JavaScript orqali GitHub'dan yuklanadi -->
@@ -1538,9 +1538,6 @@
             <div style="text-align: center; margin-top: 80px;">
                 <a href="#" class="btn btn-glow refresh-news-btn">
                     <i class="fas fa-sync-alt"></i> Yangiliklarni yangilash
-                </a>
-                <a href="https://t.me/YOUR_BOT_USERNAME" target="_blank" class="btn btn-outline" style="margin-left: 20px;">
-                    <i class="fab fa-telegram"></i> Telegram orqali yangilik qo'shish
                 </a>
             </div>
         </div>
@@ -1707,7 +1704,7 @@
                     <div style="text-align: center; padding: 60px; color: #64748b; font-size: 20px; grid-column: 1 / -1;">
                         <i class="fas fa-newspaper" style="font-size: 60px; margin-bottom: 20px; opacity: 0.5;"></i>
                         <p>Hozircha yangiliklar mavjud emas</p>
-                        <p style="font-size: 16px; margin-top: 10px;">Telegram bot orqali birinchi yangilikni qo'shing</p>
+                        <p style="font-size: 16px; margin-top: 10px;">Tez orada yangiliklar qo'shiladi</p>
                     </div>
                 `;
                 return;
@@ -1777,14 +1774,6 @@
                 .then(news => {
                     const newsItem = news.find(item => item.id === id);
                     if (newsItem) {
-                        const detailMessage = 
-                            `📰 *${newsItem.title}*\n\n` +
-                            `📅 Sana: ${newsItem.date}\n` +
-                            `🏷 Turi: ${newsItem.type || 'Yangilik'}\n\n` +
-                            `${newsItem.text}\n\n` +
-                            `${newsItem.image ? `📸 *Rasm mavjud* (batafsil veb-saytda)\n` : ''}` +
-                            `\nID: ${newsItem.id}`;
-                        
                         // Modal yaratish
                         showNewsModal(newsItem);
                     } else {
@@ -2134,13 +2123,6 @@
                         this.innerHTML = '<i class="fas fa-sync-alt"></i> Yangiliklarni yangilash';
                     }, 2000);
                 });
-            }
-            
-            // Telegram bot havolasini yangilash
-            const telegramLink = document.querySelector('a[href*="t.me"]');
-            if (telegramLink) {
-                // Bu yerda bot username ni o'zingizning botingiz bilan almashtiring
-                // telegramLink.href = "https://t.me/your_bot_username";
             }
             
             // Rasmlarni yuklashda xatolikni qayta ishlash
