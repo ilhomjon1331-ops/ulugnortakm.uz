@@ -1,5 +1,13 @@
 [
   {
+    "id": 2,
+    "type": "Yangilik",
+    "title": "Kunlik yangilik",
+    "text": "O‘zbekiston yosh shaxmatchilari umumjamoa hisobida 1-o‘rinni egalladi\n\nTurkiyaning Antaliya shahrida bo‘lib o‘tgan shaxmat bo‘yicha jahon chempionatida 33 davlatdan 314 nafar sportchi ishtirok etdi.",
+    "image": "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_10.jpg",
+    "date": "2025-12-22"
+  },
+  {
     "id": 1,
     "type": "Yangilik",
     "title": "Kunlik yangilik",
