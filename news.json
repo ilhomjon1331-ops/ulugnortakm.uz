@@ -1,5 +1,13 @@
 [
   {
+    "id": 3,
+    "type": "Yangilik",
+    "title": "#Musiqali_kecha",
+    "text": "📚Ulug'nor tumani  axborot-kutubxona markazi, hamda 21-sonli musiqa va san'at maktabi, tadbirlar zalida hududdagi barcha umum ta'lim maktablari \"Bolalar sizlar uchun yangi yilning tufhasi\" mavzusida musiqali kecha bo'lib o'tdi.",
+    "image": "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_15.jpg",
+    "date": "2025-12-24"
+  },
+  {
     "id": 2,
     "type": "Yangilik",
     "title": "Kunlik yangilik",
