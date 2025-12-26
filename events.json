@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": 1,
+    "title": "Yangi yil",
+    "description": "Zo‘l bo‘ldi bayram",
+    "image": "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_18.jpg",
+    "date": "2025-12-26"
+  }
+]
