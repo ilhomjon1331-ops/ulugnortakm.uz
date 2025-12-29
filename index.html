@@ -1372,7 +1372,7 @@
         </div>
     </section>
 
-    <!-- Yangi kitoblar - REAL KITOBLAR GITHUB'DAN -->
+    <!-- Yangi kitoblar - REAL KITOBlAR GITHUB'DAN -->
     <section class="new-books" id="books">
         <div class="container">
             <div class="section-title">
@@ -1652,7 +1652,7 @@
                     <div class="news-content">
                         <h3 class="news-title">${item.title}</h3>
                         <p class="news-excerpt">${excerpt}</p>
-                        ${item.image ? `<img src="${item.image}" alt="${item.title}" style="width:100%; border-radius:10px; margin:15px 0; max-height:200px; object-fit:cover; cursor:pointer;" onclick="showNewsDetail(${item.id})">` : ''}
+                        ${item.image ? `<img src="${item.image}" alt="${item.title}" style="width:100%; border-radius:10px; margin:15px 0; max-height:200px; object-fit:cover; cursor:pointer;" onerror="this.onerror=null; this.style.display='none';" onclick="showNewsDetail(${item.id})">` : ''}
                         <a href="#" class="news-link" onclick="showNewsDetail(${item.id}); return false;">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="news-footer">
@@ -1692,7 +1692,7 @@
                 
                 <h3 style="font-size: 32px; margin-bottom: 25px; color: var(--dark-color); line-height: 1.3;">${newsItem.title}</h3>
                 
-                ${newsItem.image ? `<img src="${newsItem.image}" alt="${newsItem.title}" style="width:100%; border-radius:10px; margin-bottom:25px;">` : ''}
+                ${newsItem.image ? `<img src="${newsItem.image}" alt="${newsItem.title}" style="width:100%; border-radius:10px; margin-bottom:25px;" onerror="this.style.display='none';">` : ''}
                 
                 <p style="color: #334155; line-height: 1.8; font-size: 18px; margin-bottom: 30px; white-space: pre-line;">${newsItem.text}</p>
                 
@@ -1738,7 +1738,7 @@
                 
                 bookCard.innerHTML = `
                     <div class="book-img">
-                        ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.src='https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">` : 
+                        ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f1f5f9;\"><i class=\"fas fa-book\" style=\"font-size:100px;color:#cbd5e1;\"></i></div>';">` : 
                           `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
                             <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
                           </div>`}
@@ -1785,7 +1785,7 @@
             modalContent.innerHTML = `
                 <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 30px;">
                     <div>
-                        ${book.image ? `<img src="${book.image}" alt="${book.title}" style="width:100%; border-radius:10px;">` : 
+                        ${book.image ? `<img src="${book.image}" alt="${book.title}" style="width:100%; border-radius:10px;" onerror="this.style.display='none';">` : 
                           `<div style="background: #f1f5f9; border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center;">
                             <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
                           </div>`}
@@ -1870,7 +1870,7 @@
                 
                 eventCard.innerHTML = `
                     <div class="event-img">
-                        ${event.image ? `<img src="${event.image}" alt="${event.title}" onerror="this.src='https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'">` :
+                        ${event.image ? `<img src="${event.image}" alt="${event.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,#e2e8f0,#cbd5e1);\"><i class=\"fas fa-calendar-alt\" style=\"font-size:80px;color:#94a3b8;\"></i></div>';">` :
                           `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, #e2e8f0, #cbd5e1);">
                             <i class="fas fa-calendar-alt" style="font-size: 80px; color: #94a3b8;"></i>
                           </div>`}
@@ -1906,7 +1906,7 @@
             modalContent.innerHTML = `
                 <h3 style="font-size: 32px; margin-bottom: 25px; color: var(--dark-color); line-height: 1.3;">${event.title}</h3>
                 
-                ${event.image ? `<img src="${event.image}" alt="${event.title}" style="width:100%; border-radius:10px; margin-bottom:25px;">` : ''}
+                ${event.image ? `<img src="${event.image}" alt="${event.title}" style="width:100%; border-radius:10px; margin-bottom:25px;" onerror="this.style.display='none';">` : ''}
                 
                 <p style="color: #334155; line-height: 1.8; font-size: 18px; margin-bottom: 30px; white-space: pre-line;">${event.description || 'Tadbir haqida ma\'lumot mavjud emas.'}</p>
                 
@@ -2135,5 +2135,3 @@
     </script>
 </body>
 </html>
-
-
