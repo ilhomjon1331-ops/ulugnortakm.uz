@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": 1,
+    "type": "Yangilik",
+    "title": "Tarix",
+    "text": "Vvggflfjdhdvkm",
+    "date": "2025-12-29",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1767031693_570.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1767031703_574.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1767031714_578.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1767031693_570.jpg"
+  }
+]
