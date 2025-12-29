@@ -6,6 +6,8 @@
     <title>Ulug'nor Tuman Axborot-Kutubxona Markazi</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS qo'shing (karusel uchun) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #2563eb;
@@ -648,7 +650,7 @@
             z-index: 1;
         }
         
-        /* Yangi kitoblar - CHIROYLI RASMLAR (KO'P KITOBLAR) */
+        /* Yangi kitoblar - CHIROYLI RASMLAR (KO'P KITOBlAR) */
         .new-books {
             padding: 140px 0;
             background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
@@ -1570,6 +1572,9 @@
         </div>
     </div>
 
+    <!-- Bootstrap JS qo'shing (karusel uchun) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
         // ================== KONFIGURATSIYA ==================
         const GITHUB_USER = "ilhomjon1331-ops";
@@ -1594,7 +1599,7 @@
         async function loadFromGitHub(fileName) {
             try {
                 console.log(`GitHub'dan ${fileName} yuklanmoqda...`);
-                const url = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${fileName}`;
+                const url = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${fileName}?t=${Date.now()}`;
                 const response = await fetch(url);
                 
                 if (!response.ok) {
@@ -1640,6 +1645,28 @@
                 const excerpt = item.text.length > 150 ? item.text.substring(0, 150) + '...' : item.text;
                 const badgeColor = getBadgeColor(item.type || 'Yangilik');
                 
+                // Rasmlarni olish
+                let imagesArray = [];
+                if (item.images && item.images.length > 0) {
+                    imagesArray = item.images;
+                } else if (item.image) {
+                    imagesArray = [item.image];
+                }
+                
+                // Rasmlar uchun HTML yaratish
+                let imagesHtml = '';
+                if (imagesArray.length > 0) {
+                    // Birinchi rasmni asosiy sifatida ko'rsatish
+                    imagesHtml += `<img src="${imagesArray[0]}" alt="${item.title}" style="width:100%; border-radius:10px; margin:15px 0; max-height:200px; object-fit:cover; cursor:pointer;" onerror="this.onerror=null; this.style.display='none';" onclick="showNewsDetail(${item.id})">`;
+                    
+                    // Agar ko'p rasm bo'lsa, sanani ko'rsatish
+                    if (imagesArray.length > 1) {
+                        imagesHtml += `<div style="text-align: center; margin-top: 10px; color: #64748b; font-size: 14px;">
+                            <i class="fas fa-images"></i> ${imagesArray.length} ta rasm
+                        </div>`;
+                    }
+                }
+                
                 const newsCard = document.createElement('div');
                 newsCard.className = 'news-card';
                 newsCard.setAttribute('data-delay', index * 0.2);
@@ -1652,7 +1679,7 @@
                     <div class="news-content">
                         <h3 class="news-title">${item.title}</h3>
                         <p class="news-excerpt">${excerpt}</p>
-                        ${item.image ? `<img src="${item.image}" alt="${item.title}" style="width:100%; border-radius:10px; margin:15px 0; max-height:200px; object-fit:cover; cursor:pointer;" onerror="this.onerror=null; this.style.display='none';" onclick="showNewsDetail(${item.id})">` : ''}
+                        ${imagesHtml}
                         <a href="#" class="news-link" onclick="showNewsDetail(${item.id}); return false;">Batafsil ma'lumot <i class="fas fa-arrow-right"></i></a>
                     </div>
                     <div class="news-footer">
@@ -1677,6 +1704,33 @@
                 return;
             }
             
+            // Rasmlarni olish
+            let imagesArray = [];
+            if (newsItem.images && newsItem.images.length > 0) {
+                imagesArray = newsItem.images;
+            } else if (newsItem.image) {
+                imagesArray = [newsItem.image];
+            }
+            
+            // Rasmlar uchun HTML yaratish
+            let imagesHtml = '';
+            if (imagesArray.length > 0) {
+                imagesHtml = `<div style="margin-bottom: 30px;">`;
+                
+                imagesArray.forEach((img, index) => {
+                    imagesHtml += `
+                        <div style="margin-bottom: 20px;">
+                            <img src="${img}" alt="${newsItem.title} - ${index + 1}" 
+                                 style="width:100%; border-radius:10px; margin-bottom:10px;" 
+                                 onerror="this.style.display='none'">
+                            ${imagesArray.length > 1 ? `<div style="text-align: center; color: #64748b; font-size: 14px;">Rasm ${index + 1} / ${imagesArray.length}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                imagesHtml += `</div>`;
+            }
+            
             const modal = document.getElementById('newsModal');
             const modalContent = document.getElementById('newsModalContent');
             
@@ -1692,7 +1746,7 @@
                 
                 <h3 style="font-size: 32px; margin-bottom: 25px; color: var(--dark-color); line-height: 1.3;">${newsItem.title}</h3>
                 
-                ${newsItem.image ? `<img src="${newsItem.image}" alt="${newsItem.title}" style="width:100%; border-radius:10px; margin-bottom:25px;" onerror="this.style.display='none';">` : ''}
+                ${imagesHtml}
                 
                 <p style="color: #334155; line-height: 1.8; font-size: 18px; margin-bottom: 30px; white-space: pre-line;">${newsItem.text}</p>
                 
@@ -1732,16 +1786,34 @@
             
             booksGrid.innerHTML = '';
             recentBooks.forEach((book, index) => {
+                // Rasmlarni olish
+                let bookImagesArray = [];
+                if (book.images && book.images.length > 0) {
+                    bookImagesArray = book.images;
+                } else if (book.image) {
+                    bookImagesArray = [book.image];
+                }
+                
+                // Birinchi rasmini ko'rsatish
+                const firstImage = bookImagesArray.length > 0 ? bookImagesArray[0] : null;
+                
                 const bookCard = document.createElement('div');
                 bookCard.className = 'book-card';
                 bookCard.setAttribute('data-delay', index * 0.2);
                 
                 bookCard.innerHTML = `
                     <div class="book-img">
-                        ${book.image ? `<img src="${book.image}" alt="${book.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f1f5f9;\"><i class=\"fas fa-book\" style=\"font-size:100px;color:#cbd5e1;\"></i></div>';">` : 
-                          `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
-                            <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
-                          </div>`}
+                        ${firstImage ? 
+                            `<img src="${firstImage}" alt="${book.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:#f1f5f9;\"><i class=\"fas fa-book\" style=\"font-size:100px;color:#cbd5e1;\"></i></div>';">` : 
+                            `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+                                <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
+                            </div>`
+                        }
+                        ${bookImagesArray.length > 1 ? 
+                            `<div style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+                                <i class="fas fa-images"></i> ${bookImagesArray.length}
+                            </div>` : ''
+                        }
                         <div class="book-overlay">
                             <button class="quick-view-btn" onclick="showBookDetail(${book.id})">Tezkor ko'rish</button>
                         </div>
@@ -1779,16 +1851,64 @@
                 return;
             }
             
+            // Rasmlarni olish
+            let bookImagesArray = [];
+            if (book.images && book.images.length > 0) {
+                bookImagesArray = book.images;
+            } else if (book.image) {
+                bookImagesArray = [book.image];
+            }
+            
+            // Rasmlar karuseli
+            let imagesCarousel = '';
+            if (bookImagesArray.length > 0) {
+                imagesCarousel = `<div style="margin-bottom: 30px;">
+                    <div id="bookCarousel${id}" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">`;
+                
+                bookImagesArray.forEach((img, index) => {
+                    imagesCarousel += `
+                        <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                            <img src="${img}" class="d-block w-100" alt="${book.title} - ${index + 1}" 
+                                 style="border-radius: 10px; max-height: 400px; object-fit: contain; background: #f8fafc;"
+                                 onerror="this.style.display='none'">
+                            ${bookImagesArray.length > 1 ? 
+                                `<div class="carousel-caption d-none d-md-block" style="background: rgba(0,0,0,0.5); padding: 10px; border-radius: 5px;">
+                                    <p style="margin: 0;">Rasm ${index + 1} / ${bookImagesArray.length}</p>
+                                </div>` : ''
+                            }
+                        </div>
+                    `;
+                });
+                
+                if (bookImagesArray.length > 1) {
+                    imagesCarousel += `
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel${id}" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Oldingi</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel${id}" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Keyingi</span>
+                        </button>
+                    `;
+                }
+                
+                imagesCarousel += `</div></div>`;
+            } else {
+                imagesCarousel = `<div style="background: #f1f5f9; border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center; margin-bottom: 30px;">
+                    <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
+                </div>`;
+            }
+            
             const modal = document.getElementById('newsModal');
             const modalContent = document.getElementById('newsModalContent');
             
             modalContent.innerHTML = `
                 <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 40px; margin-bottom: 30px;">
                     <div>
-                        ${book.image ? `<img src="${book.image}" alt="${book.title}" style="width:100%; border-radius:10px;" onerror="this.style.display='none';">` : 
-                          `<div style="background: #f1f5f9; border-radius: 10px; height: 300px; display: flex; align-items: center; justify-content: center;">
-                            <i class="fas fa-book" style="font-size: 100px; color: #cbd5e1;"></i>
-                          </div>`}
+                        ${imagesCarousel}
                     </div>
                     <div>
                         <h3 style="font-size: 32px; margin-bottom: 15px; color: var(--dark-color); line-height: 1.3;">${book.title}</h3>
@@ -1864,16 +1984,34 @@
             eventsToShow.forEach((event, index) => {
                 const excerpt = event.description ? (event.description.length > 150 ? event.description.substring(0, 150) + '...' : event.description) : 'Tadbir haqida ma\'lumot';
                 
+                // Rasmlarni olish
+                let eventImagesArray = [];
+                if (event.images && event.images.length > 0) {
+                    eventImagesArray = event.images;
+                } else if (event.image) {
+                    eventImagesArray = [event.image];
+                }
+                
+                // Birinchi rasmini ko'rsatish
+                const firstImage = eventImagesArray.length > 0 ? eventImagesArray[0] : null;
+                
                 const eventCard = document.createElement('div');
                 eventCard.className = 'event-card';
                 eventCard.setAttribute('data-delay', index * 0.3);
                 
                 eventCard.innerHTML = `
                     <div class="event-img">
-                        ${event.image ? `<img src="${event.image}" alt="${event.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,#e2e8f0,#cbd5e1);\"><i class=\"fas fa-calendar-alt\" style=\"font-size:80px;color:#94a3b8;\"></i></div>';">` :
-                          `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, #e2e8f0, #cbd5e1);">
-                            <i class="fas fa-calendar-alt" style="font-size: 80px; color: #94a3b8;"></i>
-                          </div>`}
+                        ${firstImage ? 
+                            `<img src="${firstImage}" alt="${event.title}" onerror="this.onerror=null; this.style.display='none'; this.parentElement.innerHTML='<div style=\"display:flex;align-items:center;justify-content:center;width:100%;height:100%;background:linear-gradient(135deg,#e2e8f0,#cbd5e1);\"><i class=\"fas fa-calendar-alt\" style=\"font-size:80px;color:#94a3b8;\"></i></div>';">` :
+                            `<div style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; background: linear-gradient(135deg, #e2e8f0, #cbd5e1);">
+                                <i class="fas fa-calendar-alt" style="font-size: 80px; color: #94a3b8;"></i>
+                            </div>`
+                        }
+                        ${eventImagesArray.length > 1 ? 
+                            `<div style="position: absolute; bottom: 20px; right: 20px; background: rgba(0,0,0,0.7); color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">
+                                <i class="fas fa-images"></i> ${eventImagesArray.length}
+                            </div>` : ''
+                        }
                         <div class="event-badge">${index === 0 ? 'Yangi' : index === 1 ? 'Tezkor' : 'Yaqinda'}</div>
                     </div>
                     <div class="event-content">
@@ -1900,21 +2038,49 @@
                 return;
             }
             
+            // Rasmlarni olish
+            let eventImagesArray = [];
+            if (event.images && event.images.length > 0) {
+                eventImagesArray = event.images;
+            } else if (event.image) {
+                eventImagesArray = [event.image];
+            }
+            
+            // Rasmlar uchun HTML yaratish
+            let imagesHtml = '';
+            if (eventImagesArray.length > 0) {
+                imagesHtml = `<div style="margin-bottom: 30px;">`;
+                
+                eventImagesArray.forEach((img, index) => {
+                    imagesHtml += `
+                        <div style="margin-bottom: 20px;">
+                            <img src="${img}" alt="${event.title} - ${index + 1}" 
+                                 style="width:100%; border-radius:10px; margin-bottom:10px;" 
+                                 onerror="this.style.display='none'">
+                            ${eventImagesArray.length > 1 ? `<div style="text-align: center; color: #64748b; font-size: 14px;">Rasm ${index + 1} / ${eventImagesArray.length}</div>` : ''}
+                        </div>
+                    `;
+                });
+                
+                imagesHtml += `</div>`;
+            }
+            
             const modal = document.getElementById('newsModal');
             const modalContent = document.getElementById('newsModalContent');
             
             modalContent.innerHTML = `
                 <h3 style="font-size: 32px; margin-bottom: 25px; color: var(--dark-color); line-height: 1.3;">${event.title}</h3>
                 
-                ${event.image ? `<img src="${event.image}" alt="${event.title}" style="width:100%; border-radius:10px; margin-bottom:25px;" onerror="this.style.display='none';">` : ''}
+                ${imagesHtml}
                 
                 <p style="color: #334155; line-height: 1.8; font-size: 18px; margin-bottom: 30px; white-space: pre-line;">${event.description || 'Tadbir haqida ma\'lumot mavjud emas.'}</p>
                 
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 30px;">
                     <div style="background: #f8fafc; padding: 20px; border-radius: 10px;">
                         <h4 style="color: #64748b; margin-bottom: 10px;"><i class="fas fa-calendar-alt"></i> Sana</h4>
                         <p style="color: #334155; font-weight: 500;">${event.date}</p>
                     </div>
-                        <div style="background: #f8fafc; padding: 20px; border-radius: 10px;">
+                    <div style="background: #f8fafc; padding: 20px; border-radius: 10px;">
                         <h4 style="color: #64748b; margin-bottom: 10px;"><i class="fas fa-users"></i> Qatnashuvchilar</h4>
                         <p style="color: #334155; font-weight: 500;">${event.participants || 'Barcha uchun ochiq'}</p>
                     </div>
