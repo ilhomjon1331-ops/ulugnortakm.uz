@@ -1,14 +1,1 @@
-[
-  {
-    "id": 1,
-    "type": "Yangilik",
-    "title": "Yangi",
-    "text": "Yangi",
-    "date": "2025-12-29",
-    "images": [
-      "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_22.jpg",
-      "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_24.jpg",
-      "https://api.telegram.org/file/bot8517558395:AAHXsx4s2Or80aTU3leDegQM-Wv4oZbPbDE/photos/file_25.jpg"
-    ]
-  }
-]
+[]
