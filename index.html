@@ -877,6 +877,7 @@
             overflow: hidden;
             opacity: 0;
             transform: translateY(60px);
+            cursor: pointer;
         }
 
         .leader-card.animated {
@@ -909,6 +910,30 @@
             margin-bottom: 15px;
             font-weight: 700;
             line-height: 1.3;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .leader-name::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
+            transition: width 0.3s ease;
+        }
+
+        .leader-name:hover::after {
+            width: 100%;
+        }
+
+        .leader-name:hover {
+            color: var(--primary-color);
         }
 
         .leader-position {
@@ -925,6 +950,48 @@
             color: #64748b;
             line-height: 1.6;
             font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 10px;
+            margin-top: 10px;
+            margin-bottom: 25px;
+        }
+
+        .leader-fullname:hover {
+            color: var(--dark-color);
+            background: #f1f5f9;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .leader-actions {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .btn-sm {
+            padding: 12px 25px;
+            font-size: 16px;
+            border-radius: 12px;
+        }
+
+        .pdf-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color-2));
+            color: white;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .pdf-btn:hover {
+            background: linear-gradient(135deg, var(--accent-color-2), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
         }
         
         /* Tadbirlar */
@@ -1341,6 +1408,11 @@
             .leader-position {
                 font-size: 20px;
             }
+            
+            .pdf-btn {
+                width: 100%;
+                justify-content: center;
+            }
         }
 
         /* Loading styles */
@@ -1381,6 +1453,130 @@
         .empty-state p {
             font-size: 18px;
             color: #94a3b8;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 20px 30px;
+            border-radius: 15px;
+            color: white;
+            font-weight: 600;
+            z-index: 99999;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transform: translateX(120%);
+            transition: transform 0.5s ease;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* PDF Modal Styles */
+        .pdf-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 99999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .pdf-modal-content {
+            background: #0f172a;
+            border-radius: 20px;
+            max-width: 1200px;
+            width: 95%;
+            height: 90vh;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.3);
+        }
+
+        .pdf-modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background: var(--darker-color);
+            color: white;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .pdf-modal-header h3 {
+            margin: 0;
+            font-size: 22px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+
+        .pdf-modal-header h3 i {
+            color: #ef4444;
+            margin-right: 10px;
+        }
+
+        .pdf-modal-close {
+            background: #dc2626;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(220, 38, 38, 0.3);
+        }
+
+        .pdf-modal-close:hover {
+            background: #b91c1c;
+            transform: rotate(90deg);
+        }
+
+        .pdf-modal-body {
+            height: calc(90vh - 80px);
+            padding: 20px;
+            background: #1e293b;
+        }
+
+        .pdf-viewer {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .pdf-modal-footer {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            gap: 15px;
+            z-index: 10;
+        }
+
+        .pdf-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 30px 40px;
+            border-radius: 15px;
+            display: none;
+            text-align: center;
+            z-index: 5;
         }
     </style>
 </head>
@@ -1544,7 +1740,16 @@
                     </div>
                     <h3 class="leader-name">Rahbar</h3>
                     <p class="leader-position">Kutubxona direktori</p>
-                    <p class="leader-fullname">Mirzaabdullayev Shermaxammad Mirzayuldashevich</p>
+                    <p class="leader-fullname" onclick="openPDF('rahbar')">
+                        Mirzaabdullayev Shermaxammad Mirzayuldashevich
+                    </p>
+                    
+                    <!-- PDF havolasi -->
+                    <div class="leader-actions">
+                        <button onclick="openPDF('rahbar')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> PDF ni ko'rish
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Kadrlar bo'yicha inspektori -->
@@ -1554,7 +1759,16 @@
                     </div>
                     <h3 class="leader-name">Kadrlar bo'yicha inspektori</h3>
                     <p class="leader-position">Kadrlar bo'limi boshlig'i</p>
-                    <p class="leader-fullname">Po'latova Xulkaroy Turg'untoshovna</p>
+                    <p class="leader-fullname" onclick="openPDF('kadrlar')">
+                        Po'latova Xulkaroy Turg'untoshovna
+                    </p>
+                    
+                    <!-- PDF havolasi -->
+                    <div class="leader-actions">
+                        <button onclick="openPDF('kadrlar')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> PDF ni ko'rish
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- Bosh xisobchisi -->
@@ -1564,8 +1778,22 @@
                     </div>
                     <h3 class="leader-name">Bosh xisobchisi</h3>
                     <p class="leader-position">Moliya bo'limi boshlig'i</p>
-                    <p class="leader-fullname">Xolboyev Nodirbek Sharobiddinovich</p>
+                    <p class="leader-fullname" onclick="openPDF('bosh_xisobchi')">
+                        Xolboyev Nodirbek Sharobiddinovich
+                    </p>
+                    
+                    <!-- PDF havolasi -->
+                    <div class="leader-actions">
+                        <button onclick="openPDF('bosh_xisobchi')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> PDF ni ko'rish
+                        </button>
+                    </div>
                 </div>
+            </div>
+            
+            <!-- PDF fayllar haqida eslatma -->
+            <div style="text-align: center; margin-top: 60px; color: #64748b; font-size: 18px;">
+                <p><i class="fas fa-info-circle"></i> Rahbarlar haqida batafsil ma'lumotlarni to'g'ridan-to'g'ri sahifada ko'rishingiz yoki yuklab olishingiz mumkin</p>
             </div>
         </div>
     </section>
@@ -1665,6 +1893,39 @@
         </div>
     </section>
 
+    <!-- PDF Modal Oynasi -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3><i class="fas fa-file-pdf"></i> <span id="pdfModalTitle">PDF Ko'rish</span></h3>
+                <button onclick="closePdfModal()" class="pdf-modal-close">×</button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+                <div id="pdfLoading" class="pdf-loading">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; margin-bottom: 15px; color: var(--primary-color);"></i>
+                    <p style="margin: 0; font-size: 18px;">PDF yuklanmoqda...</p>
+                </div>
+            </div>
+            <div class="pdf-modal-footer">
+                <a href="#" id="downloadPdfBtn" class="btn btn-sm" style="background: linear-gradient(135deg, var(--success-color), #34d399); color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 12px; font-size: 16px; border: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);">
+                    <i class="fas fa-download"></i> Yuklab olish
+                </a>
+                <button onclick="closePdfModal()" class="btn btn-sm" style="background: linear-gradient(135deg, #64748b, #94a3b8); color: white; padding: 12px 25px; border-radius: 12px; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(100, 116, 139, 0.3);">
+                    <i class="fas fa-times"></i> Yopish
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal oynalar -->
+    <div id="newsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
+        <div style="background: white; border-radius: 20px; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative;">
+            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer;">×</button>
+            <div id="newsModalContent"></div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -1703,17 +1964,9 @@
             </div>
             <div class="copyright">
                 <p>&copy; 2026 Ulug'nor Tuman Axborot-Kutubxona Markazi. Barcha huquqlar himoyalangan.</p>
-               </div>
+            </div>
         </div>
     </footer>
-
-    <!-- Modal oynalar -->
-    <div id="newsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
-        <div style="background: white; border-radius: 20px; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative;">
-            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer;">×</button>
-            <div id="newsModalContent"></div>
-        </div>
-    </div>
 
     <!-- Bootstrap JS qo'shing (karusel uchun) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -1729,12 +1982,149 @@
         const EVENTS_FILE = "events.json";
         const BOOKS_FILE = "books.json";
         
+        // PDF fayllar
+        const PDF_FILES = {
+            rahbar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/rahbar.pdf",
+            kadrlar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/kadrlar_inspektori.pdf",
+            bosh_xisobchi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/bosh_xisobchi.pdf"
+        };
+        
         // Statistik ma'lumotlar
         let stats = {
             news: 0,
             events: 0,
             books: 0
         };
+
+        // ================== PDF FUNKSIYALARI ==================
+        
+        // PDF ochish funksiyasi
+        function openPDF(pdfType) {
+            const pdfUrl = PDF_FILES[pdfType];
+            
+            if (!pdfUrl) {
+                showNotification(`PDF fayl topilmadi: ${pdfType}`, 'error');
+                return;
+            }
+            
+            // Modal elementlarini olish
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfModalTitle = document.getElementById('pdfModalTitle');
+            const downloadPdfBtn = document.getElementById('downloadPdfBtn');
+            const pdfLoading = document.getElementById('pdfLoading');
+            
+            // PDF nomlarini belgilash
+            const pdfTitles = {
+                rahbar: 'Rahbar - Mirzaabdullayev Shermaxammad Mirzayuldashevich',
+                kadrlar: 'Kadrlar bo\'yicha inspektori - Po\'latova Xulkaroy Turg\'untoshovna',
+                bosh_xisobchi: 'Bosh xisobchisi - Xolboyev Nodirbek Sharobiddinovich'
+            };
+            
+            // Modalni sozlash
+            pdfModalTitle.textContent = pdfTitles[pdfType] || 'PDF Ko\'rish';
+            
+            // Yuklash ko'rsatkichini ko'rsatish
+            pdfLoading.style.display = 'block';
+            
+            // PDF faylni modalga yuklash
+            pdfViewer.onload = function() {
+                pdfLoading.style.display = 'none';
+            };
+            
+            pdfViewer.onerror = function() {
+                pdfLoading.style.display = 'none';
+                showNotification('PDF faylni yuklashda xatolik yuz berdi', 'error');
+            };
+            
+            pdfViewer.src = pdfUrl;
+            downloadPdfBtn.href = pdfUrl;
+            downloadPdfBtn.download = `${pdfType}_ulugnortakm.pdf`;
+            downloadPdfBtn.setAttribute('target', '_blank');
+            
+            // Modalni ko'rsatish
+            pdfModal.style.display = 'flex';
+            
+            // Body ga scroll ni block qilish
+            document.body.style.overflow = 'hidden';
+            
+            // Yuklab olish statistikasini saqlash
+            trackPDFView(pdfType);
+            
+            // Bildirishnoma ko'rsatish
+            showNotification(`PDF fayli ochilmoqda...`, 'success');
+        }
+        
+        // PDF modalini yopish
+        function closePdfModal() {
+            const pdfModal = document.getElementById('pdfModal');
+            const pdfViewer = document.getElementById('pdfViewer');
+            const pdfLoading = document.getElementById('pdfLoading');
+            
+            // Modalni yashirish
+            pdfModal.style.display = 'none';
+            
+            // Iframe ni tozalash
+            pdfViewer.src = '';
+            pdfLoading.style.display = 'none';
+            
+            // Body ga scroll ni qaytarish
+            document.body.style.overflow = 'auto';
+        }
+        
+        // PDF ko'rishni kuzatish
+        function trackPDFView(pdfType) {
+            console.log(`PDF ko'rish: ${pdfType}`);
+            
+            // Statistikani saqlash
+            const stats = JSON.parse(localStorage.getItem('pdfViews')) || {};
+            stats[pdfType] = (stats[pdfType] || 0) + 1;
+            localStorage.setItem('pdfViews', JSON.stringify(stats));
+            
+            // O'rtacha ko'rishlar sonini hisoblash
+            const totalViews = Object.values(stats).reduce((sum, val) => sum + val, 0);
+            console.log(`Jami PDF ko'rishlar: ${totalViews}`);
+        }
+        
+        // Bildirishnoma ko'rsatish
+        function showNotification(message, type = 'info') {
+            // Mavjud bildirishnoma elementini topish
+            let notification = document.getElementById('custom-notification');
+            
+            // Agar mavjud bo'lmasa, yaratish
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'custom-notification';
+                notification.className = 'notification';
+                document.body.appendChild(notification);
+            }
+            
+            // Turiga qarab rang berish
+            const colors = {
+                'info': 'linear-gradient(135deg, var(--primary-color), var(--accent-color-2))',
+                'success': 'linear-gradient(135deg, var(--success-color), #34d399)',
+                'warning': 'linear-gradient(135deg, var(--accent-color), #fbbf24)',
+                'error': 'linear-gradient(135deg, #dc2626, #ef4444)'
+            };
+            
+            notification.style.background = colors[type] || colors.info;
+            notification.innerHTML = `
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
+                    <span>${message}</span>
+                </div>
+            `;
+            
+            // Bildirishnomani ko'rsatish
+            setTimeout(() => {
+                notification.style.transform = 'translateX(0)';
+            }, 10);
+            
+            // 4 sekunddan keyin yashirish
+            setTimeout(() => {
+                notification.style.transform = 'translateX(120%)';
+            }, 4000);
+        }
 
         // ================== GitHub API FUNKSIYALARI ==================
 
@@ -2028,7 +2418,7 @@
                     imagesCarousel += `
                         </div>
                         <button class="carousel-control-prev" type="button" data-bs-target="#bookCarousel${id}" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="carousel-control-prev-icon" aria-hidden=" true"></span>
                             <span class="visually-hidden">Oldingi</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#bookCarousel${id}" data-bs-slide="next">
@@ -2233,7 +2623,7 @@
             modal.style.display = 'flex';
         }
 
-        // ================== YORDAMCHI FUNKSIYALAR ==================
+        // ================== YORDAMCHI FUNKSIYALARI ==================
 
         // Badge rangini aniqlash
         function getBadgeColor(type) {
@@ -2407,10 +2797,19 @@
                 }
             });
             
+            document.getElementById('pdfModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePdfModal();
+                }
+            });
+            
             // Escape tugmasi bilan modalni yopish
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     closeModal();
+                    if (document.getElementById('pdfModal').style.display === 'flex') {
+                        closePdfModal();
+                    }
                 }
             });
             
