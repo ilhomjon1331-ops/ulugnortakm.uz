@@ -1,5 +1,16 @@
 [
   {
+    "id": 2,
+    "type": "Yangilik",
+    "title": "#kun_yangiligi",
+    "text": "🇺🇿🇵🇰O‘zbekiston va Pokiston: Strategik hamkorlikning yangi sahifasi \n\nDavlatimiz rahbarining Pokistonga tashrifi ikki mamlakat o‘rtasidagi aloqalarni mutlaqo yangi bosqichga olib chiqdi. \n\nPrezident Shavkat Mirziyoyev va Bosh vazir Shahboz Sharif tor doirada muzokara o‘tkazib, Strategik hamkorlik kengashining birinchi yig‘ilishiga raislik qildilar. Yakunda Qo‘shma deklaratsiya va Savdo-iqtisodiy hamkorlikni kengaytirish to‘g‘risidagi bayonnoma imzolandi.\n\nPokiston poytaxtidagi ko‘chalardan biriga “Toshkent” va yangi barpo etiladigan bog‘ga Zahiriddin Muhammad Bobur nomi berildi. Bu tarixiy va madaniy aloqalarimizning yuksak e’tirofidir.\n\nMuzokaralar natijasida tovar ayirboshlash hajmini 2 milliard dollarga yetkazish, 3,5 milliard dollarlik loyihalar portfelini shakllantirish, “Made in Uzbekistan” mahsulotlarini Pokiston bozorlariga olib chiqish va minglab yangi ish o‘rinlarini yaratish bo‘yicha rejalar belgilandi.\n\nShuningdek, Prezidentimizga Pokiston Milliy fan va texnologiyalar universitetining faxriy doktori va professori unvonlari topshirildi.\n\nKelgusida Toshkent va Peshovar universitetlari hamkorlikda kadrlar tayyorlaydi, yoshlarimiz esa IT sohasida pokistonlik tengdoshlari bilan tajriba almashish imkoniga ega bo‘ladi. Shu bilan birga, Pokistonda “O‘zbek kinosi kunlari” o‘tkazilishi belgilandi.\n\n#Mirziyoyev #Pokiston #Tashrif",
+    "date": "2026-02-07",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770441732_784.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770441732_784.jpg"
+  },
+  {
     "id": 1,
     "type": "Yangilik",
     "title": "#ҳикмат",
