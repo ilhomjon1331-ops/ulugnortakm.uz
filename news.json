@@ -1,5 +1,12 @@
 [
   {
+    "id": 6,
+    "type": "Yangilik",
+    "title": "/addevent",
+    "text": "/addevent",
+    "date": "2026-02-10"
+  },
+  {
     "id": 5,
     "type": "Yangilik",
     "title": "#adabiy_musiqali_kecha",
