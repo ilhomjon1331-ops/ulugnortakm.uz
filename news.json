@@ -1,5 +1,16 @@
 [
-{
+  {
+    "id": 4,
+    "type": "Yangilik",
+    "title": "#кун_янгиликлари",
+    "text": "Хитой янги даражага чиқмоқда. Энди машина тормозини «симлар босади» \n\nХитойнинг бир неча гигант автомобил ишлаб чиқарувчилари тормоз тизимини тўлиқ электрлаштириш (EMB) устида иш олиб бормоқда. Бунда машинани тўхташини механик йўл билан эмас, тўлиқ электрлаштирилган тизим тўхтатади. Ҳозирча бу тизим фақат синов лойиҳаларида ишлатилмоқда.",
+    "date": "2026-02-11",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770788379_947.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770788379_947.jpg"
+  },
+  {
     "id": 3,
     "type": "Yangilik",
     "title": "#suhbat",
