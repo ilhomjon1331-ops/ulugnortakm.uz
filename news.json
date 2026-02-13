@@ -1,5 +1,18 @@
 [
   {
+    "id": 5,
+    "type": "Yangilik",
+    "title": "#кун_янгиликлари",
+    "text": "Prezident Shavkat Mirziyoyev Andijon viloyatini ijtimoiy-iqtisodiy rivojlantirish boʻyicha olib borilayotgan ishlar va 2026-yil uchun ustuvor vazifalar yuzasidan yigʻilish oʻtkazdi.\n—\nПрезидент Шавкат Мирзиёев провел совещание по вопросам социально-экономического развития Андижанской области и приоритетным задачам на 2026 год.",
+    "date": "2026-02-13",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770973063_1003.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770973066_1006.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1770973063_1003.jpg"
+  },
+  {
     "id": 4,
     "type": "Yangilik",
     "title": "#кун_янгиликлари",
