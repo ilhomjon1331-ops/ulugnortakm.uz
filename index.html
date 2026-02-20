@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* ==================== ASL STILLAR – HEECH NARSA O‘ZGARTIRILMAGAN ==================== */
+        /* ==================== ASL STILLAR (to‘liq) ==================== */
         :root {
             --primary-color: #2563eb;
             --secondary-color: #0ea5e9;
@@ -1158,6 +1158,7 @@
             text-align: center;
         }
         
+        /* PDF modal */
         .pdf-modal {
             display: none;
             position: fixed;
@@ -1248,6 +1249,45 @@
             display: flex;
             gap: 15px;
             z-index: 10;
+        }
+        
+        /* Umumiy modal (matnli) */
+        #newsModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        #newsModal > div {
+            background: white;
+            border-radius: 20px;
+            max-width: 800px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 40px;
+            position: relative;
+        }
+        
+        #newsModal > div > button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #f1f5f9;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
         }
         
         @media (max-width: 1200px) {
@@ -1410,7 +1450,7 @@
         </div>
     </section>
 
-    <!-- Rahbariyat -->
+    <!-- ==================== RAHBARIYAT (batafsil ma'lumotli, PDF tugmasi modal ichida) ==================== -->
     <section class="leadership" id="leadership">
         <div class="container">
             <div class="section-title">
@@ -1418,6 +1458,7 @@
                 <p>Kutubxonamiz rahbariyati va mas'ul xodimlari. Tajribali mutaxassislar</p>
             </div>
             <div class="leadership-grid">
+                <!-- Rahbar (direktor) -->
                 <div class="leader-card" data-delay="0">
                     <div class="leader-image">
                         <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/rahbar.jpg" 
@@ -1434,11 +1475,13 @@
                         </div>
                     </div>
                     <div class="leader-actions">
-                        <button onclick="openPDF('rahbar')" class="btn btn-sm pdf-btn">
+                        <button onclick="showLeaderDetail('rahbar')" class="btn btn-sm pdf-btn">
                             <i class="fas fa-eye"></i> Ma'lumotni ko'rish
                         </button>
                     </div>
                 </div>
+                
+                <!-- Kadrlar bo'yicha inspektori -->
                 <div class="leader-card" data-delay="0.3">
                     <div class="leader-image">
                         <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/kadr.jpg" 
@@ -1455,11 +1498,13 @@
                         </div>
                     </div>
                     <div class="leader-actions">
-                        <button onclick="openPDF('kadrlar')" class="btn btn-sm pdf-btn">
+                        <button onclick="showLeaderDetail('kadrlar')" class="btn btn-sm pdf-btn">
                             <i class="fas fa-eye"></i> Ma'lumotni ko'rish
                         </button>
                     </div>
                 </div>
+                
+                <!-- Bosh xisobchisi -->
                 <div class="leader-card" data-delay="0.6">
                     <div class="leader-image">
                         <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/xisobchi.jpg" 
@@ -1476,7 +1521,7 @@
                         </div>
                     </div>
                     <div class="leader-actions">
-                        <button onclick="openPDF('bosh_xisobchi')" class="btn btn-sm pdf-btn">
+                        <button onclick="showLeaderDetail('bosh_xisobchi')" class="btn btn-sm pdf-btn">
                             <i class="fas fa-eye"></i> Ma'lumotni ko'rish
                         </button>
                     </div>
@@ -1596,10 +1641,10 @@
         </div>
     </div>
 
-    <!-- Umumiy modal (yangilik, kitob, tadbir batafsil) -->
-    <div id="newsModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 9999; justify-content: center; align-items: center; padding: 20px;">
-        <div style="background: white; border-radius: 20px; max-width: 800px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 40px; position: relative;">
-            <button onclick="closeModal()" style="position: absolute; top: 20px; right: 20px; background: #f1f5f9; border: none; width: 40px; height: 40px; border-radius: 50%; font-size: 20px; cursor: pointer;">×</button>
+    <!-- Umumiy modal (yangilik, kitob, tadbir va rahbar matni) -->
+    <div id="newsModal">
+        <div>
+            <button onclick="closeModal()">×</button>
             <div id="newsModalContent"></div>
         </div>
     </div>
@@ -1655,7 +1700,7 @@
         const NEWS_FILE = "news.json";
         const EVENTS_FILE = "events.json";
         const BOOKS_FILE = "books.json";
-        const PER_PAGE = 6;  // Har safar 6 tadan yuklanadi
+        const PER_PAGE = 6;
 
         // Sahifalash uchun o‘zgaruvchilar
         let newsPage = 1;
@@ -1665,11 +1710,116 @@
         let allEvents = [];
         let allBooks = [];
 
-        // PDF sozlamalari
+        // ================== PDF sozlamalari ==================
         const PDF_FILES = {
             rahbar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/rahbar.pdf",
             kadrlar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/kadrlar_inspektori.pdf",
             bosh_xisobchi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/bosh_xisobchi.pdf"
+        };
+
+        // ================== RAHBAR MA'LUMOTLARI (siz bergan fayllar asosida) ==================
+        const LEADER_DETAILS = {
+            rahbar: {
+                name: "Mirzaabdullayev Shermaxammad Mirzayuldashevich",
+                position: "Kutubxona direktori",
+                phone: "(99) 876-10-64",
+                reception: "Dushanba–Juma 9:00 – 11:00",
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1963 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti oliy. 1984 yilda Toshkent Davlat Madaniyat institutini “Ommaviy kutubxonalar kutubxonashunosligi va bibliografiyasi” bo'yicha tugatgan.<br>
+                    • 1984-1984 yy. - Andijon viloyati Ulug'nor tumanidagi 15-hunar texnika bilim yurtining tarbiyachisi;<br>
+                    • 1986-1986 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi uslubchisi;<br>
+                    • 1986-2006 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi direktori;<br>
+                    • 2006-2019 yy. - Andijon viloyati Ulug'nor Qishloq xo'jalik kasb-hunar kollejining Axborot-resurs markazi rahbari;<br>
+                    • 2019 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi direktori.<br>
+                    • Sh.Mirzaabdullayev oilali, 4 nafar farzandning otasi.<br><br>
+                    <strong>Vazifalari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Axborot-kutubxona markazi direktori o'zining vakolati doirasida tashkiloti faoliyatiga rahbarlik qiladi, unga oid barcha muammolarni hal etadi;</li>
+                        <li>Mamlakatda axborot-kutubxona faoliyatiga oid O'zbekiston Respublikasi Prezidenti, Vazirlar Mahkamasi va tegishli yuqori tashkilotlar tomonidan e'lon qilinayotgan farmonlar, qonunlar, qarorlar, buyruqlar va boshqa hujjatlarning tashkiloti faoliyatida bajarilishini tashkil etadi va nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilot faoliyatiga moddiy va ma'naviy javobgardir;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilotdan chiqarilayotgan va kirayotgan barcha hujjatlarning o'z vaqtida bajarilishi uchun mas'ul va uni nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tumandagi yuqori tashkilotlar, boshqa hamkorlik tashkilotlari, ma'naviyat va ma'rifat markazlari, ta'lim-tarbiya muassasalari bilan munosabatda bo'ladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilotning tumandagi barcha yo'nalishlardagi axborot-kutubxona muassasalari bilan o'zaro hamkorlikni tashkil etadi;</li>
+                        <li>Axborot-kutubxona markazining faoliyatini tashkil etish, uning sifati va samaradorligini oshirish, xodimlar ishchanligini shakllantirish, mehnatni to'g'ri tashkil etish uchun tadbirlar ishlab chiqadi va ularning bajarilishini nazorat qiladi;</li>
+                        <li>Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga axborot-kutubxona faoliyati yuzasidan takliflar va fikr-mulohozalar bilan chiqadi;</li>
+                        <li>Xodimlarni ma'naviy va moddiy rag'batlantiradi, boshqalardan ajrab turuvchi xodimlarni davlat mukofotlariga va turli darajada rag'batlantirish uchun tavsiya etadi;</li>
+                        <li>Axborot-kutubxona markaziga xodimlarni layoqati, ma'lumoti va boshqa xususiyatlariga ko'ra ishga qabul qiladi va lozim bo'lgan paytda ishdan bo'shatadi;</li>
+                        <li>Kasaba uyushmasi bilan birgalikda shikoyat va arizalarni ko'radi va hal etadi;</li>
+                        <li>Belgilangan muddatlarda Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga turli masalalar yuzasidan axborot va ma'lumotlar taqdim etadi;</li>
+                        <li>Axborot-kutubxona markazining tegishli rasmiy hujjatlarini tayyorlaydi va uni nazorat qiladi, tegishli muassasalarda rasmiylashtiradi, tasdiqlaydi va uning amaliyotiga joriy etilishini nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori respublika va xalqaro miqyosdagi anjumanlarda ishtirok etadi;</li>
+                        <li>Axborot-kutubxona markazi direktori xodimlarni qayta tayyorlash va malakasini oshirish bo'yicha ish olib boradi va uni nazorat qiladi.</li>
+                    </ul>
+                `
+            },
+            kadrlar: {
+                name: "Po'latova Xulkaroy Turg'untoshovna",
+                position: "Kadrlar bo'limi boshlig'i",
+                phone: "(90) 770-15-88",
+                workTime: "Dushanba–Juma 8:00 – 17:00",
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1988 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti o'rta maxsus. 2024 yilda Andijon shahar pedagogika industrial kollejining Axborot texnologiyalari mutaxassisi, Kutubxonashunoslik bo'yicha tugatgan.<br>
+                    • 2009-2010 yy. - Andijon viloyati Ulug'nor qishloq xo'jalik kasb-hunar kollejining Axborot resurs markazi yetakchi mutaxassisi;<br>
+                    • 2013-2013 yy. - Andijon viloyati Ulug'nor tumanidagi 4 sonli maktabgacha ta'lim muassasasi tarbiyachisi;<br>
+                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
+                    • 2022-2026 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Abonoment va foydalanuvchilarga xizmat ko'rsatish xizmati mutaxassisi;<br>
+                    • 2026 y.- h.v. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
+                    • X.Po'latova, 1 nafar farzandning onasi.<br><br>
+                    <strong>Majburiyatlari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Markaz direktorining buyruqlari, rasmiy kengashlari va yig'ilishlari qarorlari o'z vaqtida bajarishi ustidan nazoratni amalga oshiradi;</li>
+                        <li>Markaz rahbar va mutaxassis-xodimlarini shaxsiy tarkibining hisobini yuritadi;</li>
+                        <li>Mehnatga oid qonun hujjatlariga muvofiq xodimlarni ishga qabul qilish, boshqa ishga o'tkazish va ishdan bo'shatish bo'yicha hujjatlarni (Mehnat shartnomasi, buyruqlar, T-2 kartochkalari) ishlab chiqadi, rasmiylashtiradi va yuritib boradi hamda o'z vaqtida YMMT ga kiritib boradi;</li>
+                        <li>Xodimlarni ishga qabul qilishda Markazning ichki mehnat tartib qoidalari bilan rasmiy tanishtiradi, xizmat guvohnomalari (Markaz binosiga kirish-chiqish uchun ruxsatnoma) hisobini yuritadi va ularni berilishini tashkillashtiradi;</li>
+                        <li>Xodimlarning shaxsiy ish jildlarini (T-2 kartochkalar, mehnat daftarchalari) shakllantiradi va yuritadi, ularda o'z vaqtida xodimlarning faoliyati bilan bog'liq o'zgartirishlarni T-2 kartochkalariga, mehnat daftarchalariga va YMMT tizimiga kiritib boradi;</li>
+                        <li>Malaka, attestatsiya, tanlov komissiyalari uchun hamda xodimlarni rag'batlantirish va mukofotlashga taqdim etish uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
+                        <li>Mehnat daftarchalarini to'ldiradi, hisobga oladi va saqlaydi, mehnat stajini hisoblaydi hamda YMMT tizimiga kiritib boradi;</li>
+                        <li>Ishga qabul qilish, boshqa doimiy ishga o'tkazish va mehnat shartnomasini bekor qilish to'g'risida mehnat daftarchasiga yozuvlar kiritadi va YMMT tizimiga kiritib boradi;</li>
+                        <li>Mehnat daftarchalari va ularga qo'shimcha varaqlarining qabul qilish va berish jarayonini ro'yxatga oladi;</li>
+                        <li>Xodimlarning son, sifat jihatdan tarkibi va ularning harakati to'g'risidagi ma'lumotlarni Markaz xodimlariga oid ma'lumotlar bazasiga kiritadi, uning o'z vaqtida yangilanishi va to'ldirilishini kuzatib boradi;</li>
+                        <li>Xodimlarga ta'til berish hisobini yuritadi, navbatdagi ta'tillar jadvalini tuzish va unga rioya qilish ustidan nazoratni amalda oshiradi;</li>
+                        <li>Markaz xodimlariga imtiyozlar va kompensatsiyalar belgilash uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
+                        <li>Markazda mehnat intizomining holati va xodimlar tomonidan ichki mehnat tartibi qoidalariga rioya etilishi ustidan nazoratni amalga oshiradi;</li>
+                        <li>Mehnat intizomi buzilishlarining hisobini yuritadi va rahbariyat tomonidan o'z vaqtida tegishli choralar ko'rilishini nazorat qiladi.</li>
+                    </ul>
+                `
+            },
+            bosh_xisobchi: {
+                name: "Xolboyev Nodirbek Sharobiddinovich",
+                position: "Moliya bo'limi boshlig'i (bosh hisobchi)",
+                phone: "(77) 003-04-82",
+                workTime: "Dushanba–Juma 8:00 – 17:00",
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1982 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti oliy. 2025 yilda Namangan Texnika Universitetini Buxgalteriya hisobi va audit bo'yicha tugatgan.<br>
+                    • 2004-2005 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi ish yurituvchi;<br>
+                    • 2005-2007 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi qo'riqchisi;<br>
+                    • 2007-2019 yy. - Andijon viloyati Ulug'nor tumani 21 sonli Musiqa maktabida bosh hisobchi;<br>
+                    • 2020-2022 yy. - Andijon viloyati Ulug'nor tumani Xalq ta'limi bo'limi hisobchisi;<br>
+                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani "Ovulmat" MFY raisi;<br>
+                    • 2024-2025 yy. - Andijon viloyati Ulug'nor tumani Madaniyat bo'limi bosh hisobchisi;<br>
+                    • 2025 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi bosh hisobchisi;<br>
+                    • N.Xolboyev oilali, 3 nafar farzandning otasi.<br><br>
+                    <strong>Majburiyatlari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Buxgalteriyaga oid amaldagi dastur bo'yicha ishlashni tashkil etish;</li>
+                        <li>Shtat, moliyaviy va kassa intizomiga, ma'muriy-xo'jalik va boshqa xarajatlar smetasiga qat'iy rioya qilish;</li>
+                        <li>AKMda lavozim maoshlarini belgilash va ish haqi bo'yicha hisob-kitob ishlarini amalga oshirish;</li>
+                        <li>Davlat va mahalliy byudjetlarga soliqlar va yig'imlarning, byudjetdan tashqari davlat ijtimoiy jamg'armalariga sug'urta badallarining, bank muassasalariga to'lovlarning to'g'ri hisoblanishi va o'tkazilishini amalga oshirish;</li>
+                        <li>Buxgalteriyaga oid hujjatlarning qonuniy, o'z vaqtida va to'g'ri rasmiylashtirilishini ta'minlash;</li>
+                        <li>Buxgalteriya balansi va hisobotini tuzish tartibi va muddatlariga amal qilish;</li>
+                        <li>Debitor va kreditorlar bilan hisob-kitob qilish;</li>
+                        <li>Tekshiruvlar va hujjatli taftishlarni o'tkazish qoidalariga rioya etish;</li>
+                        <li>Inventarizatsiya qilish tartibini ta'minlash;</li>
+                        <li>Mehnatni muhofaza qilish, xavfsizlik texnikasi, ishlab chiqarish sanitariyasi va yong'inga qarshi himoyalanish normalari, qoidalari va yo'riqnomalarini bilish;</li>
+                    </ul>
+                `
+            }
         };
 
         // ================== PDF FUNKSIYALARI ==================
@@ -1709,27 +1859,49 @@
             document.body.style.overflow = 'auto';
         }
 
-        function showNotification(message, type = 'info') {
-            let notification = document.getElementById('custom-notification');
-            if (!notification) {
-                notification = document.createElement('div');
-                notification.id = 'custom-notification';
-                notification.className = 'notification';
-                document.body.appendChild(notification);
+        // ================== RAHBAR BATAFFSIL KO‘RISH (matnli) ==================
+        function showLeaderDetail(leaderKey) {
+            const leader = LEADER_DETAILS[leaderKey];
+            if (!leader) {
+                showNotification("Ma'lumot topilmadi", "error");
+                return;
             }
-            const colors = {
-                'info': 'linear-gradient(135deg, var(--primary-color), var(--accent-color-2))',
-                'success': 'linear-gradient(135deg, var(--success-color), #34d399)',
-                'warning': 'linear-gradient(135deg, var(--accent-color), #fbbf24)',
-                'error': 'linear-gradient(135deg, #dc2626, #ef4444)'
-            };
-            notification.style.background = colors[type] || colors.info;
-            notification.innerHTML = `<div style="display: flex; align-items: center; gap: 15px;">
-                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
-                <span>${message}</span>
-            </div>`;
-            setTimeout(() => notification.style.transform = 'translateX(0)', 10);
-            setTimeout(() => notification.style.transform = 'translateX(120%)', 4000);
+
+            const modal = document.getElementById('newsModal');
+            const content = document.getElementById('newsModalContent');
+
+            // Rasmni leader-card dan olish
+            let imgSrc = '';
+            const card = document.querySelector(`[onclick*="${leaderKey}"]`).closest('.leader-card');
+            if (card) {
+                const img = card.querySelector('img');
+                if (img) imgSrc = img.src;
+            }
+
+            // HTML ni yaratish – PDF tugmasi pastki qismda aniq qo‘shilgan
+            content.innerHTML = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    ${imgSrc ? `<img src="${imgSrc}" alt="${leader.name}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color);">` : ''}
+                </div>
+                <h3 style="font-size: 28px; margin-bottom: 10px; color: var(--dark-color);">${leader.name}</h3>
+                <p style="font-size: 20px; color: var(--primary-color); margin-bottom: 20px;">${leader.position}</p>
+                
+                <div style="background: #f8fafc; border-radius: 15px; padding: 25px; margin-top: 20px;">
+                    <p style="margin-bottom: 15px;"><i class="fas fa-phone-alt" style="color: var(--primary-color); width: 25px;"></i> <strong>Telefon:</strong> ${leader.phone}</p>
+                    ${leader.reception ? `<p style="margin-bottom: 15px;"><i class="fas fa-calendar-alt" style="color: var(--primary-color); width: 25px;"></i> <strong>Qabul vaqti:</strong> ${leader.reception}</p>` : ''}
+                    ${leader.workTime ? `<p style="margin-bottom: 15px;"><i class="fas fa-clock" style="color: var(--primary-color); width: 25px;"></i> <strong>Ish vaqti:</strong> ${leader.workTime}</p>` : ''}
+                    <div style="line-height: 1.8; margin-top: 20px;">${leader.bio}</div>
+                    
+                    <!-- PDF tugmasi – pastki qismda, aniq ko‘rinadi -->
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openPDF('${leaderKey}')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-file-pdf"></i> PDF yuklab olish
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
         }
 
         // ================== GITHUB YUKLASH ==================
@@ -1955,6 +2127,30 @@
             document.getElementById('newsModal').style.display = 'none';
         }
 
+        // ================== BILDIRISHNOMA ==================
+        function showNotification(message, type = 'info') {
+            let notification = document.getElementById('custom-notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'custom-notification';
+                notification.className = 'notification';
+                document.body.appendChild(notification);
+            }
+            const colors = {
+                'info': 'linear-gradient(135deg, var(--primary-color), var(--accent-color-2))',
+                'success': 'linear-gradient(135deg, var(--success-color), #34d399)',
+                'warning': 'linear-gradient(135deg, var(--accent-color), #fbbf24)',
+                'error': 'linear-gradient(135deg, #dc2626, #ef4444)'
+            };
+            notification.style.background = colors[type] || colors.info;
+            notification.innerHTML = `<div style="display: flex; align-items: center; gap: 15px;">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            </div>`;
+            setTimeout(() => notification.style.transform = 'translateX(0)', 10);
+            setTimeout(() => notification.style.transform = 'translateX(120%)', 4000);
+        }
+
         // ================== ANIMATSIYALAR ==================
         function animateOnScroll() {
             const elements = document.querySelectorAll('.service-card, .book-card, .event-card, .stat-item, .news-card, .leader-card');
@@ -2051,4 +2247,3 @@
     </script>
 </body>
 </html>
-
