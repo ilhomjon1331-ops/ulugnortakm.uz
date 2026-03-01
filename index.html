@@ -1040,7 +1040,7 @@
             resize: vertical;
         }
         
-        /* ==================== KUTUBXONA HAQIDA BO‘LIMI ==================== */
+        /* ==================== KUTUBXONA HAQIDA BO‘LIMI (yangi, qisqartirilgan) ==================== */
         .about-library {
             padding: 100px 0;
             background: #ffffff;
@@ -1057,7 +1057,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
@@ -1677,7 +1677,7 @@
         </div>
     </section>
 
-    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI (ID bilan) ==================== -->
+    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI (YANGI, FAQAT 5 TA HAVOLA) ==================== -->
     <section class="about-library" id="about">
         <div class="container">
             <div class="section-title">
@@ -1685,25 +1685,15 @@
                 <p>Kutubxonamiz faoliyati, tuzilmasi va tarixi haqida batafsil maʼlumot</p>
             </div>
             <div class="about-links">
-                <!-- "Rahbariyat" o‘rniga "Kutubxona ko‘rinishi" qo‘shildi -->
+                <!-- Kutubxona ko‘rinishi (saqlanadi) -->
                 <a href="#" onclick="showLibraryView(); return false;">
                     <i class="fas fa-building"></i> Kutubxona ko‘rinishi
                 </a>
-                <a href="#"><i class="fas fa-sitemap"></i> Tashkiliy tuzilma</a>
-                <a href="#"><i class="fas fa-history"></i> Kutubxona tarixi</a>
-                <a href="#"><i class="fas fa-file-alt"></i> Meʼyoriy hujjatlar</a>
-                <a href="#"><i class="fas fa-map-marker-alt"></i> Kutubxona manzili</a>
-                <a href="#"><i class="fas fa-book-reader"></i> Kutubxonadan foydalanish</a>
-                <a href="#"><i class="fas fa-building"></i> Hududiy kutubxonalar</a>
-                <a href="#"><i class="fas fa-globe"></i> Xorijiy adabiyotlar kutubxonasi</a>
-                <a href="#"><i class="fas fa-layer-group"></i> Kutubxona tarkibiy boʻlinmalari</a>
-                <a href="#"><i class="fas fa-book"></i> Uslubiy va bibliografik qoʻllanmalar</a>
-                <a href="#"><i class="fas fa-calendar-alt"></i> Kutubxona rejalari</a>
-                <a href="#"><i class="fas fa-chart-line"></i> Faoliyat koʻrsatkichlari (hisobotlar)</a>
-                <a href="#"><i class="fas fa-archive"></i> Shaxsiy kutubxonalar</a>
-                <a href="#"><i class="fas fa-database"></i> Ochiq maʼlumotlar</a>
-                <a href="#"><i class="fas fa-briefcase"></i> Boʻsh ish oʻrinlari</a>
-                <a href="#"><i class="fas fa-star"></i> Buyuk Andijonliklar</a>
+                <!-- Yangi nomlar bilan 4 ta havola -->
+                <a href="#"><i class="fas fa-ruler-combined"></i> Foydalanish qoidasi</a>
+                <a href="#"><i class="fas fa-scroll"></i> Kutubxona nizomi</a>
+                <a href="#"><i class="fas fa-map-signs"></i> Yo'l xaritasi</a>
+                <a href="#"><i class="fas fa-folder-open"></i> Kutubxona hujjatlar</a>
             </div>
         </div>
     </section>
@@ -1733,7 +1723,7 @@
         </div>
     </div>
 
-    <!-- Umumiy modal (yangilik, kitob, tadbir va rahbar matni) -->
+    <!-- Umumiy modal (yangilik, kitob, tadbir, rahbar matni va kutubxona ko‘rinishi) -->
     <div id="newsModal">
         <div>
             <button onclick="closeModal()">×</button>
@@ -1848,9 +1838,8 @@
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Bibliografiya.jpg', title: 'Uslubiy-bibliografiya xizmati' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Xisobchi.jpg', title: 'Bosh xisobchi' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Abonoment_1.jpg', title: 'Abonoment va foydalanuvchilarga xizmat ko\'rsatish xizmati, Fondlarni to\'ldirish saqlash va ularga texnik ishlov berish, Axborot-kommunikatsiya texnologiyalari va raqamlashtirish xizmati' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Abonoment_2.jpg', title: 'Abonoment va foydalanuvchilarga xizmat ko\'rsatish xizmati, Fondlarni to\'ldirish saqlash va ularga texnik ishlov berish, Axborot-kommunikatsiya texnologiyalari va raqamlashtirish xizmati' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Zal.jpg', title: 'O\'quv zali' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Xizmat.jpg', title: 'Bolalar xizmat ko\'rsatish xizmati' }
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Hizmat.jpg', title: 'Bolalar xizmat ko\'rsatish xizmati' }
             ];
 
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona binosi ko‘rinishi</h3></div>';
@@ -2291,4 +2280,3 @@
     </script>
 </body>
 </html>
-
