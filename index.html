@@ -1311,7 +1311,7 @@
             z-index: 10;
         }
         
-        /* Umumiy modal (matnli) */
+        /* Umumiy modal (matnli) - O‘ZGARTIRILDI */
         #newsModal {
             display: none;
             position: fixed;
@@ -1329,11 +1329,11 @@
         #newsModal > div {
             background: white;
             border-radius: 20px;
-            max-width: 800px;
-            width: 100%;
-            max-height: 90vh;
+            max-width: 1200px;
+            width: 95vw;
+            max-height: 98vh;
             overflow-y: auto;
-            padding: 40px;
+            padding: 10px;
             position: relative;
         }
         
@@ -1348,6 +1348,7 @@
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
+            z-index: 10;
         }
         
         @media (max-width: 1200px) {
@@ -1808,27 +1809,107 @@
         };
 
         // ================== RAHBAR MA'LUMOTLARI ==================
-        const LEADER_DETAILS = {
+       const LEADER_DETAILS = {
             rahbar: {
                 name: "Mirzaabdullayev Shermaxammad Mirzayuldashevich",
                 position: "Kutubxona direktori",
                 phone: "(99) 876-10-64",
                 reception: "Dushanba–Juma 9:00 – 11:00",
-                bio: `...` // to‘liq matn avvalgidek
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1963 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti oliy. 1984 yilda Toshkent Davlat Madaniyat institutini “Ommaviy kutubxonalar kutubxonashunosligi va bibliografiyasi” bo'yicha tugatgan.<br>
+                    • 1984-1984 yy. - Andijon viloyati Ulug'nor tumanidagi 15-hunar texnika bilim yurtining tarbiyachisi;<br>
+                    • 1986-1986 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi uslubchisi;<br>
+                    • 1986-2006 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi direktori;<br>
+                    • 2006-2019 yy. - Andijon viloyati Ulug'nor Qishloq xo'jalik kasb-hunar kollejining Axborot-resurs markazi rahbari;<br>
+                    • 2019 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi direktori.<br>
+                    • Sh.Mirzaabdullayev oilali, 4 nafar farzandning otasi.<br><br>
+                    <strong>Vazifalari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Axborot-kutubxona markazi direktori o'zining vakolati doirasida tashkiloti faoliyatiga rahbarlik qiladi, unga oid barcha muammolarni hal etadi;</li>
+                        <li>Mamlakatda axborot-kutubxona faoliyatiga oid O'zbekiston Respublikasi Prezidenti, Vazirlar Mahkamasi va tegishli yuqori tashkilotlar tomonidan e'lon qilinayotgan farmonlar, qonunlar, qarorlar, buyruqlar va boshqa hujjatlarning tashkiloti faoliyatida bajarilishini tashkil etadi va nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilot faoliyatiga moddiy va ma'naviy javobgardir;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilotdan chiqarilayotgan va kirayotgan barcha hujjatlarning o'z vaqtida bajarilishi uchun mas'ul va uni nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tumandagi yuqori tashkilotlar, boshqa hamkorlik tashkilotlari, ma'naviyat va ma'rifat markazlari, ta'lim-tarbiya muassasalari bilan munosabatda bo'ladi;</li>
+                        <li>Axborot-kutubxona markazi direktori tashkilotning tumandagi barcha yo'nalishlardagi axborot-kutubxona muassasalari bilan o'zaro hamkorlikni tashkil etadi;</li>
+                        <li>Axborot-kutubxona markazining faoliyatini tashkil etish, uning sifati va samaradorligini oshirish, xodimlar ishchanligini shakllantirish, mehnatni to'g'ri tashkil etish uchun tadbirlar ishlab chiqadi va ularning bajarilishini nazorat qiladi;</li>
+                        <li>Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga axborot-kutubxona faoliyati yuzasidan takliflar va fikr-mulohozalar bilan chiqadi;</li>
+                        <li>Xodimlarni ma'naviy va moddiy rag'batlantiradi, boshqalardan ajrab turuvchi xodimlarni davlat mukofotlariga va turli darajada rag'batlantirish uchun tavsiya etadi;</li>
+                        <li>Axborot-kutubxona markaziga xodimlarni layoqati, ma'lumoti va boshqa xususiyatlariga ko'ra ishga qabul qiladi va lozim bo'lgan paytda ishdan bo'shatadi;</li>
+                        <li>Kasaba uyushmasi bilan birgalikda shikoyat va arizalarni ko'radi va hal etadi;</li>
+                        <li>Belgilangan muddatlarda Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga turli masalalar yuzasidan axborot va ma'lumotlar taqdim etadi;</li>
+                        <li>Axborot-kutubxona markazining tegishli rasmiy hujjatlarini tayyorlaydi va uni nazorat qiladi, tegishli muassasalarda rasmiylashtiradi, tasdiqlaydi va uning amaliyotiga joriy etilishini nazorat qiladi;</li>
+                        <li>Axborot-kutubxona markazi direktori respublika va xalqaro miqyosdagi anjumanlarda ishtirok etadi;</li>
+                        <li>Axborot-kutubxona markazi direktori xodimlarni qayta tayyorlash va malakasini oshirish bo'yicha ish olib boradi va uni nazorat qiladi.</li>
+                    </ul>
+                `
             },
             kadrlar: {
                 name: "Po'latova Xulkaroy Turg'untoshovna",
                 position: "Kadrlar bo'limi boshlig'i",
                 phone: "(90) 770-15-88",
                 workTime: "Dushanba–Juma 8:00 – 17:00",
-                bio: `...`
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1988 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti o'rta maxsus. 2024 yilda Andijon shahar pedagogika industrial kollejining Axborot texnologiyalari mutaxassisi, Kutubxonashunoslik bo'yicha tugatgan.<br>
+                    • 2009-2010 yy. - Andijon viloyati Ulug'nor qishloq xo'jalik kasb-hunar kollejining Axborot resurs markazi yetakchi mutaxassisi;<br>
+                    • 2013-2013 yy. - Andijon viloyati Ulug'nor tumanidagi 4 sonli maktabgacha ta'lim muassasasi tarbiyachisi;<br>
+                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
+                    • 2022-2026 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Abonoment va foydalanuvchilarga xizmat ko'rsatish xizmati mutaxassisi;<br>
+                    • 2026 y.- h.v. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
+                    • X.Po'latova, 1 nafar farzandning onasi.<br><br>
+                    <strong>Majburiyatlari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Markaz direktorining buyruqlari, rasmiy kengashlari va yig'ilishlari qarorlari o'z vaqtida bajarishi ustidan nazoratni amalga oshiradi;</li>
+                        <li>Markaz rahbar va mutaxassis-xodimlarini shaxsiy tarkibining hisobini yuritadi;</li>
+                        <li>Mehnatga oid qonun hujjatlariga muvofiq xodimlarni ishga qabul qilish, boshqa ishga o'tkazish va ishdan bo'shatish bo'yicha hujjatlarni (Mehnat shartnomasi, buyruqlar, T-2 kartochkalari) ishlab chiqadi, rasmiylashtiradi va yuritib boradi hamda o'z vaqtida YMMT ga kiritib boradi;</li>
+                        <li>Xodimlarni ishga qabul qilishda Markazning ichki mehnat tartib qoidalari bilan rasmiy tanishtiradi, xizmat guvohnomalari (Markaz binosiga kirish-chiqish uchun ruxsatnoma) hisobini yuritadi va ularni berilishini tashkillashtiradi;</li>
+                        <li>Xodimlarning shaxsiy ish jildlarini (T-2 kartochkalar, mehnat daftarchalari) shakllantiradi va yuritadi, ularda o'z vaqtida xodimlarning faoliyati bilan bog'liq o'zgartirishlarni T-2 kartochkalariga, mehnat daftarchalariga va YMMT tizimiga kiritib boradi;</li>
+                        <li>Malaka, attestatsiya, tanlov komissiyalari uchun hamda xodimlarni rag'batlantirish va mukofotlashga taqdim etish uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
+                        <li>Mehnat daftarchalarini to'ldiradi, hisobga oladi va saqlaydi, mehnat stajini hisoblaydi hamda YMMT tizimiga kiritib boradi;</li>
+                        <li>Ishga qabul qilish, boshqa doimiy ishga o'tkazish va mehnat shartnomasini bekor qilish to'g'risida mehnat daftarchasiga yozuvlar kiritadi va YMMT tizimiga kiritib boradi;</li>
+                        <li>Mehnat daftarchalari va ularga qo'shimcha varaqlarining qabul qilish va berish jarayonini ro'yxatga oladi;</li>
+                        <li>Xodimlarning son, sifat jihatdan tarkibi va ularning harakati to'g'risidagi ma'lumotlarni Markaz xodimlariga oid ma'lumotlar bazasiga kiritadi, uning o'z vaqtida yangilanishi va to'ldirilishini kuzatib boradi;</li>
+                        <li>Xodimlarga ta'til berish hisobini yuritadi, navbatdagi ta'tillar jadvalini tuzish va unga rioya qilish ustidan nazoratni amalda oshiradi;</li>
+                        <li>Markaz xodimlariga imtiyozlar va kompensatsiyalar belgilash uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
+                        <li>Markazda mehnat intizomining holati va xodimlar tomonidan ichki mehnat tartibi qoidalariga rioya etilishi ustidan nazoratni amalga oshiradi;</li>
+                        <li>Mehnat intizomi buzilishlarining hisobini yuritadi va rahbariyat tomonidan o'z vaqtida tegishli choralar ko'rilishini nazorat qiladi.</li>
+                    </ul>
+                `
             },
             bosh_xisobchi: {
                 name: "Xolboyev Nodirbek Sharobiddinovich",
                 position: "Moliya bo'limi boshlig'i (bosh hisobchi)",
                 phone: "(77) 003-04-82",
                 workTime: "Dushanba–Juma 8:00 – 17:00",
-                bio: `...`
+                bio: `
+                    <strong>Tarjimai hol:</strong><br>
+                    • 1982 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
+                    • Ma'lumoti oliy. 2025 yilda Namangan Texnika Universitetini Buxgalteriya hisobi va audit bo'yicha tugatgan.<br>
+                    • 2004-2005 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi ish yurituvchi;<br>
+                    • 2005-2007 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi qo'riqchisi;<br>
+                    • 2007-2019 yy. - Andijon viloyati Ulug'nor tumani 21 sonli Musiqa maktabida bosh hisobchi;<br>
+                    • 2020-2022 yy. - Andijon viloyati Ulug'nor tumani Xalq ta'limi bo'limi hisobchisi;<br>
+                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani "Ovulmat" MFY raisi;<br>
+                    • 2024-2025 yy. - Andijon viloyati Ulug'nor tumani Madaniyat bo'limi bosh hisobchisi;<br>
+                    • 2025 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi bosh hisobchisi;<br>
+                    • N.Xolboyev oilali, 3 nafar farzandning otasi.<br><br>
+                    <strong>Majburiyatlari:</strong><br>
+                    <ul style="padding-left:20px;">
+                        <li>Buxgalteriyaga oid amaldagi dastur bo'yicha ishlashni tashkil etish;</li>
+                        <li>Shtat, moliyaviy va kassa intizomiga, ma'muriy-xo'jalik va boshqa xarajatlar smetasiga qat'iy rioya qilish;</li>
+                        <li>AKMda lavozim maoshlarini belgilash va ish haqi bo'yicha hisob-kitob ishlarini amalga oshirish;</li>
+                        <li>Davlat va mahalliy byudjetlarga soliqlar va yig'imlarning, byudjetdan tashqari davlat ijtimoiy jamg'armalariga sug'urta badallarining, bank muassasalariga to'lovlarning to'g'ri hisoblanishi va o'tkazilishini amalga oshirish;</li>
+                        <li>Buxgalteriyaga oid hujjatlarning qonuniy, o'z vaqtida va to'g'ri rasmiylashtirilishini ta'minlash;</li>
+                        <li>Buxgalteriya balansi va hisobotini tuzish tartibi va muddatlariga amal qilish;</li>
+                        <li>Debitor va kreditorlar bilan hisob-kitob qilish;</li>
+                        <li>Tekshiruvlar va hujjatli taftishlarni o'tkazish qoidalariga rioya etish;</li>
+                        <li>Inventarizatsiya qilish tartibini ta'minlash;</li>
+                        <li>Mehnatni muhofaza qilish, xavfsizlik texnikasi, ishlab chiqarish sanitariyasi va yong'inga qarshi himoyalanish normalari, qoidalari va yo'riqnomalarini bilish;</li>
+                    </ul>
+                `
             }
         };
 
@@ -1849,11 +1930,11 @@
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona binosi ko‘rinishi</h3></div>';
             images.forEach(img => {
                 html += `
-                    <div style="margin-bottom: 15px; text-align: center;">
+                    <div style="margin-bottom: 5px; text-align: center;">
                         <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
+                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
                              onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
                     </div>
                 `;
             });
@@ -1875,11 +1956,11 @@
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Foydalanish qoidasi</h3></div>';
             images.forEach(img => {
                 html += `
-                    <div style="margin-bottom: 15px; text-align: center;">
+                    <div style="margin-bottom: 5px; text-align: center;">
                         <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
+                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
                              onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
                     </div>
                 `;
             });
@@ -1902,11 +1983,11 @@
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona nizomi</h3></div>';
             images.forEach(img => {
                 html += `
-                    <div style="margin-bottom: 15px; text-align: center;">
+                    <div style="margin-bottom: 5px; text-align: center;">
                         <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
+                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
                              onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
                     </div>
                 `;
             });
@@ -1914,23 +1995,24 @@
             modal.style.display = 'flex';
         }
 
-        // ================== YO‘L XARITASI ==================
+        // ================== YO‘L XARITASI (yonboshlagan rasmlar to‘g‘irlandi) ==================
         function showYolXaritasi() {
             const modal = document.getElementById('newsModal');
             const content = document.getElementById('newsModalContent');
             const images = [
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi.JPG', title: 'Yo‘l xaritasi 1' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_1.JPG', title: 'Yo‘l xaritasi 2' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_2.JPG', title: 'Yo‘l xaritasi 3' }
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi.JPG', title: 'Yo‘l xaritasi 1', rotate: false },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_1.JPG', title: 'Yo‘l xaritasi 2', rotate: true },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_2.JPG', title: 'Yo‘l xaritasi 3', rotate: true }
             ];
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Yo‘l xaritasi</h3></div>';
             images.forEach(img => {
+                const rotateStyle = img.rotate ? 'transform: rotate(90deg);' : '';
                 html += `
-                    <div style="margin-bottom: 15px; text-align: center;">
+                    <div style="margin-bottom: 5px; text-align: center;">
                         <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
+                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image; ${rotateStyle}" 
                              onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
                     </div>
                 `;
             });
@@ -1961,11 +2043,11 @@
             let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona hujjatlari</h3></div>';
             images.forEach(img => {
                 html += `
-                    <div style="margin-bottom: 15px; text-align: center;">
+                    <div style="margin-bottom: 5px; text-align: center;">
                         <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
+                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
                              onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
                     </div>
                 `;
             });
