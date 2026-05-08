@@ -1,5 +1,16 @@
 [
   {
+    "id": 9,
+    "type": "Yangilik",
+    "title": "kun yangiliklari",
+    "text": "Бугун Шавкат Мирзиёев \"Ғалаба боғи\"га ташриф буюради\n\nПрезидент \"Матонат мадҳияси\" монументига ва \"Миллат фидойилари\" хиёбонида гул қўяди. Иккинчи жаҳон уруши ва меҳнат фронти қатнашчилари билан учрашув ўтказади.",
+    "date": "2026-05-08",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243820_1280.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243820_1280.jpg"
+  },
+  {
     "id": 8,
     "type": "Yangilik",
     "title": "/addevent",
