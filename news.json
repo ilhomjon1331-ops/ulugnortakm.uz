@@ -1,5 +1,19 @@
 [
   {
+    "id": 6,
+    "type": "Yangilik",
+    "title": "Suhbat",
+    "text": "Ayni damda Ulug‘nor tumani hokimi M.Axmadjonov tomonidan  O'zbekiston Respublikasi Prezidentining  \n2026 yil 15 yanvardagi PQ  9-sonli qarori asosida\nAxborot-kutubxona markazidagi faol kitobxon yoshlar ishtirokida  kitobxonlikka bo‘lgan qiziqishini oshirish, ularning fikr va tashabbuslarini qo‘llab-quvvatlash hamda mutolaa madaniyatini keng targ‘ib etish masalalari yuzasidan \"Yangi uyg'onish davri kitob va kitobxonlikdan boshlanadi\" mavzusida  suhbat o'tkazildi.",
+    "date": "2026-05-08",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778219909_1177.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778219913_1179.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778219934_1192.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778219947_1198.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778219909_1177.jpg"
+  },
+  {
     "id": 5,
     "type": "Yangilik",
     "title": "Kun yangiliklari",
