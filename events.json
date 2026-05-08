@@ -1,5 +1,17 @@
 [
   {
+    "id": 9,
+    "title": "Suhbat",
+    "description": "Ulug‘nor axborot-kutubxona markazida tuman prokurori Sh.Temirov  kitobxon yoshlar ishtirokida \"Siz o'z huquqlaringizni  bilasizlarmi?\" mavzusida suhbat o‘tkazildi. Suhbat  davomida  har bir yosh tinch va xavfsiz muhitda yashash, o‘z fikrini erkin bildirish hamda sifatli ta’lim olish huquqiga ega ekanligi to'g'risida tavsiyalar berildi. \nTadbir ochiq muloqot ruhida, yoshlar uchun qiziqarli  savol-javoblar bilan yakunlandi.",
+    "date": "2026-05-08",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778227207_1234.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778227214_1238.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778227224_1242.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778227207_1234.jpg"
+  },
+  {
     "id": 8,
     "title": "Adabiy musiqali kecha",
     "description": "Ulug'nor tuman axborot-kutubxona markazi mutaxassislari, 21-umumta'lim maktabi xamkorligida  \nxalqimizning qadimiy an’analari, milliy qadriyatlari va boy madaniyatini aks ettiruvchi muhim ayyomlardan biri bo'lgan  \n21-mart  Navro‘z bayrami  munosabati bilan  “Navro‘z – yangilanish va ezgulik bayrami”  mavzusida adabiy musiqali kecha o'tkazildi.",
