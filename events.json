@@ -1,5 +1,18 @@
 [
   {
+    "id": 10,
+    "title": "Suhbat",
+    "description": "Xotira-insonni o'tmish bilan bo'glaydigan buyuk  qadriyatdir. Qadrlash esa bugungi tinch hayotimiz uchun xizmat qilgan insonlarga hurmat ko'rsatishdir.  \n\n🏛 Ulug'nor tumani axborot-kutubxona markazida 9-may xotira va qadirlash kuni munosabati bilan\"Qahramonlarimizni yod etib\" mavzusida  suhbat o'tkazildi.",
+    "date": "2026-05-08",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243932_1292.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243939_1296.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243949_1300.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243955_1304.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778243932_1292.jpg"
+  },
+  {
     "id": 9,
     "title": "Suhbat",
     "description": "Ulug‘nor axborot-kutubxona markazida tuman prokurori Sh.Temirov  kitobxon yoshlar ishtirokida \"Siz o'z huquqlaringizni  bilasizlarmi?\" mavzusida suhbat o‘tkazildi. Suhbat  davomida  har bir yosh tinch va xavfsiz muhitda yashash, o‘z fikrini erkin bildirish hamda sifatli ta’lim olish huquqiga ega ekanligi to'g'risida tavsiyalar berildi. \nTadbir ochiq muloqot ruhida, yoshlar uchun qiziqarli  savol-javoblar bilan yakunlandi.",
