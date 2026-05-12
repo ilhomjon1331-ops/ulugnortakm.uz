@@ -1,5 +1,16 @@
 [
   {
+    "id": 10,
+    "type": "Yangilik",
+    "title": "#Bilasizmi",
+    "text": "Eng qadimiy kitob: Sinay kodekslari\n\nBizgacha yetib kelgan odatiy hozirgi shakldagi eng qadimiy kitob – Sinay kodekslari. Bu muqaddas asar IV asrga tegishlidir va butun dunyo adabiyati hamda tarixida alohida ahamiyatga ega.\n\n♦️Topilishi: 1844-yilda u kashf etilgan va ilm-fan olamida katta shov-shuv uyg‘otgan. Sinay kodekslari nafaqat diniy, balki tarixiy, lingvistik va madaniy meros sifatida ham beqiyosdir. Ushbu qadimiy kitob bizga insoniyatning bilim va yozuv tarixi haqidagi eng muhim manbalardan birini taqdim etadi.",
+    "date": "2026-05-12",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778562308_1343.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778562308_1343.jpg"
+  },
+  {
     "id": 9,
     "type": "Yangilik",
     "title": "kun yangiliklari",
