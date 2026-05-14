@@ -1,5 +1,18 @@
 [
   {
+    "id": 13,
+    "title": "#Uchrashuv",
+    "description": "Ulug‘nor tuman hududida tuman xokimligi,  MFY, MMTB, tuman tashkilotlari, hamda Axborot-kutubxona markazi xamkorligida “Yoshlar kuni” munosabati bilan \"Ma'rifatli yoshlar yurt faxri\" mavzusiga qaratilgan  o‘quvchi-yoshlar bilan uchrashuv tashkil etildi.\n  🖋Tadbir davomida yoshlarga kasb tanlash, kelgusidagi mehnat faoliyati hamda huquqiy bilimlarni oshirish masalalari yuzasidan tushunchalar berildi.",
+    "date": "2026-05-14",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778758935_1384.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778758938_1386.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778758956_1387.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778758965_1389.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1778758935_1384.jpg"
+  },
+  {
     "id": 12,
     "title": "Bibliografik_qo'llanma",
     "description": "14 yanvar Vatan ximoyachilar kuniga  Axborot - bibliografiya xizmati tavsiya etadi.",
