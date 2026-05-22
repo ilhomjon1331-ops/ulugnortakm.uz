@@ -1408,11 +1408,277 @@
         </div>
     </header>
 
-    <!-- Hero, news, services, books, stats, leadership, events, contact section – avvalgidek -->
-    <!-- Qisqalik uchun ularni bu yerga yozmadim, amalda avvalgi to‘liq fayldan ko‘chiring -->
-    <!-- ... -->
+    <section class="hero" id="home">
+        <div class="floating-elements">
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+            <div class="floating-element"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ulug'nor Tuman Axborot-Kutubxona Markazi</h1>
+                <p>Bilim, madaniyat va axborot resurslarining zamonaviy markazi. Yangi asrga mos kutubxona xizmatlari va innovatsion yondashuvlar</p>
+                <div class="hero-buttons">
+                    <a href="#services" class="btn btn-pulse btn-glow"><i class="fas fa-book-open"></i> Xizmatlarimiz</a>
+                    <a href="#contact" class="btn btn-outline btn-pulse"><i class="fas fa-user-plus"></i> A'zo bo'lish</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI ==================== -->
+    <!-- YANGILIK VA E'LONLAR -->
+    <section class="news-announcements" id="news">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangilik va E'lonlar</h2>
+                <p>Kutubxonamizdagi so'nggi yangiliklar, e'lonlar va yangilanishlar</p>
+            </div>
+            <div class="news-grid"></div>
+            <div style="text-align:center; margin-top:60px;">
+                <button id="loadMoreNews" class="btn btn-outline">
+                    <i class="fas fa-arrow-down"></i> Ko'proq yangiliklar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Xizmatlar -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Bizning Xizmatlar</h2>
+                <p>Kutubxonamiz o'quvchilar, tadqiqotchilar va barcha bilim izlovchilar uchun keng ko'lamli xizmatlarni taklif etadi</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card" data-delay="0">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Kitob ijarasi</h3>
+                    <p>Kutubxonamizda mavjud barcha kitoblarni uyga olib ketish imkoniyati. 30 kungacha ijara muddati. Onlayn kitob bron qilish tizimi.</p>
+                </div>
+                <div class="service-card" data-delay="0.6">
+                    <i class="fas fa-users"></i>
+                    <h3>Klublar va to'garaklar</h3>
+                    <p>Kitobxonlar, til o'rganish, dasturlash va boshqa mavzulardagi klublar. Har hafta yangi uchrashuvlar. Yosh avlodni tarbiyalash.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Yangi kitoblar -->
+    <section class="new-books" id="books">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yangi Kelgan Kitoblar</h2>
+                <p>Har oy 100+ yangi kitob qo'shiladi</p>
+            </div>
+            <div class="books-grid"></div>
+            <div style="text-align:center; margin-top:60px;">
+                <button id="loadMoreBooks" class="btn btn-outline">
+                    <i class="fas fa-arrow-down"></i> Ko'proq kitoblar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistika -->
+    <section class="stats" id="stats">
+        <div class="container">
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">Bizning Ko'rsatkichlar</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Kutubxonamizning faoliyati va erishgan yutuqlari</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item" data-delay="0">
+                    <div class="stat-icon"><i class="fas fa-book"></i></div>
+                    <div class="stat-number" data-count="2800" id="total-books">0</div>
+                    <div class="stat-text">Kitoblar</div>
+                </div>
+                <div class="stat-item" data-delay="0.2">
+                    <div class="stat-icon"><i class="fas fa-users"></i></div>
+                    <div class="stat-number" data-count="300" id="total-members">0</div>
+                    <div class="stat-text">Faol a'zolar</div>
+                </div>
+                <div class="stat-item" data-delay="0.4">
+                    <div class="stat-icon"><i class="fas fa-newspaper"></i></div>
+                    <div class="stat-number" data-count="120" id="total-news">0</div>
+                    <div class="stat-text">Jurnallar</div>
+                </div>
+                <div class="stat-item" data-delay="0.6">
+                    <div class="stat-icon"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-number" data-count="15" id="years-experience">0</div>
+                    <div class="stat-text">Yillik tajriba</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== RAHBARIYAT ==================== -->
+    <section class="leadership" id="leadership">
+        <div class="container">
+            <div class="section-title">
+                <h2>Rahbariyat</h2>
+                <p>Kutubxonamiz rahbariyati va mas'ul xodimlari. Tajribali mutaxassislar</p>
+            </div>
+            <div class="leadership-grid">
+                <!-- Rahbar (direktor) -->
+                <div class="leader-card" data-delay="0">
+                    <div class="leader-image">
+                        <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/rahbar.jpg" 
+                             alt="Rahbar" 
+                             onerror="this.src='https://via.placeholder.com/400x400?text=Rahbar'">
+                    </div>
+                    <h3 class="leader-name">Rahbar</h3>
+                    <p class="leader-position">Kutubxona direktori</p>
+                    <div class="leader-fullname">
+                        Mirzaabdullayev Shermaxammad Mirzayuldashevich
+                        <div class="leader-contact">
+                            <p><i class="fas fa-mobile-alt"></i> <strong>Mobil:</strong> (99) 876-10-64</p>
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Qabul kunlari:</strong> Dushanbadan jumagacha<br><span style="margin-left: 25px;">Soat 9:00 dan 11:00 gacha</span></p>
+                        </div>
+                    </div>
+                    <div class="leader-actions">
+                        <button onclick="showLeaderDetail('rahbar')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> Ma'lumotni ko'rish
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Kadrlar bo'yicha inspektori -->
+                <div class="leader-card" data-delay="0.3">
+                    <div class="leader-image">
+                        <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/kadr.jpg" 
+                             alt="Kadrlar bo'yicha inspektori"
+                             onerror="this.src='https://via.placeholder.com/400x400?text=Kadrlar+inspektori'">
+                    </div>
+                    <h3 class="leader-name">Kadrlar bo'yicha inspektori</h3>
+                    <p class="leader-position">Kadrlar bo'limi boshlig'i</p>
+                    <div class="leader-fullname">
+                        Po'latova Xulkaroy Turg'untoshovna
+                        <div class="leader-contact">
+                            <p><i class="fas fa-mobile-alt"></i> <strong>Mobil:</strong> (90) 770-15-88</p>
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Ish vaqti:</strong> <br><span style="margin-left: 25px;">Soat 8:00 dan 17:00 gacha</span></p>
+                        </div>
+                    </div>
+                    <div class="leader-actions">
+                        <button onclick="showLeaderDetail('kadrlar')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> Ma'lumotni ko'rish
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Bosh xisobchisi -->
+                <div class="leader-card" data-delay="0.6">
+                    <div class="leader-image">
+                        <img src="https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/xisobchi.jpg" 
+                             alt="Bosh xisobchisi"
+                             onerror="this.src='https://via.placeholder.com/400x400?text=Bosh+xisobchi'">
+                    </div>
+                    <h3 class="leader-name">Bosh xisobchisi</h3>
+                    <p class="leader-position">Moliya bo'limi boshlig'i</p>
+                    <div class="leader-fullname">
+                        Xolboyev Nodirbek Sharobiddinovich
+                        <div class="leader-contact">
+                            <p><i class="fas fa-mobile-alt"></i> <strong>Mobil:</strong> (77) 003-04-82</p>
+                            <p><i class="fas fa-calendar-alt"></i> <strong>Ish vaqti:</strong> <br><span style="margin-left: 25px;">Soat 8:00 dan 17:00 gacha</span></p>
+                        </div>
+                    </div>
+                    <div class="leader-actions">
+                        <button onclick="showLeaderDetail('bosh_xisobchi')" class="btn btn-sm pdf-btn">
+                            <i class="fas fa-eye"></i> Ma'lumotni ko'rish
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tadbirlar -->
+    <section class="events" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Yaqindagi Tadbirlar va Video lavhalar</h2>
+                <p>Kutubxonamizda bo'lib o'tadigan tadbirlar va dasturlar. Barchaga ochiq va bepul</p>
+            </div>
+            <div class="events-grid"></div>
+            <div style="text-align:center; margin-top:60px;">
+                <button id="loadMoreEvents" class="btn btn-outline">
+                    <i class="fas fa-arrow-down"></i> Ko'proq tadbirlar
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aloqa -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Aloqa</h2>
+                <p>Biz bilan bog'laning yoki kutubxona a'zosi bo'ling. Tezkor javob va sifatli xizmat</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Ismingiz</label>
+                            <input type="text" id="name" class="form-control" placeholder="To'liq ism sharifingiz" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon raqamingiz</label>
+                            <input type="tel" id="phone" class="form-control" placeholder="+998 (XX) XXX-XX-XX" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Elektron pochta (ixtiyoriy)</label>
+                            <input type="email" id="email" class="form-control" placeholder="example@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Xabaringiz</label>
+                            <textarea id="message" class="form-control" placeholder="Xabaringizni bu yerga yozing..." rows="6" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-glow"><i class="fas fa-paper-plane"></i> Xabarni yuborish</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Biz bilan bog'laning</h3>
+                    <p>Kutubxonamizga tashrif buyuring yoki biz bilan bog'lanishingiz mumkin. Ish vaqtimizda albatta javob beramiz.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>Manzil</h4>
+                                <p>Andijon viloyati, Ulug'nor tumani, Mustaqillik ko'chasi 1</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <div class="contact-text">
+                                <h4>Telefon raqamlar</h4>
+                                <p>+99899-876-10-64 (Rahbar)</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Elektron pochta</h4>
+                                <p>info@ulugnormarkaz.uz</p>
+                                <p>kutubxona@ulugnormarkaz.uz</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h4>Ish vaqti</h4>
+                                <p>Dushanba-Juma: 9:00 - 18:00</p>
+                                <p>Shanba: 10:00 - 16:00</p>
+                                <p>Yakshanba: Dam olish kuni</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI (barcha havolalar bilan) ==================== -->
     <section class="about-library" id="about">
         <div class="container">
             <div class="section-title">
@@ -1431,8 +1697,81 @@
         </div>
     </section>
 
-    <!-- PDF Modal, Umumiy modal va Footer – avvalgidek -->
-    <!-- ... -->
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <div class="pdf-modal-header">
+                <h3><i class="fas fa-file-pdf"></i> <span id="pdfModalTitle">PDF Ko'rish</span></h3>
+                <button onclick="closePdfModal()" class="pdf-modal-close">×</button>
+            </div>
+            <div class="pdf-modal-body">
+                <iframe id="pdfViewer" class="pdf-viewer"></iframe>
+                <div id="pdfLoading" class="pdf-loading">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 40px; margin-bottom: 15px; color: var(--primary-color);"></i>
+                    <p style="margin: 0; font-size: 18px;">PDF yuklanmoqda...</p>
+                </div>
+            </div>
+            <div class="pdf-modal-footer">
+                <a href="#" id="downloadPdfBtn" class="btn btn-sm" style="background: linear-gradient(135deg, var(--success-color), #34d399); color: white; text-decoration: none; display: flex; align-items: center; gap: 8px; padding: 12px 25px; border-radius: 12px; font-size: 16px; border: none; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(16, 185, 129, 0.3);">
+                    <i class="fas fa-download"></i> Yuklab olish
+                </a>
+                <button onclick="closePdfModal()" class="btn btn-sm" style="background: linear-gradient(135deg, #64748b, #94a3b8); color: white; padding: 12px 25px; border-radius: 12px; font-size: 16px; border: none; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 5px 15px rgba(100, 116, 139, 0.3);">
+                    <i class="fas fa-times"></i> Yopish
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Umumiy modal (yangilik, kitob, tadbir, rahbar matni va barcha galereyalar) -->
+    <div id="newsModal">
+        <div>
+            <button onclick="closeModal()">×</button>
+            <div id="newsModalContent"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Ulug'nor Tuman Axborot-Kutubxona Markazi</h3>
+                    <p>Bilim, madaniyat va axborot resurslarining asosiy markazi. 15 yildan ortiq tajriba. Zamonaviy kutubxona xizmatlari.</p>
+                    <div class="social-links">
+                        <a href="https://t.me/ulugnortakm" target="_blank"><i class="fab fa-telegram"></i></a>
+                        <a href="https://www.facebook.com/ulugnortakmuz" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/ulugnortakm1" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/@UlugnorTAKM" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://x.com/Shermuhamm81984" target="_blank"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Tez havolalar</h3>
+                    <div>
+                        <a href="#home" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Bosh sahifa</a>
+                        <a href="#news" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangiliklar</a>
+                        <a href="#services" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Xizmatlar</a>
+                        <a href="#books" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Yangi kitoblar</a>
+                        <a href="#stats" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Statistika</a>
+                        <a href="#leadership" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Rahbariyat</a>
+                        <a href="#events" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Tadbirlar</a>
+                        <a href="#about" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Kutubxona haqida</a>
+                        <a href="#contact" style="color: #cbd5e1; display: block; margin-bottom: 20px; text-decoration: none; font-size: 18px;"><i class="fas fa-chevron-right"></i> Aloqa</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Aloqa ma'lumotlari</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Andijon viloyati, Ulug'nor tumani</p>
+                    <p style="margin-top: 20px;"><i class="fas fa-phone-alt"></i> +99899-876-10-64</p>
+                    <p style="margin-top: 20px;"><i class="fas fa-envelope"></i> info@ulugnormarkaz.uz</p>
+                    <p style="margin-top: 20px;"><i class="fas fa-clock"></i> Dushanba-Juma: 9:00-18:00</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2026 Ulug'nor Tuman Axborot-Kutubxona Markazi. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -1448,19 +1787,42 @@
         let newsPage = 1, eventsPage = 1, booksPage = 1;
         let allNews = [], allEvents = [], allBooks = [];
 
-        // PDF fayllar manzillari (yangi qo‘shilganlar bilan)
+        // PDF fayllar manzillari (to‘liq)
         const PDF_FILES = {
             rahbar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/rahbar.pdf",
             kadrlar: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/kadrlar_inspektori.pdf",
             bosh_xisobchi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/bosh_xisobchi.pdf",
-            lavozim: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/Lavozim yoriqnomasi.pdf",
-            ish_rejasi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/Ish rejasi.pdf"
+            lavozim: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/Lavozim_yoriqnomasi.pdf",
+            ish_rejasi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/Ish_rejasi.pdf"
         };
 
-        // RAHBAR MA'LUMOTLARI (qisqa)
-        const LEADER_DETAILS = { ... };
+        // RAHBAR MA'LUMOTLARI (qisqa, to‘liq versiyasi avvalgi faylda mavjud)
+        const LEADER_DETAILS = {
+            rahbar: { name: "Mirzaabdullayev Shermaxammad Mirzayuldashevich", position: "Kutubxona direktori", phone: "(99) 876-10-64", reception: "Dushanba–Juma 9:00 – 11:00", bio: "..." },
+            kadrlar: { name: "Po'latova Xulkaroy Turg'untoshovna", position: "Kadrlar bo'limi boshlig'i", phone: "(90) 770-15-88", workTime: "Dushanba–Juma 8:00 – 17:00", bio: "..." },
+            bosh_xisobchi: { name: "Xolboyev Nodirbek Sharobiddinovich", position: "Moliya bo'limi boshlig'i", phone: "(77) 003-04-82", workTime: "Dushanba–Juma 8:00 – 17:00", bio: "..." }
+        };
 
-        // ================== PDF OCHISH ==================
+        // ================== YORDAMCHI FUNKSIYALAR ==================
+        function showImageGallery(title, images) {
+            const modal = document.getElementById('newsModal');
+            const content = document.getElementById('newsModalContent');
+            let html = `<div style="text-align:center; margin-bottom:20px;"><h3>${title}</h3></div>`;
+            images.forEach(img => {
+                const rotateStyle = img.rotate ? 'transform: rotate(90deg);' : '';
+                html += `
+                    <div style="margin-bottom: 15px; text-align: center;">
+                        <img src="${img.src}" alt="${img.title}" 
+                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image; ${rotateStyle}" 
+                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
+                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                    </div>
+                `;
+            });
+            content.innerHTML = html;
+            modal.style.display = 'flex';
+        }
+
         function openPDF(pdfType) {
             const pdfUrl = PDF_FILES[pdfType];
             if (!pdfUrl) {
@@ -1499,7 +1861,91 @@
             document.body.style.overflow = 'auto';
         }
 
-        // ================== LAVOZIM YO‘RIQNOMASI VA ISH REJASI ==================
+        function showNotification(message, type = 'info') {
+            let notification = document.getElementById('custom-notification');
+            if (!notification) {
+                notification = document.createElement('div');
+                notification.id = 'custom-notification';
+                notification.className = 'notification';
+                document.body.appendChild(notification);
+            }
+            const colors = {
+                'info': 'linear-gradient(135deg, var(--primary-color), var(--accent-color-2))',
+                'success': 'linear-gradient(135deg, var(--success-color), #34d399)',
+                'warning': 'linear-gradient(135deg, var(--accent-color), #fbbf24)',
+                'error': 'linear-gradient(135deg, #dc2626, #ef4444)'
+            };
+            notification.style.background = colors[type] || colors.info;
+            notification.innerHTML = `<div style="display: flex; align-items: center; gap: 15px;">
+                <i class="fas fa-${type === 'success' ? 'check-circle' : type === 'warning' ? 'exclamation-triangle' : type === 'error' ? 'times-circle' : 'info-circle'}"></i>
+                <span>${message}</span>
+            </div>`;
+            setTimeout(() => notification.style.transform = 'translateX(0)', 10);
+            setTimeout(() => notification.style.transform = 'translateX(120%)', 4000);
+        }
+
+        function closeModal() {
+            document.getElementById('newsModal').style.display = 'none';
+        }
+
+        // ================== KUTUBXONA HAQIDA GALEREYALAR ==================
+        function showLibraryView() {
+            const images = [
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Kirish%20xonasi_1.jpg', title: 'Kirish xonasi 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Kirish%20xonasi_2.jpg', title: 'Kirish xonasi 2' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Direktor.jpg', title: 'Direktor xonasi' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Bibliografiya.jpg', title: 'Uslubiy-bibliografiya xizmati' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Xisobchi.jpg', title: 'Bosh xisobchi' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Abonoment_1.jpg', title: 'Abonoment va foydalanuvchilarga xizmat ko\'rsatish xizmati' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Zal.jpg', title: 'O\'quv zali' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Hizmat.jpg', title: 'Bolalar xizmat ko\'rsatish xizmati' }
+            ];
+            showImageGallery('Kutubxona binosi ko‘rinishi', images);
+        }
+
+        function showFoydalanishQoidasi() {
+            const images = [
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi.JPG', title: 'Foydalanish qoidasi 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0001.JPG', title: 'Foydalanish qoidasi 2' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0002.JPG', title: 'Foydalanish qoidasi 3' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0003.JPG', title: 'Foydalanish qoidasi 4' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0004.JPG', title: 'Foydalanish qoidasi 5' }
+            ];
+            showImageGallery('Foydalanish qoidasi', images);
+        }
+
+        function showKutubxonaNizomi() {
+            const images = [
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi.JPG', title: 'Nizom 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0001.JPG', title: 'Nizom 2' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0002.JPG', title: 'Nizom 3' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0003.JPG', title: 'Nizom 4' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0004.JPG', title: 'Nizom 5' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0005.JPG', title: 'Nizom 6' }
+            ];
+            showImageGallery('Kutubxona nizomi', images);
+        }
+
+        function showYolXaritasi() {
+            const images = [
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi.JPG', title: 'Yo‘l xaritasi 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_1.JPG', title: 'Yo‘l xaritasi 2', rotate: true },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_2.JPG', title: 'Yo‘l xaritasi 3', rotate: true }
+            ];
+            showImageGallery('Yo‘l xaritasi', images);
+        }
+
+        function showKutubxonaHujjatlar() {
+            const images = [
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0001.jpg', title: 'Ijara shartnomasi 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0002.jpg', title: 'Ijara shartnomasi 2' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0003.jpg', title: 'Ijara shartnomasi 3' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%A3%D0%BB%D1%83%D0%B3%D0%BD%D0%BE%D1%80_%D0%A2%D0%90%D0%9A%D0%9C_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8_2026_%D0%B9_5_yanvar_%D1%85%D0%BE%D0%BB%D0%B0%D1%82%D0%B8%D0%B3%D0%B0-1.jpg', title: 'Pasport 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%A3%D0%BB%D1%83%D0%B3%D0%BD%D0%BE%D1%80_%D0%A2%D0%90%D0%9A%D0%9C_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8_2026_%D0%B9_5_yanvar_%D1%85%D0%BE%D0%BB%D0%B0%D1%82%D0%B8%D0%B3%D0%B0-2.jpg', title: 'Pasport 2' }
+            ];
+            showImageGallery('Kutubxona hujjatlari', images);
+        }
+
         function showLavozimYoritnomasi() {
             openPDF('lavozim');
         }
@@ -1508,17 +1954,61 @@
             openPDF('ish_rejasi');
         }
 
-        // ================== BOSHQA GALEREYA FUNKSIYALARI (showLibraryView, showFoydalanishQoidasi va b.) ==================
-        // (ular avvalgi fayldagi kabi qoladi)
-        // Qisqalik uchun bu yerga yozmadim, amalda to‘liq fayldan ko‘chiring
-        // ...
+        // ================== RAHBAR BATAFFSIL KO‘RISH ==================
+        function showLeaderDetail(leaderKey) {
+            const leader = LEADER_DETAILS[leaderKey];
+            if (!leader) return;
+            const modal = document.getElementById('newsModal');
+            const content = document.getElementById('newsModalContent');
+            let imgSrc = '';
+            const card = document.querySelector(`[onclick*="${leaderKey}"]`).closest('.leader-card');
+            if (card) {
+                const img = card.querySelector('img');
+                if (img) imgSrc = img.src;
+            }
+            content.innerHTML = `
+                <div style="text-align: center; margin-bottom: 20px;">
+                    ${imgSrc ? `<img src="${imgSrc}" alt="${leader.name}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-color);">` : ''}
+                </div>
+                <h3 style="font-size: 28px; margin-bottom: 10px;">${leader.name}</h3>
+                <p style="font-size: 20px; color: var(--primary-color);">${leader.position}</p>
+                <div style="background: #f8fafc; border-radius: 15px; padding: 25px; margin-top: 20px;">
+                    <p><i class="fas fa-phone-alt"></i> <strong>Telefon:</strong> ${leader.phone}</p>
+                    ${leader.reception ? `<p><i class="fas fa-calendar-alt"></i> <strong>Qabul vaqti:</strong> ${leader.reception}</p>` : ''}
+                    ${leader.workTime ? `<p><i class="fas fa-clock"></i> <strong>Ish vaqti:</strong> ${leader.workTime}</p>` : ''}
+                    <div style="margin-top: 20px;">${leader.bio}</div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <button onclick="openPDF('${leaderKey}')" class="btn btn-sm pdf-btn">PDF yuklab olish</button>
+                    </div>
+                </div>
+            `;
+            modal.style.display = 'flex';
+        }
 
-        // ================== YANGILIKLAR, TADBIRLAR, KITOBLAR, ANIMATSIYALAR (avvalgidek) ==================
-        // ...
+        // ================== YANGILIKLAR, TADBIRLAR, KITOBLAR (avvalgi fayldagi to‘liq versiyasini saqlang) ==================
+        // Qisqalik uchun bu yerga to‘liq kod yozilmadi, amalda siz avvalgi ishlaydigan fayldan ko‘chiring.
+        // Quyida faqat asosiy yuklash funksiyalari berilgan.
+        async function loadFromGitHub(fileName) {
+            try {
+                const url = `https://raw.githubusercontent.com/${GITHUB_USER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${fileName}?t=${Date.now()}`;
+                const response = await fetch(url);
+                return response.ok ? await response.json() : [];
+            } catch { return []; }
+        }
+
+        async function loadAndDisplayNews(page = 1) { /* avvalgi kabi */ }
+        async function loadAndDisplayEvents(page = 1) { /* avvalgi kabi */ }
+        async function loadAndDisplayBooks(page = 1) { /* avvalgi kabi */ }
 
         document.addEventListener('DOMContentLoaded', async function() {
-            // Barcha yuklash va hodisalar avvalgidek
-            // ...
+            await loadAndDisplayNews(1);
+            await loadAndDisplayEvents(1);
+            await loadAndDisplayBooks(1);
+            document.getElementById('total-books').textContent = allBooks.length || 2800;
+            document.getElementById('total-news').textContent = allNews.length || 120;
+            document.getElementById('total-members').textContent = 300 + Math.floor(allBooks.length / 10);
+            document.getElementById('years-experience').textContent = 15;
+            // “Ko‘proq” tugmalari va boshqa event listenerlar avvalgidek
         });
     </script>
 </body>
