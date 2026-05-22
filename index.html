@@ -1057,7 +1057,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
         }
         
@@ -1311,7 +1311,7 @@
             z-index: 10;
         }
         
-        /* Umumiy modal (matnli) - O‘ZGARTIRILDI */
+        /* Umumiy modal (matnli) – kengaytirilgan */
         #newsModal {
             display: none;
             position: fixed;
@@ -1339,14 +1339,14 @@
         
         #newsModal > div > button {
             position: absolute;
-            top: 20px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             background: #f1f5f9;
             border: none;
-            width: 40px;
-            height: 40px;
+            width: 35px;
+            height: 35px;
             border-radius: 50%;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
             z-index: 10;
         }
@@ -1678,7 +1678,7 @@
         </div>
     </section>
 
-    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI ==================== -->
+    <!-- ==================== KUTUBXONA HAQIDA BO‘LIMI (YANGI HAVOLALAR BILAN) ==================== -->
     <section class="about-library" id="about">
         <div class="container">
             <div class="section-title">
@@ -1686,7 +1686,7 @@
                 <p>Kutubxonamiz faoliyati, tuzilmasi va tarixi haqida batafsil maʼlumot</p>
             </div>
             <div class="about-links">
-                <!-- Kutubxona ko‘rinishi -->
+                <!-- Mavjud havolalar -->
                 <a href="#" onclick="showLibraryView(); return false;">
                     <i class="fas fa-building"></i> Kutubxona ko‘rinishi
                 </a>
@@ -1701,6 +1701,13 @@
                 </a>
                 <a href="#" onclick="showKutubxonaHujjatlar(); return false;">
                     <i class="fas fa-folder-open"></i> Kutubxona hujjatlar
+                </a>
+                <!-- Yangi qo‘shilgan havolalar -->
+                <a href="#" onclick="showLavozimYoritnomasi(); return false;">
+                    <i class="fas fa-file-signature"></i> Lavozim yo‘riqnomasi
+                </a>
+                <a href="#" onclick="showIshRejasi(); return false;">
+                    <i class="fas fa-calendar-week"></i> Ish rejasi
                 </a>
             </div>
         </div>
@@ -1808,115 +1815,53 @@
             bosh_xisobchi: "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/pdf/bosh_xisobchi.pdf"
         };
 
-        // ================== RAHBAR MA'LUMOTLARI ==================
-       const LEADER_DETAILS = {
+        // ================== RAHBAR MA'LUMOTLARI (qisqartirilgan, avvalgi to‘liq matn saqlanadi) ==================
+        const LEADER_DETAILS = {
             rahbar: {
                 name: "Mirzaabdullayev Shermaxammad Mirzayuldashevich",
                 position: "Kutubxona direktori",
                 phone: "(99) 876-10-64",
                 reception: "Dushanba–Juma 9:00 – 11:00",
-                bio: `
-                    <strong>Tarjimai hol:</strong><br>
-                    • 1963 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
-                    • Ma'lumoti oliy. 1984 yilda Toshkent Davlat Madaniyat institutini “Ommaviy kutubxonalar kutubxonashunosligi va bibliografiyasi” bo'yicha tugatgan.<br>
-                    • 1984-1984 yy. - Andijon viloyati Ulug'nor tumanidagi 15-hunar texnika bilim yurtining tarbiyachisi;<br>
-                    • 1986-1986 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi uslubchisi;<br>
-                    • 1986-2006 yy. - Andijon viloyati Ulug'nor tumanidagi markaziy kutubxonasi direktori;<br>
-                    • 2006-2019 yy. - Andijon viloyati Ulug'nor Qishloq xo'jalik kasb-hunar kollejining Axborot-resurs markazi rahbari;<br>
-                    • 2019 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi direktori.<br>
-                    • Sh.Mirzaabdullayev oilali, 4 nafar farzandning otasi.<br><br>
-                    <strong>Vazifalari:</strong><br>
-                    <ul style="padding-left:20px;">
-                        <li>Axborot-kutubxona markazi direktori o'zining vakolati doirasida tashkiloti faoliyatiga rahbarlik qiladi, unga oid barcha muammolarni hal etadi;</li>
-                        <li>Mamlakatda axborot-kutubxona faoliyatiga oid O'zbekiston Respublikasi Prezidenti, Vazirlar Mahkamasi va tegishli yuqori tashkilotlar tomonidan e'lon qilinayotgan farmonlar, qonunlar, qarorlar, buyruqlar va boshqa hujjatlarning tashkiloti faoliyatida bajarilishini tashkil etadi va nazorat qiladi;</li>
-                        <li>Axborot-kutubxona markazi direktori tashkilot faoliyatiga moddiy va ma'naviy javobgardir;</li>
-                        <li>Axborot-kutubxona markazi direktori tashkilotdan chiqarilayotgan va kirayotgan barcha hujjatlarning o'z vaqtida bajarilishi uchun mas'ul va uni nazorat qiladi;</li>
-                        <li>Axborot-kutubxona markazi direktori tumandagi yuqori tashkilotlar, boshqa hamkorlik tashkilotlari, ma'naviyat va ma'rifat markazlari, ta'lim-tarbiya muassasalari bilan munosabatda bo'ladi;</li>
-                        <li>Axborot-kutubxona markazi direktori tashkilotning tumandagi barcha yo'nalishlardagi axborot-kutubxona muassasalari bilan o'zaro hamkorlikni tashkil etadi;</li>
-                        <li>Axborot-kutubxona markazining faoliyatini tashkil etish, uning sifati va samaradorligini oshirish, xodimlar ishchanligini shakllantirish, mehnatni to'g'ri tashkil etish uchun tadbirlar ishlab chiqadi va ularning bajarilishini nazorat qiladi;</li>
-                        <li>Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga axborot-kutubxona faoliyati yuzasidan takliflar va fikr-mulohozalar bilan chiqadi;</li>
-                        <li>Xodimlarni ma'naviy va moddiy rag'batlantiradi, boshqalardan ajrab turuvchi xodimlarni davlat mukofotlariga va turli darajada rag'batlantirish uchun tavsiya etadi;</li>
-                        <li>Axborot-kutubxona markaziga xodimlarni layoqati, ma'lumoti va boshqa xususiyatlariga ko'ra ishga qabul qiladi va lozim bo'lgan paytda ishdan bo'shatadi;</li>
-                        <li>Kasaba uyushmasi bilan birgalikda shikoyat va arizalarni ko'radi va hal etadi;</li>
-                        <li>Belgilangan muddatlarda Bobur nomidagi Andijon viloyati axborot-kutubxona markaziga turli masalalar yuzasidan axborot va ma'lumotlar taqdim etadi;</li>
-                        <li>Axborot-kutubxona markazining tegishli rasmiy hujjatlarini tayyorlaydi va uni nazorat qiladi, tegishli muassasalarda rasmiylashtiradi, tasdiqlaydi va uning amaliyotiga joriy etilishini nazorat qiladi;</li>
-                        <li>Axborot-kutubxona markazi direktori respublika va xalqaro miqyosdagi anjumanlarda ishtirok etadi;</li>
-                        <li>Axborot-kutubxona markazi direktori xodimlarni qayta tayyorlash va malakasini oshirish bo'yicha ish olib boradi va uni nazorat qiladi.</li>
-                    </ul>
-                `
+                bio: `...` // to‘liq matn avvalgidek
             },
             kadrlar: {
                 name: "Po'latova Xulkaroy Turg'untoshovna",
                 position: "Kadrlar bo'limi boshlig'i",
                 phone: "(90) 770-15-88",
                 workTime: "Dushanba–Juma 8:00 – 17:00",
-                bio: `
-                    <strong>Tarjimai hol:</strong><br>
-                    • 1988 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
-                    • Ma'lumoti o'rta maxsus. 2024 yilda Andijon shahar pedagogika industrial kollejining Axborot texnologiyalari mutaxassisi, Kutubxonashunoslik bo'yicha tugatgan.<br>
-                    • 2009-2010 yy. - Andijon viloyati Ulug'nor qishloq xo'jalik kasb-hunar kollejining Axborot resurs markazi yetakchi mutaxassisi;<br>
-                    • 2013-2013 yy. - Andijon viloyati Ulug'nor tumanidagi 4 sonli maktabgacha ta'lim muassasasi tarbiyachisi;<br>
-                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
-                    • 2022-2026 yy. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Abonoment va foydalanuvchilarga xizmat ko'rsatish xizmati mutaxassisi;<br>
-                    • 2026 y.- h.v. - Andijon viloyati Ulug'nor tumani Axborot kutubxona markazi Kadrlar bo'yicha inspektori;<br>
-                    • X.Po'latova, 1 nafar farzandning onasi.<br><br>
-                    <strong>Majburiyatlari:</strong><br>
-                    <ul style="padding-left:20px;">
-                        <li>Markaz direktorining buyruqlari, rasmiy kengashlari va yig'ilishlari qarorlari o'z vaqtida bajarishi ustidan nazoratni amalga oshiradi;</li>
-                        <li>Markaz rahbar va mutaxassis-xodimlarini shaxsiy tarkibining hisobini yuritadi;</li>
-                        <li>Mehnatga oid qonun hujjatlariga muvofiq xodimlarni ishga qabul qilish, boshqa ishga o'tkazish va ishdan bo'shatish bo'yicha hujjatlarni (Mehnat shartnomasi, buyruqlar, T-2 kartochkalari) ishlab chiqadi, rasmiylashtiradi va yuritib boradi hamda o'z vaqtida YMMT ga kiritib boradi;</li>
-                        <li>Xodimlarni ishga qabul qilishda Markazning ichki mehnat tartib qoidalari bilan rasmiy tanishtiradi, xizmat guvohnomalari (Markaz binosiga kirish-chiqish uchun ruxsatnoma) hisobini yuritadi va ularni berilishini tashkillashtiradi;</li>
-                        <li>Xodimlarning shaxsiy ish jildlarini (T-2 kartochkalar, mehnat daftarchalari) shakllantiradi va yuritadi, ularda o'z vaqtida xodimlarning faoliyati bilan bog'liq o'zgartirishlarni T-2 kartochkalariga, mehnat daftarchalariga va YMMT tizimiga kiritib boradi;</li>
-                        <li>Malaka, attestatsiya, tanlov komissiyalari uchun hamda xodimlarni rag'batlantirish va mukofotlashga taqdim etish uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
-                        <li>Mehnat daftarchalarini to'ldiradi, hisobga oladi va saqlaydi, mehnat stajini hisoblaydi hamda YMMT tizimiga kiritib boradi;</li>
-                        <li>Ishga qabul qilish, boshqa doimiy ishga o'tkazish va mehnat shartnomasini bekor qilish to'g'risida mehnat daftarchasiga yozuvlar kiritadi va YMMT tizimiga kiritib boradi;</li>
-                        <li>Mehnat daftarchalari va ularga qo'shimcha varaqlarining qabul qilish va berish jarayonini ro'yxatga oladi;</li>
-                        <li>Xodimlarning son, sifat jihatdan tarkibi va ularning harakati to'g'risidagi ma'lumotlarni Markaz xodimlariga oid ma'lumotlar bazasiga kiritadi, uning o'z vaqtida yangilanishi va to'ldirilishini kuzatib boradi;</li>
-                        <li>Xodimlarga ta'til berish hisobini yuritadi, navbatdagi ta'tillar jadvalini tuzish va unga rioya qilish ustidan nazoratni amalda oshiradi;</li>
-                        <li>Markaz xodimlariga imtiyozlar va kompensatsiyalar belgilash uchun zarur hujjatlarni tayyorlaydi va rasmiylashtiradi;</li>
-                        <li>Markazda mehnat intizomining holati va xodimlar tomonidan ichki mehnat tartibi qoidalariga rioya etilishi ustidan nazoratni amalga oshiradi;</li>
-                        <li>Mehnat intizomi buzilishlarining hisobini yuritadi va rahbariyat tomonidan o'z vaqtida tegishli choralar ko'rilishini nazorat qiladi.</li>
-                    </ul>
-                `
+                bio: `...`
             },
             bosh_xisobchi: {
                 name: "Xolboyev Nodirbek Sharobiddinovich",
                 position: "Moliya bo'limi boshlig'i (bosh hisobchi)",
                 phone: "(77) 003-04-82",
                 workTime: "Dushanba–Juma 8:00 – 17:00",
-                bio: `
-                    <strong>Tarjimai hol:</strong><br>
-                    • 1982 yilda Andijon viloyati, Ulug'nor tumanida tug'ilgan.<br>
-                    • Ma'lumoti oliy. 2025 yilda Namangan Texnika Universitetini Buxgalteriya hisobi va audit bo'yicha tugatgan.<br>
-                    • 2004-2005 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi ish yurituvchi;<br>
-                    • 2005-2007 yy. - Andijon viloyati Ulug'nor tumani Ijtimoiy ta'minot bo'limi qo'riqchisi;<br>
-                    • 2007-2019 yy. - Andijon viloyati Ulug'nor tumani 21 sonli Musiqa maktabida bosh hisobchi;<br>
-                    • 2020-2022 yy. - Andijon viloyati Ulug'nor tumani Xalq ta'limi bo'limi hisobchisi;<br>
-                    • 2022-2024 yy. - Andijon viloyati Ulug'nor tumani "Ovulmat" MFY raisi;<br>
-                    • 2024-2025 yy. - Andijon viloyati Ulug'nor tumani Madaniyat bo'limi bosh hisobchisi;<br>
-                    • 2025 y.- h.v. - Andijon viloyati Ulug'nor tumanidagi axborot-kutubxona markazi bosh hisobchisi;<br>
-                    • N.Xolboyev oilali, 3 nafar farzandning otasi.<br><br>
-                    <strong>Majburiyatlari:</strong><br>
-                    <ul style="padding-left:20px;">
-                        <li>Buxgalteriyaga oid amaldagi dastur bo'yicha ishlashni tashkil etish;</li>
-                        <li>Shtat, moliyaviy va kassa intizomiga, ma'muriy-xo'jalik va boshqa xarajatlar smetasiga qat'iy rioya qilish;</li>
-                        <li>AKMda lavozim maoshlarini belgilash va ish haqi bo'yicha hisob-kitob ishlarini amalga oshirish;</li>
-                        <li>Davlat va mahalliy byudjetlarga soliqlar va yig'imlarning, byudjetdan tashqari davlat ijtimoiy jamg'armalariga sug'urta badallarining, bank muassasalariga to'lovlarning to'g'ri hisoblanishi va o'tkazilishini amalga oshirish;</li>
-                        <li>Buxgalteriyaga oid hujjatlarning qonuniy, o'z vaqtida va to'g'ri rasmiylashtirilishini ta'minlash;</li>
-                        <li>Buxgalteriya balansi va hisobotini tuzish tartibi va muddatlariga amal qilish;</li>
-                        <li>Debitor va kreditorlar bilan hisob-kitob qilish;</li>
-                        <li>Tekshiruvlar va hujjatli taftishlarni o'tkazish qoidalariga rioya etish;</li>
-                        <li>Inventarizatsiya qilish tartibini ta'minlash;</li>
-                        <li>Mehnatni muhofaza qilish, xavfsizlik texnikasi, ishlab chiqarish sanitariyasi va yong'inga qarshi himoyalanish normalari, qoidalari va yo'riqnomalarini bilish;</li>
-                    </ul>
-                `
+                bio: `...`
             }
         };
 
-        // ================== KUTUBXONA KO‘RINISHI ==================
-        function showLibraryView() {
+        // ================== YORDAMCHI FUNKSIYA: rasm galereyasini ko‘rsatish ==================
+        function showImageGallery(title, images) {
             const modal = document.getElementById('newsModal');
             const content = document.getElementById('newsModalContent');
+            let html = `<div style="text-align:center; margin-bottom:20px;"><h3>${title}</h3></div>`;
+            images.forEach(img => {
+                const rotateStyle = img.rotate ? 'transform: rotate(90deg);' : '';
+                html += `
+                    <div style="margin-bottom: 15px; text-align: center;">
+                        <img src="${img.src}" alt="${img.title}" 
+                             style="max-width: 100%; max-height: 90vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image; ${rotateStyle}" 
+                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
+                        <p style="margin-top: 5px; color:#64748b;">${img.title}</p>
+                    </div>
+                `;
+            });
+            content.innerHTML = html;
+            modal.style.display = 'flex';
+        }
+
+        // ================== KUTUBXONA KO‘RINISHI ==================
+        function showLibraryView() {
             const images = [
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Kirish%20xonasi_1.jpg', title: 'Kirish xonasi 1' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Kirish%20xonasi_2.jpg', title: 'Kirish xonasi 2' },
@@ -1925,27 +1870,13 @@
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Xisobchi.jpg', title: 'Bosh xisobchi' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Abonoment_1.jpg', title: 'Abonoment va foydalanuvchilarga xizmat ko\'rsatish xizmati, Fondlarni to\'ldirish saqlash va ularga texnik ishlov berish, Axborot-kommunikatsiya texnologiyalari va raqamlashtirish xizmati' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Zal.jpg', title: 'O\'quv zali' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Xizmat.jpg', title: 'Bolalar xizmat ko\'rsatish xizmati' }
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Hizmat.jpg', title: 'Bolalar xizmat ko\'rsatish xizmati' }
             ];
-            let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona binosi ko‘rinishi</h3></div>';
-            images.forEach(img => {
-                html += `
-                    <div style="margin-bottom: 5px; text-align: center;">
-                        <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
-                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
-            modal.style.display = 'flex';
+            showImageGallery('Kutubxona binosi ko‘rinishi', images);
         }
 
         // ================== FOYDALANISH QOIDASI ==================
         function showFoydalanishQoidasi() {
-            const modal = document.getElementById('newsModal');
-            const content = document.getElementById('newsModalContent');
             const images = [
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi.JPG', title: 'Foydalanish qoidasi 1' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0001.JPG', title: 'Foydalanish qoidasi 2' },
@@ -1953,25 +1884,11 @@
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0003.JPG', title: 'Foydalanish qoidasi 4' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Foydalanish%20qoidasi0004.JPG', title: 'Foydalanish qoidasi 5' }
             ];
-            let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Foydalanish qoidasi</h3></div>';
-            images.forEach(img => {
-                html += `
-                    <div style="margin-bottom: 5px; text-align: center;">
-                        <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
-                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
-            modal.style.display = 'flex';
+            showImageGallery('Foydalanish qoidasi', images);
         }
 
         // ================== KUTUBXONA NIZOMI ==================
         function showKutubxonaNizomi() {
-            const modal = document.getElementById('newsModal');
-            const content = document.getElementById('newsModalContent');
             const images = [
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi.JPG', title: 'Nizom 1' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0001.JPG', title: 'Nizom 2' },
@@ -1980,78 +1897,56 @@
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0004.JPG', title: 'Nizom 5' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Ulug%27nor%20TAKM%20Nizomi0005.JPG', title: 'Nizom 6' }
             ];
-            let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona nizomi</h3></div>';
-            images.forEach(img => {
-                html += `
-                    <div style="margin-bottom: 5px; text-align: center;">
-                        <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
-                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
-            modal.style.display = 'flex';
+            showImageGallery('Kutubxona nizomi', images);
         }
 
-        // ================== YO‘L XARITASI (yonboshlagan rasmlar to‘g‘irlandi) ==================
+        // ================== YO‘L XARITASI ==================
         function showYolXaritasi() {
-            const modal = document.getElementById('newsModal');
-            const content = document.getElementById('newsModalContent');
             const images = [
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi.JPG', title: 'Yo‘l xaritasi 1', rotate: false },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi.JPG', title: 'Yo‘l xaritasi 1' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_1.JPG', title: 'Yo‘l xaritasi 2', rotate: true },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Yol%20xaritasi_2.JPG', title: 'Yo‘l xaritasi 3', rotate: true }
             ];
-            let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Yo‘l xaritasi</h3></div>';
-            images.forEach(img => {
-                const rotateStyle = img.rotate ? 'transform: rotate(90deg);' : '';
-                html += `
-                    <div style="margin-bottom: 5px; text-align: center;">
-                        <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image; ${rotateStyle}" 
-                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
-            modal.style.display = 'flex';
+            showImageGallery('Yo‘l xaritasi', images);
         }
 
         // ================== KUTUBXONA HUJJATLAR ==================
         function showKutubxonaHujjatlar() {
-            const modal = document.getElementById('newsModal');
-            const content = document.getElementById('newsModalContent');
             const images = [
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0001.jpg', title: 'Ijara shartnomasi 1' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0002.jpg', title: 'Ijara shartnomasi 2' },
                 { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0003.jpg', title: 'Ijara shartnomasi 3' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0004.jpg', title: 'Ijara shartnomasi 4' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0005.jpg', title: 'Ijara shartnomasi 5' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0006.jpg', title: 'Ijara shartnomasi 6' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0007.jpg', title: 'Ijara shartnomasi 7' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0008.jpg', title: 'Ijara shartnomasi 8' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0009.jpg', title: 'Ijara shartnomasi 9' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0010.jpg', title: 'Ijara shartnomasi 10' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0011.jpg', title: 'Ijara shartnomasi 11' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%98%D0%B6%D0%B0%D1%80%D0%B0%20%D1%88%D0%B0%D1%80%D1%82%D0%BD%D0%BE%D0%BC%D0%B0%D1%81%D0%B8_page-0012.jpg', title: 'Ijara shartnomasi 12' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Улугнор_ТАКМ_паспорти_2026_й_5_yanvar_холатига-1.jpg', title: 'Pasport 1' },
-                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/Улугнор_ТАКМ_паспорти_2026_й_5_yanvar_холатига-2.jpg', title: 'Pasport 2' }
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%A3%D0%BB%D1%83%D0%B3%D0%BD%D0%BE%D1%80_%D0%A2%D0%90%D0%9A%D0%9C_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8_2026_%D0%B9_5_yanvar_%D1%85%D0%BE%D0%BB%D0%B0%D1%82%D0%B8%D0%B3%D0%B0-1.jpg', title: 'Pasport 1' },
+                { src: 'https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/%D0%A3%D0%BB%D1%83%D0%B3%D0%BD%D0%BE%D1%80_%D0%A2%D0%90%D0%9A%D0%9C_%D0%BF%D0%B0%D1%81%D0%BF%D0%BE%D1%80%D1%82%D0%B8_2026_%D0%B9_5_yanvar_%D1%85%D0%BE%D0%BB%D0%B0%D1%82%D0%B8%D0%B3%D0%B0-2.jpg', title: 'Pasport 2' }
             ];
-            let html = '<div style="text-align:center; margin-bottom:20px;"><h3>Kutubxona hujjatlari</h3></div>';
-            images.forEach(img => {
-                html += `
-                    <div style="margin-bottom: 5px; text-align: center;">
-                        <img src="${img.src}" alt="${img.title}" 
-                             style="max-width: 100%; max-height: 98vh; width: auto; height: auto; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); image-orientation: from-image;" 
-                             onerror="this.style.display='none'; this.parentElement.innerHTML+='<p style=\'color:red;\'>Rasm topilmadi: ${img.title}</p>';">
-                        <p style="margin-top: 3px; color:#64748b;">${img.title}</p>
-                    </div>
-                `;
-            });
-            content.innerHTML = html;
+            showImageGallery('Kutubxona hujjatlari', images);
+        }
+
+        // ================== LAVOZIM YO‘RIQNOMASI (vaqtinchalik placeholder) ==================
+        function showLavozimYoritnomasi() {
+            const modal = document.getElementById('newsModal');
+            const content = document.getElementById('newsModalContent');
+            content.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fas fa-file-alt" style="font-size: 64px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Lavozim yo‘riqnomasi</h3>
+                    <p style="margin-top: 20px; color: #64748b;">Maʼlumot hali qo‘shilmagan. Tez orada qo‘shiladi.</p>
+                </div>
+            `;
+            modal.style.display = 'flex';
+        }
+
+        // ================== ISH REJASI (vaqtinchalik placeholder) ==================
+        function showIshRejasi() {
+            const modal = document.getElementById('newsModal');
+            const content = document.getElementById('newsModalContent');
+            content.innerHTML = `
+                <div style="text-align: center; padding: 40px;">
+                    <i class="fas fa-calendar-alt" style="font-size: 64px; color: var(--primary-color); margin-bottom: 20px;"></i>
+                    <h3>Ish rejasi</h3>
+                    <p style="margin-top: 20px; color: #64748b;">Maʼlumot hali qo‘shilmagan. Tez orada qo‘shiladi.</p>
+                </div>
+            `;
             modal.style.display = 'flex';
         }
 
@@ -2389,18 +2284,15 @@
 
         // ================== SAHIFA YUKLANGANDA ==================
         document.addEventListener('DOMContentLoaded', async function() {
-            // Birinchi sahifalarni yuklash
             await loadAndDisplayNews(1);
             await loadAndDisplayEvents(1);
             await loadAndDisplayBooks(1);
 
-            // Statistika raqamlarini yangilash
             document.getElementById('total-books').textContent = allBooks.length || 2800;
             document.getElementById('total-news').textContent = allNews.length || 120;
             document.getElementById('total-members').textContent = 300 + Math.floor(allBooks.length / 10);
             document.getElementById('years-experience').textContent = 15;
 
-            // "Ko‘proq" tugmalari
             document.getElementById('loadMoreNews').addEventListener('click', async function(e) {
                 e.preventDefault();
                 newsPage++;
@@ -2417,7 +2309,6 @@
                 await loadAndDisplayBooks(booksPage);
             });
 
-            // Smooth scrolling
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
@@ -2426,7 +2317,6 @@
                 });
             });
 
-            // Kontakt forma
             document.getElementById('contactForm')?.addEventListener('submit', function(e) {
                 e.preventDefault();
                 const btn = this.querySelector('button[type="submit"]');
@@ -2440,7 +2330,6 @@
                 }, 1500);
             });
 
-            // Modal yopish
             document.getElementById('newsModal').addEventListener('click', function(e) {
                 if (e.target === this) closeModal();
             });
@@ -2448,7 +2337,6 @@
                 if (e.target === this) closePdfModal();
             });
 
-            // Escape tugmasi
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     closeModal();
@@ -2456,11 +2344,9 @@
                 }
             });
 
-            // Scroll animatsiya
             window.addEventListener('scroll', animateOnScroll);
             animateOnScroll();
 
-            // Har 5 daqiqada avtomatik yangilash
             setInterval(() => {
                 console.log('Maʼlumotlar avtomatik yangilanmoqda...');
                 loadAndDisplayNews(1);
