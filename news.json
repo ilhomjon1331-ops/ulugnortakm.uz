@@ -1,5 +1,17 @@
 [
   {
+    "id": 12,
+    "type": "Yangilik",
+    "title": "Bilim_tafakkur_ kaliti",
+    "text": "Ulug'nor tuman axborot-kutubxona markazi  AKT mutaxassisi tomonidan  \"Bilim tafakkur kaliti\"  loyhasi doirasida   faol kitobxonlar o'rtasida  \"Raqamlardan xosil bo'lgan 100 lik\" mavzusida savol javob o'yini o'tkazildi.",
+    "date": "2026-06-05",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1780647849_1425.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1780647854_1429.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1780647849_1425.jpg"
+  },
+  {
     "id": 11,
     "type": "Yangilik",
     "title": "#Buyuklar_hikmati",
