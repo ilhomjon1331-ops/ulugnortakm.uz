@@ -1,5 +1,18 @@
 [
   {
+    "id": 13,
+    "type": "Yangilik",
+    "title": "#Kitob_karvoni",
+    "text": "Yoshlar ishlari agentligi tomonidan tashkil etilgan “Kitob karvoni” loyihasi doirasida tashkil etilayotgan \"Yoshlar tashabbuslari marafoni\"  mamlakatimizda kitobxonlik madaniatining yangi to‘lqinini boshlab bergan muhim ijtimoiy-madaniy voqelikdir.\n\n Ushbu marafon nafaqat yoshlarning intellektual salohiyatini oshirish, balki ularning bunyodkorlik g‘oyalarini qo‘llab-quvvatlashga xizmat qilmoqda. Yoshlar tashabbuslari marafoni shunchaki kitob tarqatish aksiyasi emas, balki chuqur ijtimoiy ahamiyatga ega strategik loyihadir. Mutolaa madaniyatini yuksaltirish,  olis va chekka hududlardagi yoshlarga zamonaviy, badiiy va ilmiy adabiyotlarni yetkazib berishdir.\n\"Kitob karvoni\" yoshlar tashabbuslari marafoni – bu kitob ortidan ergashgan yoshlarning ulug‘vor harakatidir. \n\nUlug'nor  tuman axborot-kutubxona markazi jamoasi nomidan Yoshlar ishlari agentligiga  o'z minnatdorchiligimizni bildiramiz!!!\n\nBu marafon har bir o‘g‘il-qizga o‘z salohiyatini namoyon etish, o‘qish, o‘rganish va Vatan ravnaqi uchun xizmat qiladigan g‘oyalarni o‘rtaga tashlash uchun ulkan imkoniyatlar eshigini ochib bermoqda. Kitob bilan boshlangan tashabbuslar esa har doim yuksak marralarga yetaklaydi.",
+    "date": "2026-06-24",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1782278183_1452.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1782278137_1448.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1782278204_1458.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1782278183_1452.jpg"
+  },
+  {
     "id": 12,
     "type": "Yangilik",
     "title": "Bilim_tafakkur_ kaliti",
