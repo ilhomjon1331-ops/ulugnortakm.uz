@@ -1,5 +1,19 @@
 [
   {
+    "id": 16,
+    "type": "Yangilik",
+    "title": "#Savol_javob",
+    "text": "Ulug'nor tuman axborot-kutubxona markazida  Favqulodda vaziyatlar  bo'limining ma'sul xodimlari ishtirokida  \"Siz o'z  xuquqingizni bilasizmi\" mavzusida savol javob o'yini o'tkazildi.",
+    "date": "2026-07-07",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783402437_1510.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783402441_1512.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783402448_1518.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783402454_1522.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783402437_1510.jpg"
+  },
+  {
     "id": 15,
     "type": "Yangilik",
     "title": "Илм олишда 6 та муҳим қоида:",
