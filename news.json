@@ -1,5 +1,16 @@
 [
   {
+    "id": 17,
+    "type": "Yangilik",
+    "title": "Iqtibos",
+    "text": "Murakkab va qaltis vaziyatda barchamiz tinch va osoyishta hayotimizni asrash, milliy mustaqilligimizni mustahkamlash uchun yanada jipslashib, hushyor va ogoh bo‘lib, dadil va qat’iy harakat qilishimiz zarur.\n\nShavkat Mirziyoyev",
+    "date": "2026-07-08",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783492743_1552.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783492743_1552.jpg"
+  },
+  {
     "id": 16,
     "type": "Yangilik",
     "title": "Savol javob",
