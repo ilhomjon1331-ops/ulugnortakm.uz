@@ -1,5 +1,18 @@
 [
   {
+    "id": 15,
+    "title": "Suhbat",
+    "description": "Ulug'nor tuman axborot-kutubxona markazining \"Mingbuloq dam olish\" maskanida  faol yosh kitobxonlar ishtirokida \"Kitob tafakkur va tuyg'ularni charxlaydi\" mavzusida suhbat o'tkazildi.",
+    "date": "2026-07-10",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783680132_1564.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783680137_1568.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783680142_1572.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783680148_1576.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1783680132_1564.jpg"
+  },
+  {
     "id": 14,
     "title": "Kõchma kutubxona",
     "description": "Ulug'nor tuman axborot-kutubxona markazi mutaxassisi tomonidan   \"Mahallalarda kitob mutolaa madaniyati\" loyihasi asosida  Shahriobod, Bobur MFY   hududida istiqomat qiluvchi  kitobxon  yoshlar  o'rtasida \"Kitob - ta'tilning eng yaqin do'sti\" mavzusida kitob targ'iboti o'tkazildi.",
