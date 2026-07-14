@@ -1,5 +1,17 @@
 [
   {
+    "id": 16,
+    "title": "Adabiyotlar_ko'rgazmasi",
+    "description": "Ulug'nor tuman axborot-kutubxona markazi tomonidan axolining keng qatlamiga kitobxonlar ommasi foydalanishi uchun tuman \nxokomiyat binosi  yoniga, \nyangi  kitoblardan iborat  badiiy, ilmiy-ommabop, tarixiy, ma'naviy - ma'rifiy hamda bolalar adabiyotlari olib kelindi.  \"Yangi kiotoblar - yangi imkoniyatlar\" mavzusida kitob ko'rgazmasi tashkil etildi.",
+    "date": "2026-07-14",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1784022568_1588.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1784022576_1592.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1784022582_1596.jpg"
+    ],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1784022568_1588.jpg"
+  },
+  {
     "id": 15,
     "title": "Suhbat",
     "description": "Ulug'nor tuman axborot-kutubxona markazining \"Mingbuloq dam olish\" maskanida  faol yosh kitobxonlar ishtirokida \"Kitob tafakkur va tuyg'ularni charxlaydi\" mavzusida suhbat o'tkazildi.",
