@@ -1,5 +1,16 @@
 [
   {
+    "id": 20,
+    "title": "#sizga_tavsiy_etamiz",
+    "description": "✍🏻   Ahmad Nejali Jumali\n📚 \"Yig'irma besh  qurishga Amerika \" kitob\n📖     Qo'lingizdagi kitob turk zamonaviy nasri  namunalarini o'zida mujassam etgan. Siz bu to'plamda ilgari o'zingiz sevib o'qigan adiblaringiz  bilan birga hali umuman sizga notanish  ijodkorlar asarlarini ham ko'rishingiz  mumkin.Albatta, hikoyalar yozilish uslubi bilan bir-biridan farq qiladi. Kitobni o'qib ,Siz nafaqat muallifning mahoratini, balki dramatizmga  yo'g'rilgan,inson qalbining chuqur qatlamlariga kirib boruvchi dardli voqealarni  ham kuzatish imkoniga ega bo'lasiz.Umuman olganda, mazkur nasriy majmua barcha  yoshdagi adabiyot muxlislarining tafakkurining  boyitadigan hikoyalar guldastasi,deyish mumkin.",
+    "date": "2026-09-21",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1789967562_45.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1789967562_45.jpg"
+  },
+  {
     "id": 19,
     "title": "Ko'chma kutubxona.",
     "description": "Ulug'nor tuman axborot-kutubxona markazi mutaxassisi tomonidan    \"Mahallalarda kitob mutolaa madaniyati\" loyihasi doirasida Shaxriobod MFY hududidagi axoli  o'rtasida \"Har bir kitobda bir olam\" mavzusida kitob targ'iboti o'tkazildi.",
