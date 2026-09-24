@@ -1,5 +1,22 @@
 [
   {
+    "id": 18,
+    "type": "Yangilik",
+    "title": "qiziqarli ma'lumot",
+    "text": "Prezident Shavkat Mirziyoyev “Agroklaster Oltinkoʻl” korxonasida paxta yetishtirish jarayonini koʻzdan kechirdi.\n—\nПрезидент Шавкат Мирзиёев ознакомился с процессом выращивания хлопчатника на предприятии «Агрокластер Олтинкул».\n\n#Mirziyoyev #tashrif #Andijon #paxtachilik",
+    "date": "2026-09-24",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223897_81.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223904_84.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223911_87.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223917_90.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223922_93.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223927_96.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790223897_81.jpg"
+  },
+  {
     "id": 17,
     "type": "Yangilik",
     "title": "Iqtibos",
