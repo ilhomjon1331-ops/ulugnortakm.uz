@@ -1,5 +1,19 @@
 [
   {
+    "id": 22,
+    "title": "Uslubiy yordam",
+    "description": "Andijon viloyati  Kelajak markazi boshqarmasi tomonidan 18 sentyabr 2026 yil kuni o'tkazilgan ZOOM  yig'ilishidagi topshiqlarini ijrosini taʼminlanishi yuzasidan \n📚Ulug'nor tuman axborot-kutubxona markazining axborot-bibliografiya xizmati mutaxassisi tomonidan 17-umumta'lim maktab kutubxonachisiga uslubiy yordam va maslahatlar berildi.",
+    "date": "2026-09-24",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790225098_107.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790225103_110.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790225108_113.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790225113_116.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790225098_107.jpg"
+  },
+  {
     "id": 21,
     "title": "#Uslubiy_yordam",
     "description": "Andijon viloyati  Kelajak markazi boshqarmasi tomonidan 18 sentyabr 2026 yil kuni o'tkazilgan ZOOM  yig'ilishidagi topshiqlarini ijrosini taʼminlanishi yuzasidan \n📚Ulug'nor tuman axborot-kutubxona markazining axborot-bibliografiya xizmati mutaxassisi tomonidan 16-umumta'lim maktab kutubxonachisiga uslubiy yordam va maslahatlar berildi.",
