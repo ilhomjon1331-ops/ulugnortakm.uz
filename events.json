@@ -1,5 +1,18 @@
 [
   {
+    "id": 30,
+    "title": "Adabiy kecha",
+    "description": "Ulug'nor tuman axborot-kutubxona markazida 1 oktyabr - O'qituvchi va murabbiylar kuni munosabati bilan 21-umumta'lim maktabi xamkorligida \"Ustoz tarbiya va ma'rifat timsoli\" mavzusida adabiy kecha o'tkazildi.",
+    "date": "2026-09-30",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790745005_262.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790745007_264.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790745010_265.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790745005_262.jpg"
+  },
+  {
     "id": 29,
     "title": "Qiziqarli ma'lumot",
     "description": "Prezident Shavkat Mirziyoyev shaxmat va parashaxmat bo‘yicha O‘zbekiston terma jamoalari a’zolari, ularning ota-onalari va murabbiylari bilan uchrashdi. Chempion va sovrindorlarga davlat mukofotlari va Prezident sovg‘alari tantanali ravishda topshirildi.\n—\nПрезидент Шавкат Мирзиёев провел встречу с членами сборных команд Узбекистана по шахматам и парашахматам, их родителями и тренерами. Состоялось торжественное вручение чемпионам и призерам государственных наград и подарков Президента.",
