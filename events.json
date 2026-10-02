@@ -1,5 +1,18 @@
 [
   {
+    "id": 32,
+    "title": "Mehr kutubxonasi loyihasi",
+    "description": "Ulug'nor tuman axborot-kutubxona markazi mutaxasislari tomonidan \"Mehr - kutubxonasi\" loyihasi doirasida  Shaxriobod va Ulug'bek  MFY hududida istiqomat qiluvchi  imkoniyati cheklangan kitobxonlarni so'rovlari asosida  audio disklar va badiiy  adabiyotlardan   foydalanish uchun   tavsiya berildi.",
+    "date": "2026-10-02",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790936878_297.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790936884_300.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790936893_303.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1790936878_297.jpg"
+  },
+  {
     "id": 31,
     "title": "davra suhbat",
     "description": "Ulug'nor tumani axborot-kutubxona markazi hamkorligida\n 1-umum ta'lim maktab kutubxonasida \"Jadidlar-ilm va taraqqiyot tarafdorlari\" mavzusida davra suhbati o'tkazildi.",
