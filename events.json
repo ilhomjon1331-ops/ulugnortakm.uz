@@ -1,5 +1,23 @@
 [
   {
+    "id": 38,
+    "title": "Seminar_trening",
+    "description": "Ulug'nor tuman  markaziy kutubxonasida Maktabgacha va  maktab ta'limi  vazirligi tassarufidagi  Ulug'nor tumanidagi barcha maktab kutubxona mudiralari ishtirokida \"Kitob bilan yuksalish\" (maqsad va shaxsiy rivojlanishga undaydi)  \"Jadidlar zamonlar va avlodlar\"  uyg'onish kaliti mavzulari asosida navbatdagi seminar mashg'uloti o'tkazildi.",
+    "date": "2026-10-16",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142383_390.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142386_391.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142386_392.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142390_393.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142428_405.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142436_408.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142444_411.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142454_414.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792142383_390.jpg"
+  },
+  {
     "id": 37,
     "title": "mutaxassis_kuni",
     "description": "Ulug'nor tuman axborot-kutubxona markazi axborot - bibliografiya xizmati hamda 1 umumta'lim maktabi o'qituvchilari bilan hamkorlikda \n\"Kelajak kasblari - yangi imkoniyatlar\" nomli mutaxassis kuni o'tkazildi.",
