@@ -1,5 +1,16 @@
 [
   {
+    "id": 45,
+    "title": "Sizga tavsiya etamiz",
+    "description": "#sizga_tavsiya_etamiz\n\n✍🏻  O'ljas Sulaymonov\n📚 \"Turkiy adabiyot durdonalari\" kitobi    \nO'zbekiston Respublikasi Prezidenti Shavkat Mirziyoyev 2019-yil 15-oktabr kuni Ozarbayjon poytaxti Boku shahrida bo'lib o'tgan Turkiy davlatlar hamkorlik kengashining yettinchi sammitida tashkilotga a'zo davlatlar adabiyotining eng sara namnalaridan iborat\"Turkiy adabiyot durdonalari\" deb nomlangan100 jildlik kitoblar turkimini har bir mamlakatning  ona tilida nashr etish g'oyasini ilgari surgan edi.Ushbu ezgu tashabbus  asosida birinchi bo'lib O'zbekiston mana shu muhtasham adabiy majmua yaratildi.",
+    "date": "2026-10-22",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792671345_566.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792671345_566.jpg"
+  },
+  {
     "id": 44,
     "title": "Adabiy  kecha",
     "description": "Ulug'nor tumani axborot-kutubxona markazida 1-umumta'lim maktab o'quvchilari ishtrokida 21-oktabr O'zbek -tiliga davlat tili maqomi berilganligining  37-yilligi munosabati bilan \"Ona tilim- dilimning tarjimoni\" mavzusida  adabiy kecha o'tkazildi.",
