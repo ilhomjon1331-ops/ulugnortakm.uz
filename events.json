@@ -1,5 +1,20 @@
 [
   {
+    "id": 43,
+    "title": "Adabiy  kecha",
+    "description": "Ulug'nor tumani axborot-kutubxona markazida 20 - umumta'lim maktab o'quvchilari ishtirokida 21-oktyabr O'zbek -tiliga davlat tili maqomi berilganligining  37-yilligi munosabati bilan  \"Ona tilim milliy o'zligim timsoli\" mavzusida  adabiy kecha o'tkazildi.",
+    "date": "2026-10-22",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669925_509.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669933_512.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669940_515.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669946_518.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669952_521.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669925_509.jpg"
+  },
+  {
     "id": 42,
     "title": "Davra suhbat",
     "description": "Ulug'nor tumani axborot - kutubxona markazida  21-oktyabr O'zbek tiliga davlat tili maqomi berilganligining 37-yilligi munosabati bilan \"Til bor ekan, millat barhayot\" mavzusida davra suhbati  o'tkazildi.",
