@@ -1,5 +1,17 @@
 [
   {
+    "id": 42,
+    "title": "Davra suhbat",
+    "description": "Ulug'nor tumani axborot - kutubxona markazida  21-oktyabr O'zbek tiliga davlat tili maqomi berilganligining 37-yilligi munosabati bilan \"Til bor ekan, millat barhayot\" mavzusida davra suhbati  o'tkazildi.",
+    "date": "2026-10-22",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669281_495.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669288_498.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1792669281_495.jpg"
+  },
+  {
     "id": 41,
     "title": "adabiy_kecha",
     "description": "21-oktabr — O‘zbek tiliga davlat tili maqomi berilgan kun munosabati bilan  \"Kelajak markazi\" ning  faollar zalida 1-umum ta'lim maktabi  axborot - kutubxona markazi  hamkorligida \"Ona tilim - bilim va ma'naviyat kaliti\" mavzusida adabiy kecha o'tkazildi.",
