@@ -1,5 +1,18 @@
 [
   {
+    "id": 50,
+    "title": "Ma'naviyat soati",
+    "description": "Ulug'nor tuman axborot-kutubxona markazida   “Yoshlarni ijtimoiy tarmoqning salbiy jihatlar va oqibatlardan himoya qilish”  mavzusida   ma'naviyat soati o'tkazildi.  Axborot  soati davomida Oʻzbekiston Respublikasi Prezidentining 15.01.2026 yil  PQ-9-sonli qarori ijrosini taminlash yuzasidan ishchi hodimlar o'rtasida  \"Bir kunda - bir sahifa\" rukni ostida kitob targ'iboti amalga oshirildi.",
+    "date": "2026-10-29",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793273189_639.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793273197_642.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793273203_645.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793273189_639.jpg"
+  },
+  {
     "id": 49,
     "title": "Mehr  kutubxonasi  loyihasi",
     "description": "Ulug'nor tuman axborot-kutubxona markazi mutaxasislari tomonidan \"Mehr - kutubxonasi\" loyihasi doirasida  Bobur  MFY hududidagi  1-umumta'lim maktab qoshida ochilgan inklyuziv  imkoniyati cheklangan kitobxonlar uchun  audio disklar va badiiy  adabiyotlardan   foydalanish uchun  tavsiyalar berildi.",
