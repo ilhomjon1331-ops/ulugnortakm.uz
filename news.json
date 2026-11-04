@@ -1,5 +1,18 @@
 [
   {
+    "id": 21,
+    "type": "Yangilik",
+    "title": "/addevent",
+    "text": "adabiy ma'naviy_kecha",
+    "date": "2026-11-04",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793790805_718.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793790813_721.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793790805_718.jpg"
+  },
+  {
     "id": 20,
     "type": "Yangilik",
     "title": "Kitoblar haqida faktlar!",
