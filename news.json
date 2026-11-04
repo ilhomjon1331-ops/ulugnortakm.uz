@@ -1,5 +1,17 @@
 [
   {
+    "id": 20,
+    "type": "Yangilik",
+    "title": "Kitoblar haqida faktlar!",
+    "text": "📚 Kitoblar haqida faktlar!\n\n☑️Kitoblarning tonnasi — har yili dunyoda 755.755 ta yangi kitoblar naşr etiladi. 2017-yilning örtalaridan boşlab hozirgaça dunyo böyiça 134 mln.dan ortiq kitoblar naşr etilgan.\n\n☑️Eng uzun audiokitob — dunyoning eng uzun ovozli kitobi deyarli beş kundir. Kitob 2008-yilda Yaponiyada naşr etilgan va faylasuf, şoir hamda adabiyotşunos Takaaki Yoşimoto tomonidan ma’ruza qilingan. Kitobning umumiy vaqti 115 soatu 43 daqiqadir.\n\n☑️Eng qimmat kitob (yuqoridagi rasmda körsatilgan) — dunyodagi eng qimmat kitobning ilk nusxasi 1640-yilda Massaçusets ştatining Cambridge şahrida çop etilgan «Bay Psalm Book» kitobidir. Uşbu kitob Yangi Dunyödagi matbuotda çop etilgan birinçi kitoblardan biri bölib, Nyu-Yorkdagi 2013-yilgi kim oşdi savdosida $14.165 ga sotildi.",
+    "date": "2026-11-04",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793771916_699.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793771916_699.jpg"
+  },
+  {
     "id": 19,
     "type": "Yangilik",
     "title": "Иқтибос",
