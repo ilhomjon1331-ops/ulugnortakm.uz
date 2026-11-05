@@ -1,5 +1,17 @@
 [
   {
+    "id": 22,
+    "type": "Yangilik",
+    "title": "Kitob tavsiya",
+    "text": "Alişer Saʼdullayev yoşlarga qaysi asarlarni öqişni tavsiya qiladi?\n\n📚Uşbu tavsiya qilayotganlarimiz qatʼiy röyxat emas, keling, bu ketma-ketlikni nisbiy tuşunamiz. Demak, Yoşlar işlari agentligi direktori, senator Alişer Saʼdullayev yoşlar öqişi uçun 10ta kitob tavsiya qiladi.\n\n🟢“Boburnoma”, Zahiriddin Muhammad Bobur\n🟢“Asrga tatigulik kun”, Çingiz Aytmatov\n🟢“Keça va Kunduz”, Abdulhamid Sulaymon öğli Çölpon\n🟢“Otamdan qolgan dalalar”, Toğay Murod\n🟢“Martin Iden”, Jek London\n🟢“Uruş va Tinçlik”, Lev Tolstoy\n🟢“Usta va Margarita”, Mixail Bulgakov\n🟢“Puankare”, Abduqayum Yöldoşev\n🟢“Baxt yetkaziş” (Milliard dollarlik internet dökon tarixi), Toni Şey\n🟢“Kiçkina şahzoda”, Antuan de Sent Ekzyuperi\n\n👉 Batafsil maqolani öqiş \n\nHayotni anglaş, tafakkur qila oliş uçun önta kitob kifoya. Biroq öşa öntani topiş uçun esa yuzlab, minglab kitoblarni öqib çiqişga töğri keladi.",
+    "date": "2026-11-05",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793858756_779.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1793858756_779.jpg"
+  },
+  {
     "id": 21,
     "type": "Yangilik",
     "title": "/addevent",
