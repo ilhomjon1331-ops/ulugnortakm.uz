@@ -1,5 +1,16 @@
 [
   {
+    "id": 62,
+    "title": "Буюклар хикмати",
+    "description": "Кўзни юмгил, кўзга айлансин кўнгил.",
+    "date": "2026-11-09",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1794224715_910.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1794224715_910.jpg"
+  },
+  {
     "id": 61,
     "title": "Sizga tavsiya etamiz",
     "description": "✍🏻  Asqad Muxtor\n📚 \"Chinor\" kitobi    \n «Chinor» asar bir özbek oilasi haqida. Bu oila katta, qadimiy, madaniy, mehnatkash va shu ma'noda «tagli-zotli». Uning har bir a'zosi xalq hayotida ma'lum bir ma'suliyatli yukni  öz zimmasiga olgan. Jonajon tuproqqa chuqur tomir yoygan, baquvvat  va qadimiy Chinor mangulik ramzi, xalqimiz ramzidir. Hikoyatlar va rivoyatlar esa bu fikrlarni quvvatlab, yanada mustahkamlaydi.",
