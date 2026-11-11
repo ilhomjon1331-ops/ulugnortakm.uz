@@ -1,5 +1,17 @@
 [
   {
+    "id": 63,
+    "title": "Suhbat",
+    "description": "🇺🇿18-noyabr — xalqimiz hayotida muhim va unutilmas sanalardan biridir. Aynan shu kuni, 1991-yil 18-noyabrda O‘zbekiston Respublikasining Davlat bayrog‘i qabul qilingan. \n📚Uluğnor tuman axborot - kutubxona markazida  tuman ma'naviyat va ma'rifat markazi ma'sul xodimi, Akm  raxbar va xodimlar ishtirokida \"Bir bayroq ostida — bir xalq, bir Vatan!\" mavzusida suhbat ötkazildi. Suhbat davomida Davlat bayrog‘imiz mustaqilligimiz, milliy g‘ururimiz, xalqimizning orzu-umidlari va ezgu intilishlarini o‘zida mujassam etgan muqaddas ramzlar haqida tushunchalar bildirib ötildi.",
+    "date": "2026-11-11",
+    "images": [
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1794390179_921.jpg",
+      "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1794390190_924.jpg"
+    ],
+    "videos": [],
+    "image": "https://raw.githubusercontent.com/ilhomjon1331-ops/ulugnortakm.uz/main/images/photo_1794390179_921.jpg"
+  },
+  {
     "id": 62,
     "title": "Буюклар хикмати",
     "description": "Кўзни юмгил, кўзга айлансин кўнгил.",
